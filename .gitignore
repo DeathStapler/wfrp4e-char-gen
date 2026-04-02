@@ -1,0 +1,74 @@
+# ==================== Node.js & npm ====================
+node_modules/
+/.pnp
+.pnp.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+# ==================== Next.js ====================
+.next/
+.next/dev
+/out/
+*.runtimeconfig.json
+.next.swc
+
+# ==================== Build & Dist ====================
+/build
+/dist
+
+# ==================== Environment & Secrets ====================
+.env
+.env.local
+.env.*.local
+
+# ==================== IDE & Editor ====================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.iml
+.DS_Store
+Thumbs.db
+
+# ==================== TypeScript ====================
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# ==================== Testing ====================
+/coverage
+
+# ==================== OS ====================
+.DS_Store
+Thumbs.db
+
+# ==================== Temporary & Backup ====================
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# ==================== Logs ====================
+logs/
+*.log
+
+# ==================== Squad: ignore runtime state ====================
+.squad/orchestration-log/
+.squad/log/
+.squad/decisions/inbox/
+.squad/sessions/
+# Squad: SubSquad activation file (local to this machine)
+.squad-workstream
+
+# ==================== Turbo ====================
+.turbo/
+turbo.json.local
+
+# ==================== Yarn ====================
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*

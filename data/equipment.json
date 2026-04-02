@@ -1,0 +1,1360 @@
+[
+  {
+    "name": "Backpack",
+    "price": "4/10",
+    "enc": 2,
+    "availability": "Common",
+    "category": "Containers",
+    "description": "Carries 4 Enc. Counts as 'worn' when strapped to your back."
+  },
+  {
+    "name": "Barrel",
+    "price": "8/–",
+    "enc": 6,
+    "availability": "Common",
+    "category": "Containers",
+    "description": "Carries 12 Enc. Capacity: 32 gallons of liquid."
+  },
+  {
+    "name": "Cask",
+    "price": "3/–",
+    "enc": 2,
+    "availability": "Common",
+    "category": "Containers",
+    "description": "Carries 4 Enc. Capacity: 10 gallons of liquid."
+  },
+  {
+    "name": "Flask",
+    "price": "5/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Containers",
+    "description": "Carries 0 Enc. Capacity: 1 pint of liquid."
+  },
+  {
+    "name": "Jug",
+    "price": "3/2",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Containers",
+    "description": "Carries 1 Enc. Capacity: 1 gallon of liquid."
+  },
+  {
+    "name": "Pewter Stein",
+    "price": "4/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Containers",
+    "description": "Carries 0 Enc."
+  },
+  {
+    "name": "Pouch",
+    "price": "4d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Containers",
+    "description": "Carries 1 Enc."
+  },
+  {
+    "name": "Sack",
+    "price": "1/–",
+    "enc": 2,
+    "availability": "Common",
+    "category": "Containers",
+    "description": "Carries 4 Enc. Requires 1 hand to carry."
+  },
+  {
+    "name": "Sack, Large",
+    "price": "1/6",
+    "enc": 3,
+    "availability": "Common",
+    "category": "Containers",
+    "description": "Carries 6 Enc. Requires 1 hand to carry (or 2 hands if full)."
+  },
+  {
+    "name": "Saddlebags",
+    "price": "18/–",
+    "enc": 4,
+    "availability": "Common",
+    "category": "Containers",
+    "description": "Carries 8 Enc."
+  },
+  {
+    "name": "Sling Bag",
+    "price": "1/–",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Containers",
+    "description": "Carries 2 Enc. Counts as 'worn' when slung over your shoulder."
+  },
+  {
+    "name": "Scroll Case",
+    "price": "16/–",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Containers",
+    "description": "Carries 0 Enc."
+  },
+  {
+    "name": "Waterskin",
+    "price": "1/8",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Containers",
+    "description": "Carries 1 Enc. Capacity: 1 gallon of liquid."
+  },
+  {
+    "name": "Amulet",
+    "price": "2d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Clothing"
+  },
+  {
+    "name": "Boots",
+    "price": "5/–",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Clothing"
+  },
+  {
+    "name": "Cloak",
+    "price": "10/–",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Clothing",
+    "description": "Protects wearer against the elements."
+  },
+  {
+    "name": "Clothing",
+    "price": "6/–",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Clothing"
+  },
+  {
+    "name": "Coat",
+    "price": "18/–",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Clothing",
+    "description": "Protects against the elements and extreme cold; without a good coat you receive penalties to resist cold exposure."
+  },
+  {
+    "name": "Costume",
+    "price": "1GC",
+    "enc": 1,
+    "availability": "Scarce",
+    "category": "Clothing"
+  },
+  {
+    "name": "Courtly Garb",
+    "price": "12GC",
+    "enc": 1,
+    "availability": "Scarce",
+    "category": "Clothing",
+    "description": "Nobles' garb with lace cuffs, collars, and high-quality fabric. Servants' surcoats can be purchased at half price."
+  },
+  {
+    "name": "Face Powder",
+    "price": "10/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Clothing"
+  },
+  {
+    "name": "Gloves",
+    "price": "4/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Clothing"
+  },
+  {
+    "name": "Hood or Mask",
+    "price": "5/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Clothing"
+  },
+  {
+    "name": "Jewellery",
+    "price": "Varies",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Clothing",
+    "description": "Prices vary by craftsmanship, metal type, and gem value."
+  },
+  {
+    "name": "Perfume",
+    "price": "10/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Clothing"
+  },
+  {
+    "name": "Pins (6)",
+    "price": "10 s",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Clothing"
+  },
+  {
+    "name": "Religious Symbol",
+    "price": "6/8",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Clothing"
+  },
+  {
+    "name": "Robes",
+    "price": "2GC",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Clothing"
+  },
+  {
+    "name": "Sceptre",
+    "price": "8GC",
+    "enc": 1,
+    "availability": "Rare",
+    "category": "Clothing",
+    "description": "Carried by the highest-ranking legal officials to indicate their status."
+  },
+  {
+    "name": "Shoes",
+    "price": "5/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Clothing"
+  },
+  {
+    "name": "Signet Ring",
+    "price": "5GC",
+    "enc": 0,
+    "availability": "Rare",
+    "category": "Clothing",
+    "description": "Gold rings with engraved stamps worn by nobles and guild officials."
+  },
+  {
+    "name": "Tattoo",
+    "price": "4/– +",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Clothing"
+  },
+  {
+    "name": "Uniform",
+    "price": "1GC 2/–",
+    "enc": 1,
+    "availability": "Scarce",
+    "category": "Clothing"
+  },
+  {
+    "name": "Walking Cane",
+    "price": "3GC",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Clothing",
+    "description": "Polished wooden cane with metal cap; a status symbol amongst wealthier townsfolk."
+  },
+  {
+    "name": "Ale, pint",
+    "price": "3d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Food & Drink"
+  },
+  {
+    "name": "Ale, keg",
+    "price": "3 s",
+    "enc": 2,
+    "availability": "Common",
+    "category": "Food & Drink",
+    "description": "Capacity 3 gallons. Empty kegs can be refilled for 18d."
+  },
+  {
+    "name": "Bugman's XXXXXX Ale, pint",
+    "price": "9d",
+    "enc": 0,
+    "availability": "Exotic",
+    "category": "Food & Drink",
+    "description": "Potent Dwarfen ale. Counts as 4 mugs of normal ale for intoxication; grants immunity to Fear Tests for 1d10 hours."
+  },
+  {
+    "name": "Food, groceries/day",
+    "price": "10d",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Food & Drink"
+  },
+  {
+    "name": "Meal, inn",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Food & Drink"
+  },
+  {
+    "name": "Rations, 1 day",
+    "price": "2/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Food & Drink"
+  },
+  {
+    "name": "Room, common/night",
+    "price": "10d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Food & Drink",
+    "description": "Guests sleeping in common rooms should be wary of thieves."
+  },
+  {
+    "name": "Room, private/night",
+    "price": "10/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Food & Drink"
+  },
+  {
+    "name": "Spirits, pint",
+    "price": "2/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Food & Drink"
+  },
+  {
+    "name": "Stables/night",
+    "price": "10d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Food & Drink"
+  },
+  {
+    "name": "Wine, bottle",
+    "price": "10d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Food & Drink"
+  },
+  {
+    "name": "Wine & Spirits, drink",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Food & Drink"
+  },
+  {
+    "name": "Abacus",
+    "price": "3/4",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Tools"
+  },
+  {
+    "name": "Animal Trap",
+    "price": "2/6",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Tools",
+    "description": "Used to catch game."
+  },
+  {
+    "name": "Antitoxin Kit",
+    "price": "3GC",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Tools",
+    "description": "Contains a small knife, herbs, and leeches. A successful Heal Test removes all Poisoned Conditions."
+  },
+  {
+    "name": "Boat Hook",
+    "price": "5/–",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Broom",
+    "price": "10d",
+    "enc": 2,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Bucket",
+    "price": "2/6",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Chisel",
+    "price": "4/2",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Comb",
+    "price": "10d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Crowbar",
+    "price": "2/6",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Crutch",
+    "price": "3/–",
+    "enc": 2,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Disguise Kit",
+    "price": "6/6",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Tools",
+    "description": "Contains props for four disguises (wigs, make-up, wax, fake blood, prosthetics)."
+  },
+  {
+    "name": "Ear Pick",
+    "price": "2/–",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Tools"
+  },
+  {
+    "name": "Fish Hooks (12)",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Tools",
+    "description": "Used to catch fish."
+  },
+  {
+    "name": "Floor Brush",
+    "price": "1/6",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Gavel",
+    "price": "1GC",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Tools"
+  },
+  {
+    "name": "Hammer",
+    "price": "3/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Hand Mirror",
+    "price": "1GC 1/6",
+    "enc": 0,
+    "availability": "Exotic",
+    "category": "Tools"
+  },
+  {
+    "name": "Hoe",
+    "price": "4/–",
+    "enc": 2,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Key",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Knife",
+    "price": "8/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Lock Picks",
+    "price": "15/–",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Tools",
+    "description": "Assortment of small tools needed to use the Pick Lock Skill without penalty."
+  },
+  {
+    "name": "Manacles",
+    "price": "18/–",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Tools",
+    "description": "Prisoners breaking out suffer 1 Wound and must pass a Very Hard (–30) Strength Test."
+  },
+  {
+    "name": "Mop",
+    "price": "1/–",
+    "enc": 2,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Nails (12)",
+    "price": "2d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Paint Brush",
+    "price": "4/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Pestle & Mortar",
+    "price": "14/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Pick",
+    "price": "18/–",
+    "enc": 1,
+    "availability": "Scarce",
+    "category": "Tools"
+  },
+  {
+    "name": "Pole (3 yards)",
+    "price": "8/–",
+    "enc": 3,
+    "availability": "Common",
+    "category": "Tools",
+    "description": "Counts as an Improvised Weapon."
+  },
+  {
+    "name": "Quill Pen",
+    "price": "3/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Rake",
+    "price": "4/6",
+    "enc": 2,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Reading Lens",
+    "price": "3GC",
+    "enc": 0,
+    "availability": "Rare",
+    "category": "Tools",
+    "description": "Grants +20 to Read/Write Tests for tiny writing and +20 to Perception Tests for fine details."
+  },
+  {
+    "name": "Saw",
+    "price": "6/–",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Sickle",
+    "price": "1GC",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Spade",
+    "price": "8/–",
+    "enc": 2,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Spike",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Stamp, engraved",
+    "price": "5GC",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Tools"
+  },
+  {
+    "name": "Telescope",
+    "price": "5GC",
+    "enc": 0,
+    "availability": "Rare",
+    "category": "Tools"
+  },
+  {
+    "name": "Tongs, steel",
+    "price": "16/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Tools"
+  },
+  {
+    "name": "Tweezers",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Tools"
+  },
+  {
+    "name": "Writing Kit",
+    "price": "2GC",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Tools",
+    "description": "Contains a quill pen, inkpot, and ink blotter."
+  },
+  {
+    "name": "Book, Apothecary",
+    "price": "8GC",
+    "enc": 1,
+    "availability": "Scarce",
+    "category": "Books",
+    "description": "Contains ingredient descriptions and brewing instructions; includes formulas for Digestive Tonics, Healing Draughts, and Vitality Draughts."
+  },
+  {
+    "name": "Book, Art",
+    "price": "5GC",
+    "enc": 1,
+    "availability": "Scarce",
+    "category": "Books",
+    "description": "Plays, poems, ballads, musical arrangements, or treatises on art by famous painters or sculptors."
+  },
+  {
+    "name": "Book, Cryptography",
+    "price": "8GC",
+    "enc": 1,
+    "availability": "Exotic",
+    "category": "Books",
+    "description": "Hand-scribed codices on mathematics, numerology, and polyalphabetic encryption."
+  },
+  {
+    "name": "Book, Engineer",
+    "price": "3GC",
+    "enc": 1,
+    "availability": "Scarce",
+    "category": "Books",
+    "description": "Press-printed engineering texts, often authored or edited by Dwarfs."
+  },
+  {
+    "name": "Book, Law",
+    "price": "15GC",
+    "enc": 1,
+    "availability": "Rare",
+    "category": "Books",
+    "description": "Legislation in bound volumes; often combines printed and written pages from different towns."
+  },
+  {
+    "name": "Book, Magic",
+    "price": "20GC",
+    "enc": 1,
+    "availability": "Exotic",
+    "category": "Books",
+    "description": "Spell grimoire usually scribed by wizards; carrying one is punishable as heresy unless owner is licensed."
+  },
+  {
+    "name": "Book, Medicine",
+    "price": "15GC",
+    "enc": 1,
+    "availability": "Rare",
+    "category": "Books",
+    "description": "Medical texts including detailed autopsy drawings and procedural diagrams."
+  },
+  {
+    "name": "Book, Religion",
+    "price": "1GC",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Books",
+    "description": "Religious texts in all forms; many cheaply produced by printing presses."
+  },
+  {
+    "name": "Guild License",
+    "price": "N/A",
+    "enc": 0,
+    "availability": "N/A",
+    "category": "Books",
+    "description": "Printed on parchment, stamped with an official seal. Granted to guild members, not purchased."
+  },
+  {
+    "name": "Leaflet",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Books"
+  },
+  {
+    "name": "Legal Document",
+    "price": "3/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Books",
+    "description": "A simple legal document such as a will, IOU, or letter of intent."
+  },
+  {
+    "name": "Map",
+    "price": "3GC",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Books"
+  },
+  {
+    "name": "Parchment/sheet",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Books"
+  },
+  {
+    "name": "Trade Tools",
+    "price": "3GC",
+    "enc": 1,
+    "availability": "Rare",
+    "category": "Trade Tools",
+    "description": "Required for Trade Tests to make or fix items. Covers all trade specialities (Apothecary, Smith, Herbalist, etc.)."
+  },
+  {
+    "name": "Workshop",
+    "price": "80GC",
+    "enc": 0,
+    "availability": "Exotic",
+    "category": "Trade Tools",
+    "description": "Required for larger crafting projects. Enc listed as N/A in source (not a carried item)."
+  },
+  {
+    "name": "Cart",
+    "price": "20GC",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Animals",
+    "description": "Carries 25 Enc. Requires one driver and one draft animal."
+  },
+  {
+    "name": "Chicken",
+    "price": "5d",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Animals"
+  },
+  {
+    "name": "Coach",
+    "price": "150GC",
+    "enc": 0,
+    "availability": "Rare",
+    "category": "Animals",
+    "description": "Carries 80 Enc. Standard: two drivers and four horses."
+  },
+  {
+    "name": "Coracle",
+    "price": "2GC",
+    "enc": 6,
+    "availability": "Scarce",
+    "category": "Animals",
+    "description": "Carries 10 Enc. Small leather or bark boat for one person; rowed with a single oar."
+  },
+  {
+    "name": "Destrier",
+    "price": "230GC",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Animals",
+    "description": "Carries 20 Enc. Horse trained for war."
+  },
+  {
+    "name": "Dog collar and lead",
+    "price": "1/7",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Animals"
+  },
+  {
+    "name": "Draught Horse",
+    "price": "4GC",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Animals",
+    "description": "Carries 20 Enc."
+  },
+  {
+    "name": "Homing Pigeons",
+    "price": "3/–",
+    "enc": 1,
+    "availability": "Scarce",
+    "category": "Animals",
+    "description": "Carries 0 Enc."
+  },
+  {
+    "name": "Hunting Dog",
+    "price": "2GC",
+    "enc": 0,
+    "availability": "Rare",
+    "category": "Animals",
+    "description": "Carries 0 Enc."
+  },
+  {
+    "name": "Light Warhorse",
+    "price": "70GC",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Animals",
+    "description": "Carries 18 Enc."
+  },
+  {
+    "name": "Monkey",
+    "price": "10GC",
+    "enc": 2,
+    "availability": "Rare",
+    "category": "Animals",
+    "description": "Carries 1 Enc."
+  },
+  {
+    "name": "Mule",
+    "price": "5GC",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Animals",
+    "description": "Carries 14 Enc."
+  },
+  {
+    "name": "Pony",
+    "price": "10GC",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Animals",
+    "description": "Carries 14 Enc."
+  },
+  {
+    "name": "Riding Horse",
+    "price": "15GC",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Animals",
+    "description": "Carries 16 Enc."
+  },
+  {
+    "name": "River Barge",
+    "price": "225GC",
+    "enc": 0,
+    "availability": "Rare",
+    "category": "Animals",
+    "description": "Carries 300 Enc. Standard crew: three."
+  },
+  {
+    "name": "Row Boat",
+    "price": "6GC",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Animals",
+    "description": "Carries 60 Enc. Standard crew: one rower."
+  },
+  {
+    "name": "Saddle and Harness",
+    "price": "6GC",
+    "enc": 4,
+    "availability": "Common",
+    "category": "Animals"
+  },
+  {
+    "name": "Wagon",
+    "price": "75GC",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Animals",
+    "description": "Carries 30 Enc. Standard: one driver and two horses."
+  },
+  {
+    "name": "Worms (6)",
+    "price": "1d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Animals"
+  },
+  {
+    "name": "Black Lotus",
+    "price": "20GC",
+    "enc": 0,
+    "availability": "Exotic",
+    "category": "Drugs & Poisons",
+    "description": "Deadly blade venom. Victims hit for 1+ Wound take 2 Poisoned Conditions; resisted with Difficult (–10) Endurance."
+  },
+  {
+    "name": "Heartkill",
+    "price": "40GC",
+    "enc": 0,
+    "availability": "Exotic",
+    "category": "Drugs & Poisons",
+    "description": "Odourless poison from Amphisbaena and Jabberslythe venoms. When ingested inflicts 4 Poisoned Conditions; resisted with Difficult (–10) Endurance."
+  },
+  {
+    "name": "Mad Cap Mushrooms",
+    "price": "5GC",
+    "enc": 0,
+    "availability": "Exotic",
+    "category": "Drugs & Poisons",
+    "description": "Hallucinogenic. Adds +10 Strength, +4 Wounds, and Frenzy; user loses 1d10 Wounds when effect ends. Duration: 2d10 minutes."
+  },
+  {
+    "name": "Mandrake Root",
+    "price": "1GC",
+    "enc": 0,
+    "availability": "Rare",
+    "category": "Drugs & Poisons",
+    "description": "Highly addictive deliriant. WP Test each Round to act; Movement halved; Cool Tests +20. Duration: 1d10×10 minutes."
+  },
+  {
+    "name": "Moonflower",
+    "price": "5GC",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Drugs & Poisons",
+    "description": "Tranquilliser. Elves gain +30 to resist Black Plague; others risk Unconscious Condition or gain +20 Cool. Duration: 1d10+5 hours."
+  },
+  {
+    "name": "Ranald's Delight",
+    "price": "18/–",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Drugs & Poisons",
+    "description": "Stimulant. +1 Movement and +10 to WS, S, T, Agi for 3 hours; afterwards –2 Movement and –20 to those Characteristics."
+  },
+  {
+    "name": "Spit",
+    "price": "1GC 5/–",
+    "enc": 0,
+    "availability": "Rare",
+    "category": "Drugs & Poisons",
+    "description": "Powerful hallucinogen. Fail Very Hard (–30) Toughness or be lost in vivid fantasy. Duration: 1d10 minutes."
+  },
+  {
+    "name": "Weirdroot",
+    "price": "4/–",
+    "enc": 0,
+    "availability": "Rare",
+    "category": "Drugs & Poisons",
+    "description": "Common street drug. Chewed for euphoria; +10 Toughness and Willpower, –10 Agility, Initiative, and Intelligence. Duration: 1d10×10 minutes."
+  },
+  {
+    "name": "Digestive Tonic",
+    "price": "3/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Herbs",
+    "description": "Provides +20 to recovery Tests from stomach ailments such as Galloping Trots or Bloody Flux."
+  },
+  {
+    "name": "Earth Root",
+    "price": "5GC",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Herbs",
+    "description": "Negates Buboes from Black Plague; grants +10 on all related Tests. Dose: 1 per day."
+  },
+  {
+    "name": "Faxtoryll",
+    "price": "15/–",
+    "enc": 0,
+    "availability": "Exotic",
+    "category": "Herbs",
+    "description": "Herbal coagulant; poultices remove all Bleeding Conditions without a Heal Test. Dose: 1 per Critical Wound."
+  },
+  {
+    "name": "Healing Draught",
+    "price": "10/–",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Herbs",
+    "description": "Immediately recover Toughness Bonus Wounds if you have more than 0. Dose: 1 per encounter."
+  },
+  {
+    "name": "Healing Poultice",
+    "price": "12/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Herbs",
+    "description": "Prevents Minor Infections from a treated Critical Wound."
+  },
+  {
+    "name": "Nightshade",
+    "price": "3GC",
+    "enc": 0,
+    "availability": "Rare",
+    "category": "Herbs",
+    "description": "Causes deep sleep after 2–3 hours unless Endurance Test passed; lasts 1d10+4 hours. Dose: 1 per person."
+  },
+  {
+    "name": "Salwort",
+    "price": "12/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Herbs",
+    "description": "Crushed sprig removes 1 Stunned Condition when held under someone's nose. Dose: 1 per encounter."
+  },
+  {
+    "name": "Vitality Draught",
+    "price": "18/–",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Herbs",
+    "description": "Instantly removes all Fatigued Conditions."
+  },
+  {
+    "name": "Eye Patch",
+    "price": "6d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Prosthetics",
+    "description": "Often decorated; used to cover scarred eye sockets."
+  },
+  {
+    "name": "False Eye",
+    "price": "1GC",
+    "enc": 0,
+    "availability": "Rare",
+    "category": "Prosthetics",
+    "description": "Comes in many forms from wooden to polished glass; popular with the wealthy."
+  },
+  {
+    "name": "False Leg",
+    "price": "16/–",
+    "enc": 2,
+    "availability": "Scarce",
+    "category": "Prosthetics",
+    "description": "Ignores 1 point of Movement loss from missing limb. For 100 XP recover last Movement point; for 200 XP relearn Dodge."
+  },
+  {
+    "name": "Gilded Nose",
+    "price": "18/–",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Prosthetics",
+    "description": "Usually wood or ceramic. Ignore the Fellowship loss for having no nose."
+  },
+  {
+    "name": "Hook",
+    "price": "3/4",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Prosthetics",
+    "description": "Replaces a lost hand. Buy back –20 penalty for 100 XP per 5 subtracted. Counts as a Dagger in Close Combat."
+  },
+  {
+    "name": "Engineering Marvel",
+    "price": "20GC",
+    "enc": 1,
+    "availability": "Exotic",
+    "category": "Prosthetics",
+    "description": "Steam-powered prosthetic from Engineers' Guild. Fully replaces lost ear, hand, arm, or leg; breaks on Critical Wound and costs 10%+ to repair."
+  },
+  {
+    "name": "Wooden Teeth",
+    "price": "10/–",
+    "enc": 0,
+    "availability": "Rare",
+    "category": "Prosthetics",
+    "description": "False teeth; ignore all penalties for loss of teeth."
+  },
+  {
+    "name": "Ball",
+    "price": "5d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Bandage",
+    "price": "4d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous",
+    "description": "A successful Heal Test removes +1 extra Bleeding Condition."
+  },
+  {
+    "name": "Baton",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Bedroll",
+    "price": "6/–",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Miscellaneous",
+    "description": "Endurance Tests to resist cold exposure gain +20 when resting."
+  },
+  {
+    "name": "Blanket",
+    "price": "8d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Candle (dozen)",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous",
+    "description": "Provides illumination for 10 yards when lit."
+  },
+  {
+    "name": "Canvas Tarp",
+    "price": "8/–",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Chalk",
+    "price": "10d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Charcoal Stick",
+    "price": "10d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Cutlery",
+    "price": "3/6",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Davrich Lamp",
+    "price": "2GC",
+    "enc": 1,
+    "availability": "Rare",
+    "category": "Miscellaneous",
+    "description": "Safety lamp for mines; flares in firedamp and causes explosion after 1d10 rounds."
+  },
+  {
+    "name": "Deck of Cards",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Cooking Pot",
+    "price": "8/–",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Cup",
+    "price": "8d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Dice",
+    "price": "10d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Doll",
+    "price": "2/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Grappling Hook",
+    "price": "1GC 0/10",
+    "enc": 1,
+    "availability": "Scarce",
+    "category": "Miscellaneous",
+    "description": "Coupled with a rope, allows unscalable surfaces to be climbed."
+  },
+  {
+    "name": "Instrument",
+    "price": "2GC",
+    "enc": 1,
+    "availability": "Rare",
+    "category": "Miscellaneous",
+    "description": "Medium-sized instrument (e.g. mandolin). Small: half price, 0 Enc. Large: double price, 2 Enc."
+  },
+  {
+    "name": "Lamp Oil",
+    "price": "2/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous",
+    "description": "Fuel for 4 hours standard or 8 hours at low flame."
+  },
+  {
+    "name": "Lantern",
+    "price": "12/–",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Miscellaneous",
+    "description": "Provides illumination for 20 yards."
+  },
+  {
+    "name": "Storm Lantern",
+    "price": "1GC",
+    "enc": 1,
+    "availability": "Scarce",
+    "category": "Miscellaneous",
+    "description": "Shuttered; illuminates 20 yards (30 targeted). Flame protected from wind."
+  },
+  {
+    "name": "Match",
+    "price": "1d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Pan",
+    "price": "7/6",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Pipe and Tobacco",
+    "price": "3/4",
+    "enc": 0,
+    "availability": "Scarce",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Placard",
+    "price": "1/–",
+    "enc": 2,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Plate",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Bowl",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Rags",
+    "price": "1d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Rope, 10 yards",
+    "price": "8/4",
+    "enc": 1,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Tent",
+    "price": "12/–",
+    "enc": 2,
+    "availability": "Scarce",
+    "category": "Miscellaneous",
+    "description": "Medium tent for four people. Small (2 people): half price, 1 Enc. Large (8 people): double price, 4 Enc."
+  },
+  {
+    "name": "Tinderbox",
+    "price": "4/2",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Miscellaneous"
+  },
+  {
+    "name": "Local Scout",
+    "price": "5d",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Hirelings",
+    "description": "Daily: 15d. Weekly: 10/–. Works independently without Leadership Tests."
+  },
+  {
+    "name": "Seasoned Mercenary",
+    "price": "3/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Hirelings",
+    "description": "Daily: 9/–. Weekly: 3GC/12/–. Demands a share of loot in lieu of danger pay."
+  },
+  {
+    "name": "Lawyer",
+    "price": "3/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Hirelings",
+    "description": "Daily: 9/–. Weekly: 3GC/12/–. Drafting a simple legal document costs 2–4 shillings."
+  },
+  {
+    "name": "Porter",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Hirelings",
+    "description": "Daily: 3/–. Weekly: 1GC/4/–. Carries 10 Encumbrance points."
+  },
+  {
+    "name": "Scribe",
+    "price": "2/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Hirelings",
+    "description": "Daily: 6/–. Weekly: 2GC/8/–. Also translates 1–2 other common languages."
+  },
+  {
+    "name": "Doktor",
+    "price": "5/–",
+    "enc": 0,
+    "availability": "Common",
+    "category": "Hirelings",
+    "description": "Daily: 15/–. Weekly: 5GC. A single visit costs 4–6 shillings for medical attention."
+  }
+]

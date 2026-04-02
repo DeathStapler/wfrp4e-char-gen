@@ -1,0 +1,1205 @@
+[
+  {
+    "id": "athletics",
+    "name": "Athletics",
+    "characteristic": "Ag",
+    "grouped": false,
+    "advanced": false,
+    "description": "Run, jump, and move with speed or grace; covers sprinting, leaping gaps, and navigating difficult terrain at pace."
+  },
+  {
+    "id": "bribery",
+    "name": "Bribery",
+    "characteristic": "Fel",
+    "grouped": false,
+    "advanced": false,
+    "description": "Judge how likely a target is to accept a bribe and negotiate the appropriate amount to offer without causing offence or suspicion."
+  },
+  {
+    "id": "charm",
+    "name": "Charm",
+    "characteristic": "Fel",
+    "grouped": false,
+    "advanced": false,
+    "description": "Make people think favourably of you, win friends, and influence behaviour through pleasant manner, flattery, or personal magnetism."
+  },
+  {
+    "id": "charm-animal",
+    "name": "Charm Animal",
+    "characteristic": "WP",
+    "grouped": false,
+    "advanced": false,
+    "description": "Befriend, calm, or subjugate animals through patient communication and an understanding of animal behaviour."
+  },
+  {
+    "id": "climb",
+    "name": "Climb",
+    "characteristic": "S",
+    "grouped": false,
+    "advanced": false,
+    "description": "Ascend steep or vertical surfaces such as walls, cliffs, and rigging, finding handholds and hauling yourself upward."
+  },
+  {
+    "id": "cool",
+    "name": "Cool",
+    "characteristic": "WP",
+    "grouped": false,
+    "advanced": false,
+    "description": "Remain calm under stress, suppress panic, and resist Fear and Terror effects through sheer psychological resilience."
+  },
+  {
+    "id": "consume-alcohol",
+    "name": "Consume Alcohol",
+    "characteristic": "T",
+    "grouped": false,
+    "advanced": false,
+    "description": "Handle alcohol without clouding your judgment; drink rivals under the table while keeping your wits about you."
+  },
+  {
+    "id": "dodge",
+    "name": "Dodge",
+    "characteristic": "Ag",
+    "grouped": false,
+    "advanced": false,
+    "description": "Avoid attacks and hazards by moving clear at the last moment; the primary defensive response action in melee and ranged combat."
+  },
+  {
+    "id": "drive",
+    "name": "Drive",
+    "characteristic": "Ag",
+    "grouped": false,
+    "advanced": false,
+    "description": "Guide carts, carriages, and other wheeled vehicles along roads and tracks with minimal mishap, including tricky manoeuvres."
+  },
+  {
+    "id": "endurance",
+    "name": "Endurance",
+    "characteristic": "T",
+    "grouped": false,
+    "advanced": false,
+    "description": "Endure hardship, deprivation, and harsh environments; also used when recovering from wounds and resisting the effects of fatigue."
+  },
+  {
+    "id": "gamble",
+    "name": "Gamble",
+    "characteristic": "Int",
+    "grouped": false,
+    "advanced": false,
+    "description": "Measure the likelihood of bets paying off and excel at games of chance, knowing when to hold and when to fold."
+  },
+  {
+    "id": "gossip",
+    "name": "Gossip",
+    "characteristic": "Fel",
+    "grouped": false,
+    "advanced": false,
+    "description": "Ferret out local news, secrets, and rumours by chatting up the right people, or spread misinformation convincingly."
+  },
+  {
+    "id": "haggle",
+    "name": "Haggle",
+    "characteristic": "Fel",
+    "grouped": false,
+    "advanced": false,
+    "description": "Secure better deals when buying or selling goods by negotiating prices and terms through confident bargaining."
+  },
+  {
+    "id": "intimidate",
+    "name": "Intimidate",
+    "characteristic": "S",
+    "grouped": false,
+    "advanced": false,
+    "description": "Coerce or frighten sentient creatures into compliance through displays of physical menace, threats, or sheer presence."
+  },
+  {
+    "id": "intuition",
+    "name": "Intuition",
+    "characteristic": "I",
+    "grouped": false,
+    "advanced": false,
+    "description": "Get a feel for your surroundings and notice when something is wrong; sense ambushes, deceptions, and hidden danger."
+  },
+  {
+    "id": "leadership",
+    "name": "Leadership",
+    "characteristic": "Fel",
+    "grouped": false,
+    "advanced": false,
+    "description": "Lead others, command their respect, and inspire them to follow your orders under pressure or in the heat of battle."
+  },
+  {
+    "id": "navigation",
+    "name": "Navigation",
+    "characteristic": "I",
+    "grouped": false,
+    "advanced": false,
+    "description": "Find your way in the wilderness or unfamiliar terrain using landmarks, the stars, maps, or dead reckoning."
+  },
+  {
+    "id": "outdoor-survival",
+    "name": "Outdoor Survival",
+    "characteristic": "Int",
+    "grouped": false,
+    "advanced": false,
+    "description": "Survive in the wild by fishing, hunting, foraging for food, building shelters, and reading the weather."
+  },
+  {
+    "id": "perception",
+    "name": "Perception",
+    "characteristic": "I",
+    "grouped": false,
+    "advanced": false,
+    "description": "Notice things with all your senses — spot hidden enemies, detect concealed objects, and pick up on subtle environmental cues."
+  },
+  {
+    "id": "row",
+    "name": "Row",
+    "characteristic": "S",
+    "grouped": false,
+    "advanced": false,
+    "description": "Pull an oar effectively to move a boat through water, whether crossing a calm river or fighting against the current."
+  },
+  {
+    "id": "art-cartography",
+    "name": "Art (Cartography)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Cartography",
+    "advanced": false,
+    "description": "Create accurate and readable maps of regions, dungeons, and cities, capturing geography and notable features on parchment."
+  },
+  {
+    "id": "art-engraving",
+    "name": "Art (Engraving)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Engraving",
+    "advanced": false,
+    "description": "Carve detailed patterns, images, and inscriptions into metal, wood, stone, or bone to create decorative or commemorative works."
+  },
+  {
+    "id": "art-mosaics",
+    "name": "Art (Mosaics)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Mosaics",
+    "advanced": false,
+    "description": "Assemble small pieces of tile, glass, or stone into intricate images and decorative patterns for walls and floors."
+  },
+  {
+    "id": "art-painting",
+    "name": "Art (Painting)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Painting",
+    "advanced": false,
+    "description": "Create works in paint — portraits, landscapes, religious icons, and illuminated manuscripts of aesthetic and commercial value."
+  },
+  {
+    "id": "art-sculpture",
+    "name": "Art (Sculpture)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Sculpture",
+    "advanced": false,
+    "description": "Shape stone, clay, wood, or metal into three-dimensional figures and decorative forms ranging from small carvings to grand statues."
+  },
+  {
+    "id": "art-tattoo",
+    "name": "Art (Tattoo)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Tattoo",
+    "advanced": false,
+    "description": "Apply permanent ink designs to skin with precision, from simple tribal marks to elaborate pictorial works of art."
+  },
+  {
+    "id": "art-weaving",
+    "name": "Art (Weaving)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Weaving",
+    "advanced": false,
+    "description": "Weave threads into cloth, tapestries, and patterned textiles, combining craft skill with artistic composition."
+  },
+  {
+    "id": "entertain-acting",
+    "name": "Entertain (Acting)",
+    "characteristic": "Fel",
+    "grouped": true,
+    "specialisation": "Acting",
+    "advanced": false,
+    "description": "Portray characters convincingly on stage or in everyday deception, controlling voice, posture, and expression to persuade an audience."
+  },
+  {
+    "id": "entertain-comedy",
+    "name": "Entertain (Comedy)",
+    "characteristic": "Fel",
+    "grouped": true,
+    "specialisation": "Comedy",
+    "advanced": false,
+    "description": "Delight crowds with jests, wordplay, physical humour, and comic timing to earn laughs and goodwill."
+  },
+  {
+    "id": "entertain-singing",
+    "name": "Entertain (Singing)",
+    "characteristic": "Fel",
+    "grouped": true,
+    "specialisation": "Singing",
+    "advanced": false,
+    "description": "Perform vocal music to entertain audiences in taverns, courts, or temples — from rousing drinking songs to devotional hymns."
+  },
+  {
+    "id": "entertain-storytelling",
+    "name": "Entertain (Storytelling)",
+    "characteristic": "Fel",
+    "grouped": true,
+    "specialisation": "Storytelling",
+    "advanced": false,
+    "description": "Captivate listeners with spoken tales, legends, and yarns, weaving narrative tension and memorable characters through voice and pacing."
+  },
+  {
+    "id": "melee-basic",
+    "name": "Melee (Basic)",
+    "characteristic": "WS",
+    "grouped": true,
+    "specialisation": "Basic",
+    "advanced": false,
+    "description": "Use common hand-to-hand weapons — swords, axes, maces, and clubs — the default melee specialisation available to nearly every martial career."
+  },
+  {
+    "id": "melee-brawling",
+    "name": "Melee (Brawling)",
+    "characteristic": "WS",
+    "grouped": true,
+    "specialisation": "Brawling",
+    "advanced": false,
+    "description": "Fight with fists, feet, and improvised street-brawling techniques; also covers knuckledusters and other brawling weapons."
+  },
+  {
+    "id": "melee-cavalry",
+    "name": "Melee (Cavalry)",
+    "characteristic": "WS",
+    "grouped": true,
+    "specialisation": "Cavalry",
+    "advanced": false,
+    "description": "Wield weapons designed for use on horseback — lances, cavalry sabres, and other arms optimised for mounted combat."
+  },
+  {
+    "id": "melee-fencing",
+    "name": "Melee (Fencing)",
+    "characteristic": "WS",
+    "grouped": true,
+    "specialisation": "Fencing",
+    "advanced": false,
+    "description": "Use light duelling blades with trained, precise technique — rapiers and estocs favoured by duelists and Estalian swordsmen."
+  },
+  {
+    "id": "melee-flail",
+    "name": "Melee (Flail)",
+    "characteristic": "WS",
+    "grouped": true,
+    "specialisation": "Flail",
+    "advanced": false,
+    "description": "Wield flails and chain weapons whose flexible construction makes them harder to parry but demands greater skill to control."
+  },
+  {
+    "id": "melee-parry",
+    "name": "Melee (Parry)",
+    "characteristic": "WS",
+    "grouped": true,
+    "specialisation": "Parry",
+    "advanced": false,
+    "description": "Use weapons with the Defensive quality — bucklers, main-gauche, and parrying daggers — to deflect incoming blows."
+  },
+  {
+    "id": "melee-pole-arm",
+    "name": "Melee (Pole-Arm)",
+    "characteristic": "WS",
+    "grouped": true,
+    "specialisation": "Pole-Arm",
+    "advanced": false,
+    "description": "Wield polearms such as halberds, spears, and pikes — weapons that provide reach but require space and training to use effectively."
+  },
+  {
+    "id": "melee-two-handed",
+    "name": "Melee (Two-Handed)",
+    "characteristic": "WS",
+    "grouped": true,
+    "specialisation": "Two-Handed",
+    "advanced": false,
+    "description": "Swing great swords, great axes, and other two-handed weapons that trade speed for devastating damage potential."
+  },
+  {
+    "id": "ride-demigryph",
+    "name": "Ride (Demigryph)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Demigryph",
+    "advanced": false,
+    "description": "Ride and control a Demigryph — the fearsome half-eagle, half-lion beasts used as mounts by the elite Knights of the Empire."
+  },
+  {
+    "id": "ride-great-wolf",
+    "name": "Ride (Great Wolf)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Great Wolf",
+    "advanced": false,
+    "description": "Ride a Great Wolf, the massive predatory canines favoured as mounts by certain Chaos marauders and northern warriors."
+  },
+  {
+    "id": "ride-griffon",
+    "name": "Ride (Griffon)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Griffon",
+    "advanced": false,
+    "description": "Ride a Griffon, the proud eagle-lion creatures used as mounts by only the most exalted warrior princes and generals."
+  },
+  {
+    "id": "ride-horse",
+    "name": "Ride (Horse)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Horse",
+    "advanced": false,
+    "description": "Ride horses competently — controlling the mount in combat, on difficult terrain, and at full gallop without losing your seat."
+  },
+  {
+    "id": "ride-pegasus",
+    "name": "Ride (Pegasus)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Pegasus",
+    "advanced": false,
+    "description": "Ride a Pegasus, the winged horse of legend, mastering the challenges of aerial combat and airborne manoeuvring."
+  },
+  {
+    "id": "stealth-rural",
+    "name": "Stealth (Rural)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Rural",
+    "advanced": false,
+    "description": "Move quietly and conceal yourself in natural environments — forests, fields, and open countryside — without being seen or heard."
+  },
+  {
+    "id": "stealth-underground",
+    "name": "Stealth (Underground)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Underground",
+    "advanced": false,
+    "description": "Creep through caves, tunnels, sewers, and dungeon corridors without drawing attention, exploiting darkness and confined spaces."
+  },
+  {
+    "id": "stealth-urban",
+    "name": "Stealth (Urban)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Urban",
+    "advanced": false,
+    "description": "Move unseen and unheard through streets, alleys, and buildings, slipping through crowds and hugging shadows in city environments."
+  },
+  {
+    "id": "animal-care",
+    "name": "Animal Care",
+    "characteristic": "Int",
+    "grouped": false,
+    "advanced": true,
+    "description": "Tend and care for animals in your charge — feed, groom, and stable them — and diagnose and treat sickness or injury."
+  },
+  {
+    "id": "evaluate",
+    "name": "Evaluate",
+    "characteristic": "Int",
+    "grouped": false,
+    "advanced": true,
+    "description": "Determine the true value of rare artefacts, unusual goods, gems, and works of art, spotting fakes and knowing what the market will bear."
+  },
+  {
+    "id": "heal",
+    "name": "Heal",
+    "characteristic": "Int",
+    "grouped": false,
+    "advanced": true,
+    "description": "Treat injuries, staunch bleeding, diagnose illness, and tend wounds using medical knowledge and whatever supplies are at hand."
+  },
+  {
+    "id": "pick-lock",
+    "name": "Pick Lock",
+    "characteristic": "Dex",
+    "grouped": false,
+    "advanced": true,
+    "description": "Open locks without their proper keys using picks and tension wrenches, defeating mechanical security through feel and technique."
+  },
+  {
+    "id": "pray",
+    "name": "Pray",
+    "characteristic": "Fel",
+    "grouped": false,
+    "advanced": true,
+    "description": "Invoke or commune with a deity through ritual prayer to seek divine intervention, guidance, or the granting of Miracles."
+  },
+  {
+    "id": "research",
+    "name": "Research",
+    "characteristic": "Int",
+    "grouped": false,
+    "advanced": true,
+    "description": "Pull useful information from libraries, archives, and information storehouses by knowing where to look and how to interpret what you find."
+  },
+  {
+    "id": "set-trap",
+    "name": "Set Trap",
+    "characteristic": "Dex",
+    "grouped": false,
+    "advanced": true,
+    "description": "Set, conceal, and disarm traps of all varieties — from simple snares and pitfalls to complex mechanical devices."
+  },
+  {
+    "id": "sleight-of-hand",
+    "name": "Sleight of Hand",
+    "characteristic": "Dex",
+    "grouped": false,
+    "advanced": true,
+    "description": "Pick pockets, palm objects, perform prestidigitation, and cheat at cards through misdirection and nimble finger work."
+  },
+  {
+    "id": "swim",
+    "name": "Swim",
+    "characteristic": "S",
+    "grouped": false,
+    "advanced": true,
+    "description": "Swim in water without drowning — keeping afloat and making progress against currents, in armour, or while exhausted."
+  },
+  {
+    "id": "track",
+    "name": "Track",
+    "characteristic": "I",
+    "grouped": false,
+    "advanced": true,
+    "description": "Follow subtle trails left by others across wilderness terrain — reading footprints, broken vegetation, and other signs of passage."
+  },
+  {
+    "id": "animal-training-demigryph",
+    "name": "Animal Training (Demigryph)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Demigryph",
+    "advanced": true,
+    "description": "Train Demigryphs to accept riders and obey commands in battle — a rare and dangerous discipline mastered only by dedicated handlers."
+  },
+  {
+    "id": "animal-training-dog",
+    "name": "Animal Training (Dog)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Dog",
+    "advanced": true,
+    "description": "Train dogs to track, guard, attack on command, or perform other useful tasks through patient conditioning and reward."
+  },
+  {
+    "id": "animal-training-horse",
+    "name": "Animal Training (Horse)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Horse",
+    "advanced": true,
+    "description": "Train horses to perform beyond basic riding — war training, dressage, trick performance, or reliable behaviour under fire."
+  },
+  {
+    "id": "animal-training-pegasus",
+    "name": "Animal Training (Pegasus)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Pegasus",
+    "advanced": true,
+    "description": "Train Pegasi to accept a rider, obey commands in the air, and overcome their wild instincts — an extraordinarily difficult undertaking."
+  },
+  {
+    "id": "animal-training-pigeon",
+    "name": "Animal Training (Pigeon)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Pigeon",
+    "advanced": true,
+    "description": "Train carrier pigeons to return home reliably, enabling the sending of messages across long distances with reasonable speed."
+  },
+  {
+    "id": "channelling-aqshy",
+    "name": "Channelling (Aqshy)",
+    "characteristic": "WP",
+    "grouped": true,
+    "specialisation": "Aqshy",
+    "advanced": true,
+    "description": "Call upon and control Aqshy, the Wind of Fire — the passionate, destructive magical wind harnessed by the Bright Order."
+  },
+  {
+    "id": "channelling-azyr",
+    "name": "Channelling (Azyr)",
+    "characteristic": "WP",
+    "grouped": true,
+    "specialisation": "Azyr",
+    "advanced": true,
+    "description": "Call upon and control Azyr, the Wind of Heavens — the cold, distant magical wind of celestial prophecy mastered by the Celestial Order."
+  },
+  {
+    "id": "channelling-chamon",
+    "name": "Channelling (Chamon)",
+    "characteristic": "WP",
+    "grouped": true,
+    "specialisation": "Chamon",
+    "advanced": true,
+    "description": "Call upon and control Chamon, the Wind of Metal — the dense, alchemical wind of transformation harnessed by the Gold Order."
+  },
+  {
+    "id": "channelling-dhar",
+    "name": "Channelling (Dhar)",
+    "characteristic": "WP",
+    "grouped": true,
+    "specialisation": "Dhar",
+    "advanced": true,
+    "description": "Call upon and control Dhar, the Dark Wind — corrupted magic drawn from the blending of all Winds; the province of Chaos sorcerers and Dark Wizards."
+  },
+  {
+    "id": "channelling-ghur",
+    "name": "Channelling (Ghur)",
+    "characteristic": "WP",
+    "grouped": true,
+    "specialisation": "Ghur",
+    "advanced": true,
+    "description": "Call upon and control Ghur, the Wind of Beasts — the primal, savage magical wind that connects magic to the natural world, used by the Amber Order."
+  },
+  {
+    "id": "channelling-ghyran",
+    "name": "Channelling (Ghyran)",
+    "characteristic": "WP",
+    "grouped": true,
+    "specialisation": "Ghyran",
+    "advanced": true,
+    "description": "Call upon and control Ghyran, the Wind of Life — the nurturing, restorative magical wind of growth and healing harnessed by the Jade Order."
+  },
+  {
+    "id": "channelling-hysh",
+    "name": "Channelling (Hysh)",
+    "characteristic": "WP",
+    "grouped": true,
+    "specialisation": "Hysh",
+    "advanced": true,
+    "description": "Call upon and control Hysh, the Wind of Light — the pure, luminous magical wind of reason and illumination mastered by the Light Order."
+  },
+  {
+    "id": "channelling-shyish",
+    "name": "Channelling (Shyish)",
+    "characteristic": "WP",
+    "grouped": true,
+    "specialisation": "Shyish",
+    "advanced": true,
+    "description": "Call upon and control Shyish, the Wind of Death — the cold, entropic magical wind of endings and the underworld, harnessed by the Amethyst Order."
+  },
+  {
+    "id": "channelling-ulgu",
+    "name": "Channelling (Ulgu)",
+    "characteristic": "WP",
+    "grouped": true,
+    "specialisation": "Ulgu",
+    "advanced": true,
+    "description": "Call upon and control Ulgu, the Wind of Shadows — the grey, deceptive magical wind of illusion and misdirection mastered by the Grey Order."
+  },
+  {
+    "id": "language-albion",
+    "name": "Language (Albion)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Albion",
+    "advanced": true,
+    "description": "Speak and understand the tongue of Albion, the mist-shrouded isle across the Great Ocean — rare knowledge in the Old World."
+  },
+  {
+    "id": "language-battle-tongue",
+    "name": "Language (Battle Tongue)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Battle Tongue",
+    "advanced": true,
+    "description": "Use the simplified command language employed by armies to communicate orders clearly through the noise and chaos of battle."
+  },
+  {
+    "id": "language-bretonnian",
+    "name": "Language (Bretonnian)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Bretonnian",
+    "advanced": true,
+    "description": "Speak and understand Bretonnian, the language of the noble kingdom to the Empire's west, prized at court and in diplomacy."
+  },
+  {
+    "id": "language-classical",
+    "name": "Language (Classical)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Classical",
+    "advanced": true,
+    "description": "Read and write Classical, the dead scholarly language used in academic texts, religious ceremonies, and arcane notation across the Old World."
+  },
+  {
+    "id": "language-eltharin",
+    "name": "Language (Elthárin)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Elthárin",
+    "advanced": true,
+    "description": "Speak and understand Elthárin, the melodic tongue of the High Elves and Wood Elves — complex, ancient, and rarely taught to humans."
+  },
+  {
+    "id": "language-estalian",
+    "name": "Language (Estalian)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Estalian",
+    "advanced": true,
+    "description": "Speak and understand Estalian, the language of Estalia on the southern peninsula — useful for trade, travel, and dealings with Estalian merchants."
+  },
+  {
+    "id": "language-gospodarinyi",
+    "name": "Language (Gospodarinyi)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Gospodarinyi",
+    "advanced": true,
+    "description": "Speak and understand Gospodarinyi, the tongue of Kislev — a harsh, guttural language invaluable for dealings in the frozen north."
+  },
+  {
+    "id": "language-grumbarth",
+    "name": "Language (Grumbarth)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Grumbarth",
+    "advanced": true,
+    "description": "Speak and understand Grumbarth, the secret tongue used by Ogres — a blunt, grunted language of few words and great directness."
+  },
+  {
+    "id": "language-guilder",
+    "name": "Language (Guilder)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Guilder",
+    "advanced": true,
+    "description": "Speak and understand the coded trade-cant used by guild members to communicate commercial information and signal membership."
+  },
+  {
+    "id": "language-khazalid",
+    "name": "Language (Khazalid)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Khazalid",
+    "advanced": true,
+    "description": "Speak and understand Khazalid, the guttural tongue of the Dwarfs — rarely taught to outsiders and a mark of deep trust when it is."
+  },
+  {
+    "id": "language-magick",
+    "name": "Language (Magick)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Magick",
+    "advanced": true,
+    "description": "Read, write, and speak the arcane tongue used to shape and direct magical energies; required to cast spells and interpret magical texts."
+  },
+  {
+    "id": "language-mootish",
+    "name": "Language (Mootish)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Mootish",
+    "advanced": true,
+    "description": "Speak and understand Mootish, the quirky dialect of the Halflings of the Moot — full of food metaphors and comfortable understatement."
+  },
+  {
+    "id": "language-norse",
+    "name": "Language (Norse)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Norse",
+    "advanced": true,
+    "description": "Speak and understand Norse, the rough tongue of the Norse raiders from the far north — useful for trade or survival in Norsca."
+  },
+  {
+    "id": "language-queekish",
+    "name": "Language (Queekish)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Queekish",
+    "advanced": true,
+    "description": "Speak and understand Queekish, the chittering language of the Skaven — disturbing knowledge that hints at dangerous familiarity with the ratmen."
+  },
+  {
+    "id": "language-reikspiel",
+    "name": "Language (Reikspiel)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Reikspiel",
+    "advanced": true,
+    "description": "Speak and understand Reikspiel, the common tongue of the Empire — the lingua franca of trade and politics across most of the Old World."
+  },
+  {
+    "id": "language-thieves-tongue",
+    "name": "Language (Thieves' Tongue)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Thieves' Tongue",
+    "advanced": true,
+    "description": "Speak and understand the secret argot of thieves and criminals — a coded patois that lets underworld denizens communicate safely in plain sight."
+  },
+  {
+    "id": "language-tilean",
+    "name": "Language (Tilean)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Tilean",
+    "advanced": true,
+    "description": "Speak and understand Tilean, the language of the city-states of Tilea — the tongue of merchants, mercenaries, and Renaissance culture."
+  },
+  {
+    "id": "language-wastelander",
+    "name": "Language (Wastelander)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Wastelander",
+    "advanced": true,
+    "description": "Speak and understand Wastelander, the dialect of the Wasteland north of Bretonnia — a Dutch-influenced tongue of seafarers and merchants."
+  },
+  {
+    "id": "lore-engineering",
+    "name": "Lore (Engineering)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Engineering",
+    "advanced": true,
+    "description": "Apply formal knowledge of engineering principles — construction, structural mechanics, siege equipment, and the workings of machines."
+  },
+  {
+    "id": "lore-geology",
+    "name": "Lore (Geology)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Geology",
+    "advanced": true,
+    "description": "Identify minerals, rock formations, and geological features; invaluable for miners, prospectors, and those who delve deep underground."
+  },
+  {
+    "id": "lore-heraldry",
+    "name": "Lore (Heraldry)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Heraldry",
+    "advanced": true,
+    "description": "Identify coats of arms, noble houses, and heraldic devices, understanding the social and political implications they carry."
+  },
+  {
+    "id": "lore-history",
+    "name": "Lore (History)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "History",
+    "advanced": true,
+    "description": "Recall and interpret the history of the Old World — past wars, dynasties, disasters, and the events that shaped the present age."
+  },
+  {
+    "id": "lore-law",
+    "name": "Lore (Law)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Law",
+    "advanced": true,
+    "description": "Understand Imperial law, local ordinances, and legal procedure — invaluable for lawyers, merchants, and those who wish to avoid the gallows."
+  },
+  {
+    "id": "lore-magick",
+    "name": "Lore (Magick)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Magick",
+    "advanced": true,
+    "description": "Understand the theoretical underpinnings of magic — the Winds, the Orders, and the dangers of the arcane arts, beyond the ability to cast."
+  },
+  {
+    "id": "lore-metallurgy",
+    "name": "Lore (Metallurgy)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Metallurgy",
+    "advanced": true,
+    "description": "Know the properties, working techniques, and identification of metals and alloys — essential for smiths, alchemists, and engineers."
+  },
+  {
+    "id": "lore-science",
+    "name": "Lore (Science)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Science",
+    "advanced": true,
+    "description": "Apply natural philosophy and empirical reasoning — physics, chemistry, biology, and the scientific method in an age of emerging inquiry."
+  },
+  {
+    "id": "lore-theology",
+    "name": "Lore (Theology)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Theology",
+    "advanced": true,
+    "description": "Know the doctrines, histories, and rituals of the Old World's religions — the cults of Sigmar, Ulric, Morr, and dozens of other deities."
+  },
+  {
+    "id": "perform-acrobatics",
+    "name": "Perform (Acrobatics)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Acrobatics",
+    "advanced": true,
+    "description": "Execute tumbles, flips, handstands, and gymnastic feats for performance or practical use in combat and infiltration."
+  },
+  {
+    "id": "perform-clowning",
+    "name": "Perform (Clowning)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Clowning",
+    "advanced": true,
+    "description": "Entertain audiences with physical comedy, pratfalls, and exaggerated buffoonery — a staple of travelling fairs and noble entertainments."
+  },
+  {
+    "id": "perform-dancing",
+    "name": "Perform (Dancing)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Dancing",
+    "advanced": true,
+    "description": "Dance with skill and grace for audiences or at social functions, from folk reels in village taverns to formal court dances."
+  },
+  {
+    "id": "perform-firebreathing",
+    "name": "Perform (Firebreathing)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Firebreathing",
+    "advanced": true,
+    "description": "Spectacularly breathe or manipulate fire for entertainment — a dramatic and dangerous crowd-pleasing act requiring precise technique."
+  },
+  {
+    "id": "perform-juggling",
+    "name": "Perform (Juggling)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Juggling",
+    "advanced": true,
+    "description": "Keep multiple objects airborne simultaneously, entertaining crowds and demonstrating exceptional hand-eye coordination."
+  },
+  {
+    "id": "perform-miming",
+    "name": "Perform (Miming)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Miming",
+    "advanced": true,
+    "description": "Convey stories, emotions, and characters through silent body movement and gesture alone, without words or props."
+  },
+  {
+    "id": "perform-rope-walking",
+    "name": "Perform (Rope Walking)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Rope Walking",
+    "advanced": true,
+    "description": "Walk, balance, and perform on taut ropes or narrow surfaces at height — a crowd-pleasing act with obvious practical infiltration applications."
+  },
+  {
+    "id": "play-bagpipe",
+    "name": "Play (Bagpipe)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Bagpipe",
+    "advanced": true,
+    "description": "Play the bagpipe competently — a demanding instrument of drones and chanter requiring considerable lung capacity and coordination."
+  },
+  {
+    "id": "play-harpsichord",
+    "name": "Play (Harpsichord)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Harpsichord",
+    "advanced": true,
+    "description": "Play the harpsichord with skill — a keyboard instrument of fine drawing rooms, chapels, and the courts of the wealthy."
+  },
+  {
+    "id": "play-horn",
+    "name": "Play (Horn)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Horn",
+    "advanced": true,
+    "description": "Play the horn or bugle — both as a musical instrument in performance and as a signalling device on the battlefield."
+  },
+  {
+    "id": "play-lute",
+    "name": "Play (Lute)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Lute",
+    "advanced": true,
+    "description": "Play the lute with skill — the quintessential instrument of bards, troubadours, and entertainers across the Old World."
+  },
+  {
+    "id": "play-violin",
+    "name": "Play (Violin)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Violin",
+    "advanced": true,
+    "description": "Play the violin with skill — a versatile bowed instrument heard in village dances and aristocratic concert halls alike."
+  },
+  {
+    "id": "ranged-blackpowder",
+    "name": "Ranged (Blackpowder)",
+    "characteristic": "BS",
+    "grouped": true,
+    "specialisation": "Blackpowder",
+    "advanced": true,
+    "description": "Use blackpowder firearms — pistols, handguns, and blunderbusses — with the training needed to load, aim, and fire reliably."
+  },
+  {
+    "id": "ranged-bow",
+    "name": "Ranged (Bow)",
+    "characteristic": "BS",
+    "grouped": true,
+    "specialisation": "Bow",
+    "advanced": true,
+    "description": "Use shortbows and longbows with trained accuracy — the classic ranged weapon of hunters, soldiers, and Wood Elf warriors."
+  },
+  {
+    "id": "ranged-crossbow",
+    "name": "Ranged (Crossbow)",
+    "characteristic": "BS",
+    "grouped": true,
+    "specialisation": "Crossbow",
+    "advanced": true,
+    "description": "Use crossbows with proficiency — mechanically aimed weapons favoured by city guards and mercenaries for reliable stopping power."
+  },
+  {
+    "id": "ranged-engineering",
+    "name": "Ranged (Engineering)",
+    "characteristic": "BS",
+    "grouped": true,
+    "specialisation": "Engineering",
+    "advanced": true,
+    "description": "Operate complex ranged engineering devices — repeating handguns, steam-powered guns, and other Dwarf or Imperial innovations."
+  },
+  {
+    "id": "ranged-entangling",
+    "name": "Ranged (Entangling)",
+    "characteristic": "BS",
+    "grouped": true,
+    "specialisation": "Entangling",
+    "advanced": true,
+    "description": "Use entangling ranged weapons such as bolas and nets to restrain and immobilise targets rather than wound them."
+  },
+  {
+    "id": "ranged-explosives",
+    "name": "Ranged (Explosives)",
+    "characteristic": "BS",
+    "grouped": true,
+    "specialisation": "Explosives",
+    "advanced": true,
+    "description": "Throw or launch explosive devices — grenades, bombs, and similar weapons — with enough accuracy to hit the intended target."
+  },
+  {
+    "id": "ranged-sling",
+    "name": "Ranged (Sling)",
+    "characteristic": "BS",
+    "grouped": true,
+    "specialisation": "Sling",
+    "advanced": true,
+    "description": "Hurl stones and lead shot with a sling at speed and accuracy — a cheap but effective ranged weapon in trained hands."
+  },
+  {
+    "id": "ranged-throwing",
+    "name": "Ranged (Throwing)",
+    "characteristic": "BS",
+    "grouped": true,
+    "specialisation": "Throwing",
+    "advanced": true,
+    "description": "Throw weapons such as javelins, throwing axes, and knives with trained precision beyond a simple untrained hurl."
+  },
+  {
+    "id": "sail-barge",
+    "name": "Sail (Barge)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Barge",
+    "advanced": true,
+    "description": "Operate and manoeuvre a barge on rivers and canals, managing the sail, tiller, and poles to navigate slow inland waterways."
+  },
+  {
+    "id": "sail-caravel",
+    "name": "Sail (Caravel)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Caravel",
+    "advanced": true,
+    "description": "Operate a caravel — a light, manoeuvrable ocean-going vessel suited for exploration and trade on the open sea."
+  },
+  {
+    "id": "sail-cog",
+    "name": "Sail (Cog)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Cog",
+    "advanced": true,
+    "description": "Operate a cog — a sturdy single-masted trading vessel common on the rivers and coastal waters of the Old World."
+  },
+  {
+    "id": "sail-frigate",
+    "name": "Sail (Frigate)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Frigate",
+    "advanced": true,
+    "description": "Operate a frigate — a fast, well-armed warship capable of deep-ocean operations, requiring a full crew and expert seamanship."
+  },
+  {
+    "id": "sail-wolfship",
+    "name": "Sail (Wolfship)",
+    "characteristic": "Ag",
+    "grouped": true,
+    "specialisation": "Wolfship",
+    "advanced": true,
+    "description": "Operate a Wolfship — the deadly longship of the Norse raiders, designed for speed, coastal assault, and river penetration."
+  },
+  {
+    "id": "secret-signs-grey-order",
+    "name": "Secret Signs (Grey Order)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Grey Order",
+    "advanced": true,
+    "description": "Recognise and use the clandestine markings of the Grey Order of Wizards, the shadowy society of Ulgu practitioners."
+  },
+  {
+    "id": "secret-signs-guilder",
+    "name": "Secret Signs (Guilder)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Guilder",
+    "advanced": true,
+    "description": "Recognise and use the secret markings of the merchant guilds — symbols that communicate guild membership, prices, and warnings."
+  },
+  {
+    "id": "secret-signs-ranger",
+    "name": "Secret Signs (Ranger)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Ranger",
+    "advanced": true,
+    "description": "Recognise and use the trail signs left by Rangers — carvings and natural markers that communicate direction, danger, and resources."
+  },
+  {
+    "id": "secret-signs-scout",
+    "name": "Secret Signs (Scout)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Scout",
+    "advanced": true,
+    "description": "Recognise and use military scout markings — coded signs that relay tactical information about enemy positions and safe routes."
+  },
+  {
+    "id": "secret-signs-thief",
+    "name": "Secret Signs (Thief)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Thief",
+    "advanced": true,
+    "description": "Recognise and use the chalk marks and scratched symbols of the thieves' underworld — communicating opportunity, danger, and territory."
+  },
+  {
+    "id": "secret-signs-vagabond",
+    "name": "Secret Signs (Vagabond)",
+    "characteristic": "Int",
+    "grouped": true,
+    "specialisation": "Vagabond",
+    "advanced": true,
+    "description": "Recognise and use the marks left by vagabonds and travellers — signs indicating safe houses, hostile locals, and generous households."
+  },
+  {
+    "id": "trade-apothecary",
+    "name": "Trade (Apothecary)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Apothecary",
+    "advanced": true,
+    "description": "Compound medicines, poultices, and potions from herbs and other ingredients, providing medicinal services to paying customers."
+  },
+  {
+    "id": "trade-calligrapher",
+    "name": "Trade (Calligrapher)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Calligrapher",
+    "advanced": true,
+    "description": "Produce elegant, legible script for documents, manuscripts, and official records — a valued service in a world of expensive literacy."
+  },
+  {
+    "id": "trade-carpenter",
+    "name": "Trade (Carpenter)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Carpenter",
+    "advanced": true,
+    "description": "Work wood into furniture, structural timbers, barrels, and other objects — a foundational trade of Old World towns and cities."
+  },
+  {
+    "id": "trade-chandler",
+    "name": "Trade (Chandler)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Chandler",
+    "advanced": true,
+    "description": "Make and sell candles, soap, and rendered products — providing essential illumination and hygiene goods to communities."
+  },
+  {
+    "id": "trade-cook",
+    "name": "Trade (Cook)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Cook",
+    "advanced": true,
+    "description": "Prepare food professionally — from basic camp fare that keeps a party going to elaborate banquet dishes for wealthy patrons."
+  },
+  {
+    "id": "trade-embalmer",
+    "name": "Trade (Embalmer)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Embalmer",
+    "advanced": true,
+    "description": "Preserve corpses against decay for burial preparation — a respected trade in service of Morr's cult and the families of the dead."
+  },
+  {
+    "id": "trade-smith",
+    "name": "Trade (Smith)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Smith",
+    "advanced": true,
+    "description": "Work metal at the forge — shaping iron and steel into tools, horseshoes, weapons, and armour for paying customers."
+  },
+  {
+    "id": "trade-tanner",
+    "name": "Trade (Tanner)",
+    "characteristic": "Dex",
+    "grouped": true,
+    "specialisation": "Tanner",
+    "advanced": true,
+    "description": "Cure and tan animal hides into leather for armour, clothing, and equipment — a vital but pungent trade of the Old World."
+  }
+]

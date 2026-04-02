@@ -1,0 +1,364 @@
+[
+  {
+    "id": "human",
+    "name": "Human",
+    "characteristics": {
+      "WS":  20,
+      "BS":  20,
+      "S":   20,
+      "T":   20,
+      "I":   20,
+      "Ag":  20,
+      "Dex": 20,
+      "Int": 20,
+      "WP":  20,
+      "Fel": 20
+    },
+    "fate": 2,
+    "resilience": 1,
+    "extraPoints": 3,
+    "extraWounds": 0,
+    "movement": 4,
+    "size": "Average",
+    "startingSkills": [
+      "Animal Care",
+      "Charm",
+      "Cool",
+      "Evaluate",
+      "Gossip",
+      "Haggle",
+      "Language (Bretonnian)",
+      "Language (Wastelander)",
+      "Leadership",
+      "Lore (Reikland)",
+      "Melee (Basic)",
+      "Ranged (Bow)"
+    ],
+    "startingTalents": [
+      { "type": "fixed",  "talent": "Doomed" },
+      { "type": "choice", "options": ["Savvy", "Suave"] },
+      { "type": "random", "count": 3 }
+    ],
+    "description": "Humans are the most numerous and widespread of the civilised species of the Old World, occupying every corner of the continent. Their relatively short lives drive extraordinary ambition and versatility. Humans can enter any career class without restriction. They begin with 3 additional Random Talents rolled on the Random Talent Table, and have Extra Points to distribute freely between Fate and Resilience.",
+    "appearance": {
+      "age": { "base": 15, "diceCount": 1, "diceSize": 10 },
+      "height": { "baseInches": 57, "diceCount": 2, "diceSize": 10 },
+      "eyeColour": [
+        { "min": 2,  "max": 2,  "result": "Free Choice" },
+        { "min": 3,  "max": 3,  "result": "Green" },
+        { "min": 4,  "max": 4,  "result": "Pale Blue" },
+        { "min": 5,  "max": 7,  "result": "Blue" },
+        { "min": 8,  "max": 11, "result": "Pale Grey" },
+        { "min": 12, "max": 14, "result": "Grey" },
+        { "min": 15, "max": 17, "result": "Brown" },
+        { "min": 18, "max": 18, "result": "Hazel" },
+        { "min": 19, "max": 19, "result": "Dark Brown" },
+        { "min": 20, "max": 20, "result": "Black" }
+      ],
+      "hairColour": [
+        { "min": 2,  "max": 2,  "result": "White Blond" },
+        { "min": 3,  "max": 3,  "result": "Golden Blond" },
+        { "min": 4,  "max": 4,  "result": "Red Blond" },
+        { "min": 5,  "max": 7,  "result": "Golden Brown" },
+        { "min": 8,  "max": 11, "result": "Light Brown" },
+        { "min": 12, "max": 14, "result": "Dark Brown" },
+        { "min": 15, "max": 17, "result": "Black" },
+        { "min": 18, "max": 18, "result": "Auburn" },
+        { "min": 19, "max": 19, "result": "Red" },
+        { "min": 20, "max": 20, "result": "Grey" }
+      ]
+    }
+  },
+  {
+    "id": "dwarf",
+    "name": "Dwarf",
+    "characteristics": {
+      "WS":  30,
+      "BS":  20,
+      "S":   20,
+      "T":   30,
+      "I":   20,
+      "Ag":  10,
+      "Dex": 30,
+      "Int": 20,
+      "WP":  40,
+      "Fel": 10
+    },
+    "fate": 0,
+    "resilience": 2,
+    "extraPoints": 2,
+    "extraWounds": 2,
+    "movement": 3,
+    "size": "Average",
+    "startingSkills": [
+      "Consume Alcohol",
+      "Cool",
+      "Endurance",
+      "Entertain (Storytelling)",
+      "Evaluate",
+      "Intimidate",
+      "Language (Khazalid)",
+      "Lore (Dwarfs)",
+      "Lore (Geology)",
+      "Lore (Metallurgy)",
+      "Melee (Basic)",
+      "Trade (any one)"
+    ],
+    "startingTalents": [
+      { "type": "fixed",  "talent": "Magic Resistance" },
+      { "type": "fixed",  "talent": "Night Vision" },
+      { "type": "choice", "options": ["Read/Write", "Relentless"] },
+      { "type": "choice", "options": ["Resolute", "Strong-minded"] },
+      { "type": "fixed",  "talent": "Sturdy" }
+    ],
+    "description": "Dwarfs — or 'Dawi' as they call themselves — are legendarily gruff and stubborn. Squat with thick muscular limbs, they excel at stonework, smithing, and engineering. Their exceptional Toughness and Willpower reflect their famed resilience and mental fortitude. Dwarfs cannot cast spells and bear Animosity toward Elves from the ancient War of the Beard. Their long memories mean they nurse grudges for generations.",
+    "appearance": {
+      "age": { "base": 15, "diceCount": 10, "diceSize": 10 },
+      "height": { "baseInches": 51, "diceCount": 1, "diceSize": 10 },
+      "eyeColour": [
+        { "min": 2,  "max": 2,  "result": "Coal" },
+        { "min": 3,  "max": 3,  "result": "Lead" },
+        { "min": 4,  "max": 4,  "result": "Steel" },
+        { "min": 5,  "max": 7,  "result": "Blue" },
+        { "min": 8,  "max": 11, "result": "Earth Brown" },
+        { "min": 12, "max": 14, "result": "Dark Brown" },
+        { "min": 15, "max": 17, "result": "Hazel" },
+        { "min": 18, "max": 18, "result": "Green" },
+        { "min": 19, "max": 19, "result": "Copper" },
+        { "min": 20, "max": 20, "result": "Gold" }
+      ],
+      "hairColour": [
+        { "min": 2,  "max": 2,  "result": "White" },
+        { "min": 3,  "max": 3,  "result": "Grey" },
+        { "min": 4,  "max": 4,  "result": "Pale Blond" },
+        { "min": 5,  "max": 7,  "result": "Golden" },
+        { "min": 8,  "max": 11, "result": "Copper" },
+        { "min": 12, "max": 14, "result": "Bronze" },
+        { "min": 15, "max": 17, "result": "Brown" },
+        { "min": 18, "max": 18, "result": "Dark Brown" },
+        { "min": 19, "max": 19, "result": "Reddish Brown" },
+        { "min": 20, "max": 20, "result": "Black" }
+      ]
+    }
+  },
+  {
+    "id": "halfling",
+    "name": "Halfling",
+    "characteristics": {
+      "WS":  10,
+      "BS":  30,
+      "S":   10,
+      "T":   20,
+      "I":   20,
+      "Ag":  20,
+      "Dex": 30,
+      "Int": 20,
+      "WP":  30,
+      "Fel": 30
+    },
+    "fate": 0,
+    "resilience": 2,
+    "extraPoints": 3,
+    "extraWounds": 0,
+    "movement": 3,
+    "size": "Small",
+    "startingSkills": [
+      "Charm",
+      "Consume Alcohol",
+      "Dodge",
+      "Gamble",
+      "Haggle",
+      "Intuition",
+      "Language (Mootish)",
+      "Lore (Reikland)",
+      "Perception",
+      "Sleight of Hand",
+      "Stealth",
+      "Trade (Cook)"
+    ],
+    "startingTalents": [
+      { "type": "fixed",  "talent": "Acute Sense (Taste)" },
+      { "type": "fixed",  "talent": "Night Vision" },
+      { "type": "fixed",  "talent": "Resistance (Chaos)" },
+      { "type": "fixed",  "talent": "Small" },
+      { "type": "random", "count": 2 }
+    ],
+    "description": "Halflings are ubiquitous across the Reikland, found in service industries and known for their enormous appetites and sunny dispositions. Short and apple-cheeked, they excel at ranged combat, dexterity, and fellowship. Their Small trait reduces their Wounds (calculated without Strength Bonus) but also makes them harder to hit. They begin with 2 additional Random Talents rolled on the Random Talent Table.",
+    "appearance": {
+      "age": { "base": 15, "diceCount": 5, "diceSize": 10 },
+      "height": { "baseInches": 37, "diceCount": 1, "diceSize": 10 },
+      "eyeColour": [
+        { "min": 2,  "max": 2,  "result": "Light Grey" },
+        { "min": 3,  "max": 3,  "result": "Grey" },
+        { "min": 4,  "max": 4,  "result": "Pale Blue" },
+        { "min": 5,  "max": 7,  "result": "Blue" },
+        { "min": 8,  "max": 11, "result": "Green" },
+        { "min": 12, "max": 14, "result": "Hazel" },
+        { "min": 15, "max": 17, "result": "Brown" },
+        { "min": 18, "max": 18, "result": "Copper" },
+        { "min": 19, "max": 19, "result": "Dark Brown" },
+        { "min": 20, "max": 20, "result": "Dark Brown" }
+      ],
+      "hairColour": [
+        { "min": 2,  "max": 2,  "result": "Grey" },
+        { "min": 3,  "max": 3,  "result": "Flaxen" },
+        { "min": 4,  "max": 4,  "result": "Russet" },
+        { "min": 5,  "max": 7,  "result": "Honey" },
+        { "min": 8,  "max": 11, "result": "Chestnut" },
+        { "min": 12, "max": 14, "result": "Ginger" },
+        { "min": 15, "max": 17, "result": "Mustard" },
+        { "min": 18, "max": 18, "result": "Almond" },
+        { "min": 19, "max": 19, "result": "Chocolate" },
+        { "min": 20, "max": 20, "result": "Liquorice" }
+      ]
+    }
+  },
+  {
+    "id": "high-elf",
+    "name": "High Elf",
+    "characteristics": {
+      "WS":  30,
+      "BS":  30,
+      "S":   20,
+      "T":   20,
+      "I":   40,
+      "Ag":  30,
+      "Dex": 30,
+      "Int": 30,
+      "WP":  30,
+      "Fel": 20
+    },
+    "fate": 0,
+    "resilience": 0,
+    "extraPoints": 2,
+    "extraWounds": 0,
+    "movement": 5,
+    "size": "Average",
+    "startingSkills": [
+      "Cool",
+      "Entertain (Sing)",
+      "Evaluate",
+      "Language (Eltharin)",
+      "Leadership",
+      "Melee (Basic)",
+      "Navigation",
+      "Perception",
+      "Play (any one)",
+      "Ranged (Bow)",
+      "Sail",
+      "Swim"
+    ],
+    "startingTalents": [
+      { "type": "fixed",  "talent": "Acute Sense (Sight)" },
+      { "type": "choice", "options": ["Coolheaded", "Savvy"] },
+      { "type": "fixed",  "talent": "Night Vision" },
+      { "type": "choice", "options": ["Second Sight", "Sixth Sense"] },
+      { "type": "fixed",  "talent": "Read/Write" }
+    ],
+    "description": "High Elves — the Asur — are native to the magical island of Ulthuan to the west. Tall, slender, and extraordinarily perceptive, they boast among the highest Initiative and Agility of any species. Merchants, diplomats, and scholars, they are widely seen as both the most beautiful and most arrogant of the elder races. High Elves have Extra Points to distribute between Fate and Resilience at character creation.",
+    "appearance": {
+      "age": { "base": 30, "diceCount": 10, "diceSize": 10 },
+      "height": { "baseInches": 71, "diceCount": 1, "diceSize": 10 },
+      "eyeColour": [
+        { "min": 2,  "max": 2,  "result": "Jet" },
+        { "min": 3,  "max": 3,  "result": "Amethyst" },
+        { "min": 4,  "max": 4,  "result": "Aquamarine" },
+        { "min": 5,  "max": 7,  "result": "Sapphire" },
+        { "min": 8,  "max": 11, "result": "Turquoise" },
+        { "min": 12, "max": 14, "result": "Emerald" },
+        { "min": 15, "max": 17, "result": "Amber" },
+        { "min": 18, "max": 18, "result": "Copper" },
+        { "min": 19, "max": 19, "result": "Citrine" },
+        { "min": 20, "max": 20, "result": "Gold" }
+      ],
+      "hairColour": [
+        { "min": 2,  "max": 2,  "result": "Silver" },
+        { "min": 3,  "max": 3,  "result": "White" },
+        { "min": 4,  "max": 4,  "result": "Pale Blond" },
+        { "min": 5,  "max": 7,  "result": "Blond" },
+        { "min": 8,  "max": 11, "result": "Yellow Blond" },
+        { "min": 12, "max": 14, "result": "Copper Blond" },
+        { "min": 15, "max": 17, "result": "Red Blond" },
+        { "min": 18, "max": 18, "result": "Auburn" },
+        { "min": 19, "max": 19, "result": "Red" },
+        { "min": 20, "max": 20, "result": "Black" }
+      ],
+      "canRollEyeTwice": true,
+      "canRollHairTwice": true
+    }
+  },
+  {
+    "id": "wood-elf",
+    "name": "Wood Elf",
+    "characteristics": {
+      "WS":  30,
+      "BS":  30,
+      "S":   20,
+      "T":   20,
+      "I":   40,
+      "Ag":  30,
+      "Dex": 30,
+      "Int": 30,
+      "WP":  30,
+      "Fel": 20
+    },
+    "fate": 0,
+    "resilience": 0,
+    "extraPoints": 2,
+    "extraWounds": 0,
+    "movement": 5,
+    "size": "Average",
+    "startingSkills": [
+      "Athletics",
+      "Climb",
+      "Endurance",
+      "Entertain (Sing)",
+      "Intimidate",
+      "Language (Eltharin)",
+      "Melee (Basic)",
+      "Outdoor Survival",
+      "Perception",
+      "Ranged (Bow)",
+      "Stealth (Rural)",
+      "Track"
+    ],
+    "startingTalents": [
+      { "type": "fixed",  "talent": "Acute Sense (Sight)" },
+      { "type": "choice", "options": ["Hardy", "Second Sight"] },
+      { "type": "fixed",  "talent": "Night Vision" },
+      { "type": "choice", "options": ["Read/Write", "Very Resilient"] },
+      { "type": "fixed",  "talent": "Rover" }
+    ],
+    "description": "Wood Elves — the Asrai of Athel Loren and Eonir of the Laurelorn — remained in the Old World after the War of the Beard and withdrew into the deep forests. Sharing the same characteristic profile as High Elves, they differ markedly in culture and skills: wilderness-focused, stealthy hunters and trackers. They are rare and unsettling visitors to civilised lands, and deeply mistrustful of outsiders.",
+    "appearance": {
+      "age": { "base": 30, "diceCount": 10, "diceSize": 10 },
+      "height": { "baseInches": 71, "diceCount": 1, "diceSize": 10 },
+      "eyeColour": [
+        { "min": 2,  "max": 2,  "result": "Ivory" },
+        { "min": 3,  "max": 3,  "result": "Charcoal" },
+        { "min": 4,  "max": 4,  "result": "Ivy Green" },
+        { "min": 5,  "max": 7,  "result": "Mossy Green" },
+        { "min": 8,  "max": 11, "result": "Chestnut" },
+        { "min": 12, "max": 14, "result": "Chestnut" },
+        { "min": 15, "max": 17, "result": "Dark Brown" },
+        { "min": 18, "max": 18, "result": "Tan" },
+        { "min": 19, "max": 19, "result": "Sandy Brown" },
+        { "min": 20, "max": 20, "result": "Violet" }
+      ],
+      "hairColour": [
+        { "min": 2,  "max": 2,  "result": "Birch Silver" },
+        { "min": 3,  "max": 3,  "result": "Ash Blond" },
+        { "min": 4,  "max": 4,  "result": "Rose Gold" },
+        { "min": 5,  "max": 7,  "result": "Honey Blond" },
+        { "min": 8,  "max": 11, "result": "Brown" },
+        { "min": 12, "max": 14, "result": "Mahogany Brown" },
+        { "min": 15, "max": 17, "result": "Dark Brown" },
+        { "min": 18, "max": 18, "result": "Sienna" },
+        { "min": 19, "max": 19, "result": "Ebony" },
+        { "min": 20, "max": 20, "result": "Blue-Black" }
+      ],
+      "canRollEyeTwice": true,
+      "canRollHairTwice": true
+    }
+  }
+]

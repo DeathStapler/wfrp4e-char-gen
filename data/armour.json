@@ -1,0 +1,261 @@
+[
+  {
+    "name": "Leather Jack",
+    "price": "12/–",
+    "enc": 1,
+    "availability": "Common",
+    "locations": [
+      "Arms",
+      "Body"
+    ],
+    "ap": 1,
+    "qualities": [],
+    "flaws": []
+  },
+  {
+    "name": "Leather Jerkin",
+    "price": "10/–",
+    "enc": 1,
+    "availability": "Common",
+    "locations": [
+      "Body"
+    ],
+    "ap": 1,
+    "qualities": [],
+    "flaws": []
+  },
+  {
+    "name": "Leather Leggings",
+    "price": "14/–",
+    "enc": 1,
+    "availability": "Common",
+    "locations": [
+      "Legs"
+    ],
+    "ap": 1,
+    "qualities": [],
+    "flaws": []
+  },
+  {
+    "name": "Leather Skullcap",
+    "price": "8/–",
+    "enc": 0,
+    "availability": "Common",
+    "locations": [
+      "Head"
+    ],
+    "ap": 1,
+    "qualities": [],
+    "flaws": []
+  },
+  {
+    "name": "Breastplate (Boiled Leather)",
+    "price": "18/–",
+    "enc": 2,
+    "availability": "Scarce",
+    "locations": [
+      "Body"
+    ],
+    "ap": 2,
+    "qualities": [],
+    "flaws": [
+      "Weakpoints"
+    ]
+  },
+  {
+    "name": "Mail Chausses",
+    "price": "2GC",
+    "enc": 3,
+    "availability": "Scarce",
+    "locations": [
+      "Legs"
+    ],
+    "ap": 2,
+    "qualities": [
+      "Flexible"
+    ],
+    "flaws": []
+  },
+  {
+    "name": "Mail Coat",
+    "price": "3GC",
+    "enc": 3,
+    "availability": "Common",
+    "locations": [
+      "Arms",
+      "Body"
+    ],
+    "ap": 2,
+    "qualities": [
+      "Flexible"
+    ],
+    "flaws": []
+  },
+  {
+    "name": "Mail Coif",
+    "price": "1GC",
+    "enc": 2,
+    "availability": "Scarce",
+    "penalty": "–10% Perception",
+    "locations": [
+      "Head"
+    ],
+    "ap": 2,
+    "qualities": [
+      "Flexible"
+    ],
+    "flaws": [
+      "Partial"
+    ]
+  },
+  {
+    "name": "Mail Shirt",
+    "price": "2GC",
+    "enc": 2,
+    "availability": "Scarce",
+    "locations": [
+      "Body"
+    ],
+    "ap": 2,
+    "qualities": [
+      "Flexible"
+    ],
+    "flaws": []
+  },
+  {
+    "name": "Breastplate (Plate)",
+    "price": "10GC",
+    "enc": 3,
+    "availability": "Scarce",
+    "locations": [
+      "Body"
+    ],
+    "ap": 2,
+    "qualities": [
+      "Impenetrable"
+    ],
+    "flaws": [
+      "Weakpoints"
+    ]
+  },
+  {
+    "name": "Open Helm",
+    "price": "2GC",
+    "enc": 1,
+    "availability": "Common",
+    "penalty": "–10% Perception",
+    "locations": [
+      "Head"
+    ],
+    "ap": 2,
+    "qualities": [],
+    "flaws": [
+      "Partial"
+    ]
+  },
+  {
+    "name": "Bracers",
+    "price": "8GC",
+    "enc": 3,
+    "availability": "Rare",
+    "locations": [
+      "Arms"
+    ],
+    "ap": 2,
+    "qualities": [
+      "Impenetrable"
+    ],
+    "flaws": [
+      "Weakpoints"
+    ]
+  },
+  {
+    "name": "Plate Leggings",
+    "price": "10GC",
+    "enc": 3,
+    "availability": "Rare",
+    "penalty": "–10 Stealth",
+    "locations": [
+      "Legs"
+    ],
+    "ap": 2,
+    "qualities": [
+      "Impenetrable"
+    ],
+    "flaws": [
+      "Weakpoints"
+    ]
+  },
+  {
+    "name": "Helm",
+    "price": "3GC",
+    "enc": 2,
+    "availability": "Rare",
+    "penalty": "–20% Perception",
+    "locations": [
+      "Head"
+    ],
+    "ap": 2,
+    "qualities": [
+      "Impenetrable"
+    ],
+    "flaws": [
+      "Weakpoints"
+    ]
+  },
+  {
+    "name": "Light Armour",
+    "price": "2GC",
+    "enc": 1,
+    "availability": "Common",
+    "locations": [
+      "Head",
+      "Body",
+      "Arms",
+      "Legs"
+    ],
+    "ap": 1,
+    "qualities": [
+      "Flexible"
+    ],
+    "flaws": []
+  },
+  {
+    "name": "Medium Armour",
+    "price": "5GC",
+    "enc": 5,
+    "availability": "Scarce",
+    "penalty": "–10% Perception, –10 Stealth",
+    "locations": [
+      "Head",
+      "Body",
+      "Arms",
+      "Legs"
+    ],
+    "ap": 2,
+    "qualities": [
+      "Flexible"
+    ],
+    "flaws": []
+  },
+  {
+    "name": "Heavy Armour",
+    "price": "30GC",
+    "enc": 6,
+    "availability": "Rare",
+    "penalty": "–20% Perception, –20 Stealth",
+    "locations": [
+      "Head",
+      "Body",
+      "Arms",
+      "Legs"
+    ],
+    "ap": 3,
+    "qualities": [
+      "Impenetrable"
+    ],
+    "flaws": [
+      "Weakpoints"
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "universe_usage_history": [
+    {
+      "universe": "Deadwood",
+      "project": "wfrp-char-gen",
+      "date": "2026-03-26"
+    }
+  ],
+  "assignment_cast_snapshots": {
+    "wfrp-char-gen-initial": {
+      "assignment_id": "wfrp-char-gen-initial",
+      "universe": "Deadwood",
+      "date": "2026-03-26",
+      "agents": {
+        "swearengen": "Lead / Architect",
+        "bullock": "Backend Dev",
+        "jane": "Frontend Dev",
+        "cochran": "Tester"
+      }
+    }
+  }
+}

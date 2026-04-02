@@ -1,0 +1,79 @@
+{
+  "_source": "WFRP 4e Core Rulebook p.38 — Class Trappings section",
+  "_notes": [
+    "Items that are 'contained in' a bag/pack are listed individually alongside the container.",
+    "1d10 Sheets of Parchment: actual quantity rolled at character creation; stored as the string literal here.",
+    "1d10 Matches: same — rolled at character creation.",
+    "Hood or Mask (Rogues): player chooses one at creation; stored as a single choice-string.",
+    "Pouch (Courtiers): in the rulebook the Pouch contains Tweezers, Ear Pick, and Comb — items listed individually.",
+    "Class names match Career.careerClass values in careers.json: Academic, Burghers, Courtier, Peasant, Ranger, Riverfolk, Rogue, Warrior."
+  ],
+  "classStartingTrappings": {
+    "Academic": [
+      "Clothing",
+      "Dagger",
+      "Pouch",
+      "Sling Bag",
+      "Writing Kit",
+      "1d10 Sheets of Parchment"
+    ],
+    "Burghers": [
+      "Cloak",
+      "Clothing",
+      "Dagger",
+      "Hat",
+      "Pouch",
+      "Sling Bag",
+      "Lunch"
+    ],
+    "Courtier": [
+      "Courtly Garb",
+      "Dagger",
+      "Pouch",
+      "Tweezers",
+      "Ear Pick",
+      "Comb"
+    ],
+    "Peasant": [
+      "Cloak",
+      "Clothing",
+      "Dagger",
+      "Pouch",
+      "Sling Bag",
+      "Rations (1 day)"
+    ],
+    "Ranger": [
+      "Cloak",
+      "Clothing",
+      "Dagger",
+      "Pouch",
+      "Backpack",
+      "Tinderbox",
+      "Blanket",
+      "Rations (1 day)"
+    ],
+    "Riverfolk": [
+      "Cloak",
+      "Clothing",
+      "Dagger",
+      "Pouch",
+      "Sling Bag",
+      "Flask of Spirits"
+    ],
+    "Rogue": [
+      "Clothing",
+      "Dagger",
+      "Pouch",
+      "Sling Bag",
+      "2 Candles",
+      "1d10 Matches",
+      "Hood or Mask"
+    ],
+    "Warrior": [
+      "Clothing",
+      "Hand Weapon",
+      "Dagger",
+      "Pouch"
+    ]
+  }
+}

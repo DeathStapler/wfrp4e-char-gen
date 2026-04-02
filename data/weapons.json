@@ -1,0 +1,836 @@
+[
+  {
+    "name": "Hand Weapon",
+    "price": "1GC",
+    "enc": 1,
+    "availability": "Common",
+    "reach": "Average",
+    "damage": "+SB+4",
+    "qualities": [],
+    "flaws": [],
+    "group": "Basic"
+  },
+  {
+    "name": "Improvised Weapon",
+    "price": "N/A",
+    "enc": 0,
+    "availability": "N/A",
+    "reach": "Varies",
+    "damage": "+SB+1",
+    "qualities": [],
+    "flaws": [
+      "Undamaging"
+    ],
+    "group": "Basic"
+  },
+  {
+    "name": "Dagger",
+    "price": "16/–",
+    "enc": 0,
+    "availability": "Common",
+    "reach": "Very Short",
+    "damage": "+SB+2",
+    "qualities": [],
+    "flaws": [],
+    "group": "Basic"
+  },
+  {
+    "name": "Knife",
+    "price": "8/–",
+    "enc": 0,
+    "availability": "Common",
+    "reach": "Very Short",
+    "damage": "+SB+1",
+    "qualities": [],
+    "flaws": [
+      "Undamaging"
+    ],
+    "group": "Basic"
+  },
+  {
+    "name": "Shield (Buckler)",
+    "price": "18/2",
+    "enc": 0,
+    "availability": "Common",
+    "reach": "Personal",
+    "damage": "+SB+1",
+    "qualities": [
+      "Shield 1",
+      "Defensive"
+    ],
+    "flaws": [
+      "Undamaging"
+    ],
+    "group": "Basic"
+  },
+  {
+    "name": "Shield",
+    "price": "2GC",
+    "enc": 1,
+    "availability": "Common",
+    "reach": "Very Short",
+    "damage": "+SB+2",
+    "qualities": [
+      "Shield 2",
+      "Defensive"
+    ],
+    "flaws": [
+      "Undamaging"
+    ],
+    "group": "Basic"
+  },
+  {
+    "name": "Shield (Large)",
+    "price": "3GC",
+    "enc": 3,
+    "availability": "Common",
+    "reach": "Very Short",
+    "damage": "+SB+3",
+    "qualities": [
+      "Shield 3",
+      "Defensive"
+    ],
+    "flaws": [
+      "Undamaging"
+    ],
+    "group": "Basic"
+  },
+  {
+    "name": "(2H) Cavalry Hammer",
+    "price": "3GC",
+    "enc": 3,
+    "availability": "Scarce",
+    "reach": "Long",
+    "damage": "+SB+5",
+    "qualities": [
+      "Pummel"
+    ],
+    "flaws": [],
+    "group": "Cavalry"
+  },
+  {
+    "name": "Lance",
+    "price": "1GC",
+    "enc": 3,
+    "availability": "Rare",
+    "reach": "Very Long",
+    "damage": "+SB+6",
+    "qualities": [
+      "Impact",
+      "Impale"
+    ],
+    "flaws": [],
+    "group": "Cavalry"
+  },
+  {
+    "name": "Foil",
+    "price": "5GC",
+    "enc": 1,
+    "availability": "Scarce",
+    "reach": "Medium",
+    "damage": "+SB+3",
+    "qualities": [
+      "Fast",
+      "Impale",
+      "Precise"
+    ],
+    "flaws": [
+      "Undamaging"
+    ],
+    "group": "Fencing"
+  },
+  {
+    "name": "Rapier",
+    "price": "5GC",
+    "enc": 1,
+    "availability": "Scarce",
+    "reach": "Long",
+    "damage": "+SB+4",
+    "qualities": [
+      "Fast",
+      "Impale"
+    ],
+    "flaws": [],
+    "group": "Fencing"
+  },
+  {
+    "name": "Unarmed",
+    "price": "N/A",
+    "enc": 0,
+    "availability": "–",
+    "reach": "Personal",
+    "damage": "+SB+0",
+    "qualities": [],
+    "flaws": [
+      "Undamaging"
+    ],
+    "group": "Brawling"
+  },
+  {
+    "name": "Knuckledusters",
+    "price": "2/6",
+    "enc": 0,
+    "availability": "Common",
+    "reach": "Personal",
+    "damage": "+SB+2",
+    "qualities": [],
+    "flaws": [],
+    "group": "Brawling"
+  },
+  {
+    "name": "Grain Flail",
+    "price": "10/–",
+    "enc": 1,
+    "availability": "Common",
+    "reach": "Average",
+    "damage": "+SB+3",
+    "qualities": [
+      "Distract",
+      "Wrap"
+    ],
+    "flaws": [
+      "Imprecise"
+    ],
+    "group": "Flail"
+  },
+  {
+    "name": "Flail",
+    "price": "2GC",
+    "enc": 1,
+    "availability": "Scarce",
+    "reach": "Average",
+    "damage": "+SB+5",
+    "qualities": [
+      "Distract",
+      "Wrap"
+    ],
+    "flaws": [],
+    "group": "Flail"
+  },
+  {
+    "name": "(2H) Military Flail",
+    "price": "3GC",
+    "enc": 2,
+    "availability": "Rare",
+    "reach": "Long",
+    "damage": "+SB+6",
+    "qualities": [
+      "Distract",
+      "Impact",
+      "Wrap"
+    ],
+    "flaws": [
+      "Tiring"
+    ],
+    "group": "Flail"
+  },
+  {
+    "name": "Main Gauche",
+    "price": "1GC",
+    "enc": 0,
+    "availability": "Rare",
+    "reach": "Very Short",
+    "damage": "+SB+2",
+    "qualities": [
+      "Defensive"
+    ],
+    "flaws": [],
+    "group": "Parry"
+  },
+  {
+    "name": "Swordbreaker",
+    "price": "1GC 2/6",
+    "enc": 1,
+    "availability": "Scarce",
+    "reach": "Short",
+    "damage": "+SB+3",
+    "qualities": [
+      "Defensive",
+      "Trap Blade"
+    ],
+    "flaws": [],
+    "group": "Parry"
+  },
+  {
+    "name": "(2H) Halberd",
+    "price": "2GC",
+    "enc": 3,
+    "availability": "Common",
+    "reach": "Long",
+    "damage": "+SB+4",
+    "qualities": [
+      "Defensive",
+      "Hack",
+      "Impale"
+    ],
+    "flaws": [],
+    "group": "Polearm"
+  },
+  {
+    "name": "(2H) Spear",
+    "price": "15/–",
+    "enc": 2,
+    "availability": "Common",
+    "reach": "Very Long",
+    "damage": "+SB+4",
+    "qualities": [
+      "Impale"
+    ],
+    "flaws": [],
+    "group": "Polearm"
+  },
+  {
+    "name": "(2H) Pike",
+    "price": "18/–",
+    "enc": 4,
+    "availability": "Rare",
+    "reach": "Massive",
+    "damage": "+SB+4",
+    "qualities": [
+      "Impale"
+    ],
+    "flaws": [],
+    "group": "Polearm"
+  },
+  {
+    "name": "(2H) Quarter Staff",
+    "price": "3/–",
+    "enc": 2,
+    "availability": "Common",
+    "reach": "Long",
+    "damage": "+SB+4",
+    "qualities": [
+      "Defensive",
+      "Pummel"
+    ],
+    "flaws": [],
+    "group": "Polearm"
+  },
+  {
+    "name": "(2H) Bastard Sword",
+    "price": "8GC",
+    "enc": 3,
+    "availability": "Scarce",
+    "reach": "Long",
+    "damage": "+SB+5",
+    "qualities": [
+      "Damaging",
+      "Defensive"
+    ],
+    "flaws": [],
+    "group": "Two-Handed"
+  },
+  {
+    "name": "(2H) Great Axe",
+    "price": "4GC",
+    "enc": 3,
+    "availability": "Scarce",
+    "reach": "Long",
+    "damage": "+SB+6",
+    "qualities": [
+      "Hack",
+      "Impact"
+    ],
+    "flaws": [
+      "Tiring"
+    ],
+    "group": "Two-Handed"
+  },
+  {
+    "name": "(2H) Pick",
+    "price": "9/–",
+    "enc": 3,
+    "availability": "Common",
+    "reach": "Average",
+    "damage": "+SB+5",
+    "qualities": [
+      "Damaging",
+      "Impale"
+    ],
+    "flaws": [],
+    "group": "Two-Handed"
+  },
+  {
+    "name": "(2H) Warhammer",
+    "price": "3GC",
+    "enc": 3,
+    "availability": "Common",
+    "reach": "Average",
+    "damage": "+SB+6",
+    "qualities": [
+      "Damaging",
+      "Pummel"
+    ],
+    "flaws": [],
+    "group": "Two-Handed"
+  },
+  {
+    "name": "(2H) Zweihänder",
+    "price": "10GC",
+    "enc": 3,
+    "availability": "Scarce",
+    "reach": "Long",
+    "damage": "+SB+5",
+    "qualities": [
+      "Damaging",
+      "Hack"
+    ],
+    "flaws": [],
+    "group": "Two-Handed"
+  },
+  {
+    "name": "(2H) Blunderbuss",
+    "price": "2GC",
+    "enc": 1,
+    "availability": "Scarce",
+    "range": "20",
+    "damage": "+8",
+    "qualities": [
+      "Blackpowder",
+      "Blast 3",
+      "Damaging"
+    ],
+    "flaws": [
+      "Dangerous",
+      "Reload 2"
+    ],
+    "group": "Blackpowder"
+  },
+  {
+    "name": "(2H) Hochland Long Rifle",
+    "price": "100GC",
+    "enc": 3,
+    "availability": "Exotic",
+    "range": "100",
+    "damage": "+9",
+    "qualities": [
+      "Accurate",
+      "Blackpowder",
+      "Damaging",
+      "Precise"
+    ],
+    "flaws": [
+      "Reload 4"
+    ],
+    "group": "Blackpowder"
+  },
+  {
+    "name": "(2H) Handgun",
+    "price": "4GC",
+    "enc": 2,
+    "availability": "Scarce",
+    "range": "50",
+    "damage": "+9",
+    "qualities": [
+      "Blackpowder",
+      "Damaging"
+    ],
+    "flaws": [
+      "Dangerous",
+      "Reload 3"
+    ],
+    "group": "Blackpowder"
+  },
+  {
+    "name": "Pistol",
+    "price": "8GC",
+    "enc": 0,
+    "availability": "Rare",
+    "range": "20",
+    "damage": "+8",
+    "qualities": [
+      "Blackpowder",
+      "Damaging",
+      "Pistol"
+    ],
+    "flaws": [
+      "Reload 1"
+    ],
+    "group": "Blackpowder"
+  },
+  {
+    "name": "(2H) Elf Bow",
+    "price": "10GC",
+    "enc": 2,
+    "availability": "Exotic",
+    "range": "150",
+    "damage": "+SB+4",
+    "qualities": [
+      "Damaging",
+      "Precise"
+    ],
+    "flaws": [],
+    "group": "Bow"
+  },
+  {
+    "name": "(2H) Longbow",
+    "price": "5GC",
+    "enc": 3,
+    "availability": "Scarce",
+    "range": "100",
+    "damage": "+SB+4",
+    "qualities": [
+      "Damaging"
+    ],
+    "flaws": [],
+    "group": "Bow"
+  },
+  {
+    "name": "(2H) Bow",
+    "price": "4GC",
+    "enc": 2,
+    "availability": "Common",
+    "range": "50",
+    "damage": "+SB+3",
+    "qualities": [],
+    "flaws": [],
+    "group": "Bow"
+  },
+  {
+    "name": "(2H) Shortbow",
+    "price": "3GC",
+    "enc": 1,
+    "availability": "Common",
+    "range": "20",
+    "damage": "+SB+2",
+    "qualities": [],
+    "flaws": [],
+    "group": "Bow"
+  },
+  {
+    "name": "Crossbow Pistol",
+    "price": "6GC",
+    "enc": 0,
+    "availability": "Scarce",
+    "range": "10",
+    "damage": "+7",
+    "qualities": [
+      "Pistol"
+    ],
+    "flaws": [],
+    "group": "Crossbow"
+  },
+  {
+    "name": "(2H) Heavy Crossbow",
+    "price": "7GC",
+    "enc": 3,
+    "availability": "Rare",
+    "range": "100",
+    "damage": "+9",
+    "qualities": [
+      "Damaging"
+    ],
+    "flaws": [
+      "Reload 2"
+    ],
+    "group": "Crossbow"
+  },
+  {
+    "name": "(2H) Crossbow",
+    "price": "5GC",
+    "enc": 2,
+    "availability": "Common",
+    "range": "60",
+    "damage": "+9",
+    "qualities": [],
+    "flaws": [
+      "Reload 1"
+    ],
+    "group": "Crossbow"
+  },
+  {
+    "name": "(2H) Repeater Handgun",
+    "price": "10GC",
+    "enc": 3,
+    "availability": "Rare",
+    "range": "30",
+    "damage": "+9",
+    "qualities": [
+      "Blackpowder",
+      "Damaging",
+      "Repeater 4"
+    ],
+    "flaws": [
+      "Dangerous",
+      "Reload 5"
+    ],
+    "group": "Engineering"
+  },
+  {
+    "name": "Repeater Pistol",
+    "price": "15GC",
+    "enc": 1,
+    "availability": "Rare",
+    "range": "10",
+    "damage": "+8",
+    "qualities": [
+      "Blackpowder",
+      "Damaging",
+      "Repeater",
+      "Repeater 4"
+    ],
+    "flaws": [
+      "Dangerous",
+      "Reload 4"
+    ],
+    "group": "Engineering"
+  },
+  {
+    "name": "Lasso",
+    "price": "6/–",
+    "enc": 0,
+    "availability": "Common",
+    "range": "SB×2",
+    "damage": "–",
+    "qualities": [
+      "Entangle"
+    ],
+    "flaws": [],
+    "group": "Entangling"
+  },
+  {
+    "name": "Whip",
+    "price": "5/–",
+    "enc": 0,
+    "availability": "Common",
+    "range": "6",
+    "damage": "+SB+2",
+    "qualities": [
+      "Entangle"
+    ],
+    "flaws": [],
+    "group": "Entangling"
+  },
+  {
+    "name": "Bomb",
+    "price": "3GC",
+    "enc": 0,
+    "availability": "Rare",
+    "range": "SB",
+    "damage": "+12",
+    "qualities": [
+      "Blast 5",
+      "Impact"
+    ],
+    "flaws": [
+      "Dangerous"
+    ],
+    "group": "Explosives"
+  },
+  {
+    "name": "Incendiary",
+    "price": "1GC",
+    "enc": 0,
+    "availability": "Scarce",
+    "range": "SB",
+    "damage": "Special",
+    "qualities": [
+      "Blast 4"
+    ],
+    "flaws": [
+      "Dangerous"
+    ],
+    "group": "Explosives"
+  },
+  {
+    "name": "Sling",
+    "price": "1/–",
+    "enc": 0,
+    "availability": "Common",
+    "range": "60",
+    "damage": "+6",
+    "qualities": [],
+    "flaws": [],
+    "group": "Sling"
+  },
+  {
+    "name": "(2H) Staffsling",
+    "price": "4/–",
+    "enc": 2,
+    "availability": "Scarce",
+    "range": "100",
+    "damage": "+7",
+    "qualities": [],
+    "flaws": [],
+    "group": "Sling"
+  },
+  {
+    "name": "Bolas",
+    "price": "10/–",
+    "enc": 0,
+    "availability": "Rare",
+    "range": "SB×3",
+    "damage": "+SB",
+    "qualities": [
+      "Entangle"
+    ],
+    "flaws": [],
+    "group": "Throwing"
+  },
+  {
+    "name": "Dart",
+    "price": "2/–",
+    "enc": 0,
+    "availability": "Scarce",
+    "range": "SB×2",
+    "damage": "+SB+1",
+    "qualities": [
+      "Impale"
+    ],
+    "flaws": [],
+    "group": "Throwing"
+  },
+  {
+    "name": "Javelin",
+    "price": "10/6",
+    "enc": 1,
+    "availability": "Scarce",
+    "range": "SB×3",
+    "damage": "+SB+3",
+    "qualities": [
+      "Impale"
+    ],
+    "flaws": [],
+    "group": "Throwing"
+  },
+  {
+    "name": "Rock",
+    "price": "–",
+    "enc": 0,
+    "availability": "Common",
+    "range": "SB×3",
+    "damage": "+SB+0",
+    "qualities": [],
+    "flaws": [],
+    "group": "Throwing"
+  },
+  {
+    "name": "Throwing Axe",
+    "price": "1GC",
+    "enc": 1,
+    "availability": "Average",
+    "range": "SB×2",
+    "damage": "+SB+3",
+    "qualities": [
+      "Hack"
+    ],
+    "flaws": [],
+    "group": "Throwing"
+  },
+  {
+    "name": "Throwing Knife",
+    "price": "18/–",
+    "enc": 0,
+    "availability": "Common",
+    "range": "SB×2",
+    "damage": "+SB+2",
+    "qualities": [],
+    "flaws": [],
+    "group": "Throwing"
+  },
+  {
+    "name": "Bullet and Powder (12)",
+    "price": "3/3",
+    "enc": 0,
+    "availability": "Common",
+    "range": "As weapon",
+    "damage": "+1",
+    "qualities": [
+      "Impale",
+      "Penetrating"
+    ],
+    "flaws": [],
+    "group": "Ammunition"
+  },
+  {
+    "name": "Improvised Shot and Powder",
+    "price": "3d",
+    "enc": 0,
+    "availability": "Common",
+    "range": "Half weapon",
+    "damage": "–",
+    "qualities": [],
+    "flaws": [],
+    "group": "Ammunition"
+  },
+  {
+    "name": "Small Shot and Powder (12)",
+    "price": "3/3",
+    "enc": 0,
+    "availability": "Common",
+    "range": "As weapon",
+    "damage": "–",
+    "qualities": [
+      "Blast +1"
+    ],
+    "flaws": [],
+    "group": "Ammunition"
+  },
+  {
+    "name": "Arrow (12)",
+    "price": "5/–",
+    "enc": 0,
+    "availability": "Common",
+    "range": "As weapon",
+    "damage": "–",
+    "qualities": [
+      "Impale"
+    ],
+    "flaws": [],
+    "group": "Ammunition"
+  },
+  {
+    "name": "Elf Arrow",
+    "price": "6/–",
+    "enc": 0,
+    "availability": "Exotic",
+    "range": "+50",
+    "damage": "+1",
+    "qualities": [
+      "Accurate",
+      "Impale",
+      "Penetrating"
+    ],
+    "flaws": [],
+    "group": "Ammunition"
+  },
+  {
+    "name": "Bolt (12)",
+    "price": "5/–",
+    "enc": 0,
+    "availability": "Common",
+    "range": "As weapon",
+    "damage": "–",
+    "qualities": [
+      "Impale"
+    ],
+    "flaws": [],
+    "group": "Ammunition"
+  },
+  {
+    "name": "Lead Bullet (12)",
+    "price": "4d",
+    "enc": 0,
+    "availability": "Common",
+    "range": "–10",
+    "damage": "+1",
+    "qualities": [
+      "Pummel"
+    ],
+    "flaws": [],
+    "group": "Ammunition"
+  },
+  {
+    "name": "Stone Bullet (12)",
+    "price": "2d",
+    "enc": 0,
+    "availability": "Common",
+    "range": "As weapon",
+    "damage": "–",
+    "qualities": [
+      "Pummel"
+    ],
+    "flaws": [],
+    "group": "Ammunition"
+  }
+]

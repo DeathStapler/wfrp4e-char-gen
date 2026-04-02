@@ -1,0 +1,4170 @@
+{
+  "issues": [
+    "  ❌ Merchant → Trader\n     Expected chars: [Def, Dex, Fel]\n     Got:           [Fel, Int, WP]",
+    "  ❌ Merchant → Merchant\n     Expected chars: [WP]\n     Got:           [Fel, I, Int, WP]",
+    "  ❌ Merchant → Master Merchant\n     Expected chars: [Ag]\n     Got:           [Ag, Fel, I, Int, WP]",
+    "  ❌ Merchant → Merchant Prince\n     Expected chars: [BS]\n     Got:           [Ag, Fel, I, Int, T, WP]",
+    "  ❌ Outlaw → Brigand\n     Expected chars: [BS, I, T]\n     Got:           [Ag, BS, WS]",
+    "  ❌ Outlaw → Outlaw\n     Expected chars: [S]\n     Got:           [Ag, BS, S, WS]",
+    "  ❌ Outlaw → Outlaw Chief\n     Expected chars: [Ag]\n     Got:           [Ag, BS, I, S, WS]",
+    "  ❌ Outlaw → Bandit King\n     Expected chars: [Def]\n     Got:           [Ag, BS, I, S, T, WS]",
+    "  ❌ Hedge Witch → Hedge Apprentice\n     Expected chars: [Ag, I, Int]\n     Got:           [Dex, Int, WP]",
+    "  ⚠️  Hedge Witch → Hedge Apprentice skills\n     Expected: 10, Got: 8",
+    "  ❌ Hedge Witch → Hedge Witch\n     Expected chars: [WP]\n     Got:           [Dex, I, Int, WP]",
+    "  ❌ Hedge Witch → Hedge Master\n     Expected chars: [Def]\n     Got:           [Dex, I, Int, T, WP]",
+    "  ❌ Hedge Witch → Hedgewise\n     Expected chars: [Fel]\n     Got:           [Dex, Fel, I, Int, T, WP]",
+    "  ❌ Watchman → Watch Recruit\n     Expected chars: [BS, Def, T]\n     Got:           [S, T, WS]",
+    "  ❌ Watchman → Watchman\n     Expected chars: [Fel]\n     Got:           [I, S, T, WS]",
+    "  ❌ Watchman → Watch Sergeant\n     Expected chars: [Ag]\n     Got:           [Ag, I, S, T, WS]",
+    "  ❌ Watchman → Watch Captain\n     Expected chars: [WP]\n     Got:           [Ag, I, S, T, WP, WS]",
+    "  ❌ Duellist → Fencer\n     Expected chars: [Ag, BS, Dex]\n     Got:           [Ag, I, WS]",
+    "  ❌ Duellist → Duellist\n     Expected chars: [S]\n     Got:           [Ag, BS, I, WS]",
+    "  ❌ Duellist → Duelmaster\n     Expected chars: [T]\n     Got:           [Ag, BS, I, S, WS]",
+    "  ❌ Duellist → Judicial Champion\n     Expected chars: [Fel]\n     Got:           [Ag, BS, Dex, I, S, WS]",
+    "  ❌ Thief → Prowler\n     Expected chars: [Ag, Dex, Fel]\n     Got:           [Ag, Dex, I]",
+    "  ❌ Thief → Thief\n     Expected chars: [Int]\n     Got:           [Ag, Dex, I, Int]",
+    "  ❌ Thief → Master Thief\n     Expected chars: [T]\n     Got:           [Ag, Dex, I, Int, WS]",
+    "  ❌ Thief → Cat Burglar\n     Expected chars: [Def]\n     Got:           [Ag, Dex, I, Int, S, WS]",
+    "  ❌ Spy → Informer\n     Expected chars: [Def, Dex, Fel]\n     Got:           [Ag, Fel, Int]",
+    "  ❌ Spy → Spy\n     Expected chars: [BS]\n     Got:           [Ag, Fel, I, Int]",
+    "  ❌ Spy → Agent\n     Expected chars: [Ag]\n     Got:           [Ag, Dex, Fel, I, Int]",
+    "  ❌ Spy → Spymaster\n     Expected chars: [WP]\n     Got:           [Ag, Dex, Fel, I, Int, WP]",
+    "  ❌ Messenger → Runner\n     Expected chars: [Ag, Dex, I]\n     Got:           [Ag, I, WP]",
+    "  ❌ Messenger → Messenger\n     Expected chars: [BS]\n     Got:           [Ag, I, T, WP]",
+    "  ❌ Messenger → Courier\n     Expected chars: [Fel]\n     Got:           [Ag, BS, I, T, WP]",
+    "  ❌ Messenger → Courier-Captain\n     Expected chars: [Def]\n     Got:           [Ag, BS, Fel, I, T, WP]",
+    "  ❌ Investigator → Sleuth\n     Expected chars: [Ag, Dex, WP]\n     Got:           [Ag, I, Int]",
+    "  ❌ Investigator → Investigator\n     Expected chars: [Def]\n     Got:           [Ag, I, Int, WP]",
+    "  ❌ Investigator → Master Investigator\n     Expected chars: [Int]\n     Got:           [Ag, Dex, I, Int, WP]",
+    "  ❌ Investigator → Detective\n     Expected chars: [Fel]\n     Got:           [Ag, Dex, Fel, I, Int, WP]",
+    "  ❌ Witch → Hexer\n     Expected chars: [BS, Fel, I]\n     Got:           [I, Int, WP]",
+    "  ❌ Witch → Witch\n     Expected chars: [Ag]\n     Got:           [I, Int, T, WP]",
+    "  ❌ Witch → Wyrd\n     Expected chars: [Def]\n     Got:           [Ag, I, Int, T, WP]",
+    "  ❌ Witch → Warlock\n     Expected chars: [WP]\n     Got:           [Ag, Dex, I, Int, T, WP]",
+    "  ❌ Bailiff → Tax Collector\n     Expected chars: [Ag, BS, Fel]\n     Got:           [Fel, Int, WS]",
+    "  ❌ Bailiff → Bailiff\n     Expected chars: [Def]\n     Got:           [Fel, I, Int, WS]",
+    "  ❌ Bailiff → Reeve\n     Expected chars: [Dex]\n     Got:           [Fel, I, Int, WP, WS]",
+    "  ❌ Bailiff → Magistrate\n     Expected chars: [WP]\n     Got:           [Ag, Fel, I, Int, WP, WS]",
+    "  ❌ Coachman → Postilion\n     Expected chars: [Fel, I, S]\n     Got:           [Ag, BS, T]",
+    "  ❌ Coachman → Coachman\n     Expected chars: [Dex]\n     Got:           [Ag, BS, I, T]",
+    "  ❌ Coachman → Coach Master\n     Expected chars: [BS]\n     Got:           [Ag, BS, I, T, WS]",
+    "  ❌ Coachman → Route Master\n     Expected chars: [Ag]\n     Got:           [Ag, BS, I, T, WP, WS]",
+    "  ❌ Miner → Prospector\n     Expected chars: [Fel, I, T]\n     Got:           [S, T, WS]",
+    "  ❌ Miner → Miner\n     Expected chars: [BS]\n     Got:           [S, T, WP, WS]",
+    "  ❌ Miner → Master Miner\n     Expected chars: [Ag]\n     Got:           [I, S, T, WP, WS]",
+    "  ❌ Miner → Mine Foreman\n     Expected chars: [Def]\n     Got:           [Dex, I, S, T, WP, WS]",
+    "  ❌ Physician → Physician’s Apprentice\n     Expected chars: [Fel, Int, WP]\n     Got:           [Dex, Int, WP]",
+    "  ❌ Physician → Physician\n     Expected chars: [Def]\n     Got:           [Dex, Int, T, WP]",
+    "  ❌ Physician → Doktor\n     Expected chars: [Ag]\n     Got:           [Dex, I, Int, T, WP]",
+    "  ❌ Physician → Court Physician\n     Expected chars: [Dex]\n     Got:           [Dex, Fel, I, Int, T, WP]",
+    "  ❌ Beggar → Pauper\n     Expected chars: [Def, Dex, I]\n     Got:           [Ag, Fel, T]",
+    "  ❌ Beggar → Beggar\n     Expected chars: [Fel]\n     Got:           [Ag, Fel, I, T]",
+    "  ❌ Beggar → Master Beggar\n     Expected chars: [BS]\n     Got:           [Ag, Fel, I, T, WP]",
+    "  ❌ Beggar → Beggar King\n     Expected chars: [Ag]\n     Got:           [Ag, Dex, Fel, I, T, WP]",
+    "  ❌ Flagellant → Zealot\n     Expected chars: [BS, I, T]\n     Got:           [T, WP, WS]",
+    "  ❌ Flagellant → Flagellant\n     Expected chars: [Fel]\n     Got:           [S, T, WP, WS]",
+    "  ❌ Flagellant → Penitent\n     Expected chars: [Ag]\n     Got:           [I, S, T, WP, WS]",
+    "  ❌ Flagellant → Prophet of Doom\n     Expected chars: [Def]\n     Got:           [Fel, I, S, T, WP, WS]",
+    "  ❌ Nun → Novitiate\n     Expected chars: [Def, Int, WP]\n     Got:           [Fel, T, WP]",
+    "  ❌ Nun → Nun\n     Expected chars: [Fel]\n     Got:           [Fel, I, T, WP]",
+    "  ❌ Nun → Abbess\n     Expected chars: [Ag]\n     Got:           [Fel, I, S, T, WP]",
+    "  ❌ Nun → Prioress General\n     Expected chars: [I]\n     Got:           [Fel, I, S, T, WP, WS]",
+    "  ❌ Advisor → Aide\n     Expected chars: [Ag, Dex, I]\n     Got:           [Fel, I, Int]",
+    "  ❌ Advisor → Advisor\n     Expected chars: [Def]\n     Got:           [Fel, I, Int, WP]",
+    "  ❌ Advisor → Counsellor\n     Expected chars: [WP]\n     Got:           [Ag, Fel, I, Int, WP]",
+    "  ❌ Advisor → Chancellor\n     Expected chars: [Fel]\n     Got:           [Ag, Fel, I, Int, T, WP]",
+    "  ❌ Scholar → Student\n     Expected chars: [Fel, I, WP]\n     Got:           [I, Int, WP]",
+    "  ❌ Scholar → Scholar\n     Expected chars: [Ag]\n     Got:           [I, Int, T, WP]",
+    "  ❌ Scholar → Fellow\n     Expected chars: [Def]\n     Got:           [Dex, I, Int, T, WP]",
+    "  ❌ Scholar → Professor\n     Expected chars: [Int]\n     Got:           [Dex, Fel, I, Int, T, WP]",
+    "  ❌ Seaman → Landsman\n     Expected chars: [Def, Dex, Int]\n     Got:           [Ag, S, T]",
+    "  ❌ Seaman → Seaman\n     Expected chars: [BS]\n     Got:           [Ag, S, T, WS]",
+    "  ❌ Seaman → Boatswain\n     Expected chars: [Ag]\n     Got:           [Ag, I, S, T, WS]",
+    "  ❌ Seaman → Ship’s Master\n     Expected chars: [WP]\n     Got:           [Ag, Fel, I, S, T, WS]",
+    "  ❌ Artisan → Apprentice Artisan\n     Expected chars: [I, Int, T]\n     Got:           [Dex, Int, S]",
+    "  ❌ Artisan → Artisan\n     Expected chars: [Def]\n     Got:           [Dex, Int, S, T]",
+    "  ❌ Artisan → Master Artisan\n     Expected chars: [Fel]\n     Got:           [Dex, Int, S, T, WP]",
+    "  ❌ Artisan → Guildmaster\n     Expected chars: [WP]\n     Got:           [Dex, I, Int, S, T, WP]",
+    "  ❌ Lawyer → Student Lawyer\n     Expected chars: [Ag, Int, WP]\n     Got:           [Fel, I, Int]",
+    "  ❌ Lawyer → Lawyer\n     Expected chars: [Def]\n     Got:           [Fel, I, Int, WP]",
+    "  ❌ Lawyer → Barrister\n     Expected chars: [Fel]\n     Got:           [Ag, Fel, I, Int, WP]",
+    "  ❌ Lawyer → Judge\n     Expected chars: [I]\n     Got:           [Ag, Dex, Fel, I, Int, WP]",
+    "  ❌ Scout → Guide\n     Expected chars: [Ag, Dex, I]\n     Got:           [Ag, BS, I]",
+    "  ❌ Scout → Scout\n     Expected chars: [S]\n     Got:           [Ag, BS, I, T]",
+    "  ❌ Scout → Pathfinder\n     Expected chars: [WP]\n     Got:           [Ag, BS, I, S, T]",
+    "  ❌ Scout → Explorer\n     Expected chars: [Int]\n     Got:           [Ag, BS, I, Int, S, T]",
+    "  ❌ Townsman → Clerk\n     Expected chars: [Def, Dex, WP]\n     Got:           [Ag, Fel, Int]",
+    "  ❌ Townsman → Townsman\n     Expected chars: [Ag]\n     Got:           [Ag, Fel, I, Int]",
+    "  ❌ Townsman → Town Councillor\n     Expected chars: [Int]\n     Got:           [Ag, Dex, Fel, I, Int]",
+    "  ❌ Townsman → Burgomeister\n     Expected chars: [Fel]\n     Got:           [Ag, Dex, Fel, I, Int, WP]",
+    "  ❌ Envoy → Herald\n     Expected chars: [Def, Dex, I]\n     Got:           [Fel, I, T]",
+    "  ❌ Envoy → Envoy\n     Expected chars: [WP]\n     Got:           [Ag, Fel, I, T]",
+    "  ❌ Envoy → Diplomat\n     Expected chars: [Ag]\n     Got:           [Ag, Fel, I, T, WP]",
+    "  ❌ Envoy → Ambassador\n     Expected chars: [Fel]\n     Got:           [Ag, Fel, I, Int, T, WP]",
+    "  ❌ Wizard → Wizard’s Apprentice\n     Expected chars: [BS, Fel, WP]\n     Got:           [I, Int, WP]",
+    "  ❌ Wizard → Wizard\n     Expected chars: [Dex]\n     Got:           [I, Int, T, WP]",
+    "  ❌ Wizard → Master Wizard\n     Expected chars: [Ag]\n     Got:           [Dex, I, Int, T, WP]",
+    "  ❌ Wizard → Wizard Lord\n     Expected chars: [Def]\n     Got:           [Dex, I, Int, S, T, WP]",
+    "  ❌ Riverwoman → Greenfish\n     Expected chars: [Dex, I, Int]\n     Got:           [Ag, S, T]",
+    "  ❌ Riverwoman → Riverwoman\n     Expected chars: [BS]\n     Got:           [Ag, I, S, T]",
+    "  ❌ Riverwoman → Riverwise\n     Expected chars: [Ag]\n     Got:           [Ag, I, S, T, WS]",
+    "  ❌ Riverwoman → River Elder\n     Expected chars: [Def]\n     Got:           [Ag, I, S, T, WP, WS]",
+    "  ❌ Noble → Scion\n     Expected chars: [Ag, BS, Int]\n     Got:           [Fel, I, WS]",
+    "  ❌ Noble → Noble\n     Expected chars: [Def]\n     Got:           [Fel, I, Int, WS]",
+    "  ❌ Noble → Magnate\n     Expected chars: [WP]\n     Got:           [Ag, Fel, I, Int, WS]",
+    "  ❌ Noble → Noble Lord\n     Expected chars: [Fel]\n     Got:           [Ag, Fel, I, Int, WP, WS]",
+    "  ❌ Fence → Broker\n     Expected chars: [Ag, Def, Dex]\n     Got:           [Fel, I, Int]",
+    "  ❌ Fence → Fence\n     Expected chars: [WP]\n     Got:           [Ag, Fel, I, Int]",
+    "  ❌ Fence → Master Fence\n     Expected chars: [WP]\n     Got:           [Ag, Dex, Fel, I, Int]",
+    "  ❌ Fence → Black Marketeer\n     Expected chars: [Fel]\n     Got:           [Ag, Dex, Fel, I, Int, WP]",
+    "  ❌ Warrior Priest → Novitiate\n     Expected chars: [BS, Fel, I]\n     Got:           [T, WP, WS]",
+    "  ❌ Warrior Priest → Warrior Priest\n     Expected chars: [T]\n     Got:           [S, T, WP, WS]",
+    "  ❌ Warrior Priest → Priest Sergeant\n     Expected chars: [Ag]\n     Got:           [I, S, T, WP, WS]",
+    "  ❌ Warrior Priest → Priest Captain\n     Expected chars: [Def]\n     Got:           [Fel, I, S, T, WP, WS]",
+    "  ❌ Engineer → Student Engineer\n     Expected chars: [Int, S, WP]\n     Got:           [BS, Dex, Int]",
+    "  ❌ Engineer → Engineer\n     Expected chars: [Ag]\n     Got:           [BS, Dex, Int, S]",
+    "  ❌ Engineer → Master Engineer\n     Expected chars: [I]\n     Got:           [BS, Dex, I, Int, S]",
+    "  ❌ Engineer → Chartered Engineer\n     Expected chars: [Fel]\n     Got:           [BS, Dex, I, Int, S, T]",
+    "  ❌ Hunter → Trapper\n     Expected chars: [I, Int, T]\n     Got:           [Ag, BS, I]",
+    "  ❌ Hunter → Hunter\n     Expected chars: [S]\n     Got:           [Ag, BS, I, S]",
+    "  ❌ Hunter → Tracker\n     Expected chars: [Ag]\n     Got:           [Ag, BS, I, S, T]",
+    "  ❌ Hunter → Huntsmaster\n     Expected chars: [WP]\n     Got:           [Ag, BS, I, S, T, WP]",
+    "  ❌ Apothecary → Apothecary's Apprentice\n     Expected chars: [I, Int, WP]\n     Got:           [Dex, Int, T]",
+    "  ❌ Apothecary → Apothecary\n     Expected chars: [Def]\n     Got:           [Dex, I, Int, T]",
+    "  ❌ Apothecary → Master Apothecary\n     Expected chars: [Ag]\n     Got:           [Dex, I, Int, S, T]",
+    "  ❌ Apothecary → Apothecary-General\n     Expected chars: [Fel]\n     Got:           [Dex, I, Int, S, T, WP]",
+    "  ❌ Riverwarden → River Recruit\n     Expected chars: [Def, S, T]\n     Got:           [S, T, WS]",
+    "  ❌ Riverwarden → Riverwarden\n     Expected chars: [BS]\n     Got:           [I, S, T, WS]",
+    "  ❌ Riverwarden → Shipsword\n     Expected chars: [Ag]\n     Got:           [Ag, I, S, T, WS]",
+    "  ❌ Riverwarden → Shipsword Master\n     Expected chars: [WP]\n     Got:           [Ag, BS, I, S, T, WS]",
+    "  ❌ Cavalryman → Horseman\n     Expected chars: [BS, Dex, T]\n     Got:           [Ag, BS, I, WS]",
+    "  ❌ Cavalryman → Cavalryman\n     Expected chars: [S]\n     Got:           [Ag, BS, I, S, WS]",
+    "  ❌ Cavalryman → Cavalry Sergeant\n     Expected chars: [Ag]\n     Got:           [Ag, BS, I, S, T, WS]",
+    "  ❌ Cavalryman → Cavalry Officer\n     Expected chars: [Def]\n     Got:           [Ag, BS, I, Int, S, T, WS]",
+    "  ❌ Grave Robber → Body Snatcher\n     Expected chars: [Ag, Fel, T]\n     Got:           [Ag, I, WP]",
+    "  ❌ Grave Robber → Grave Robber\n     Expected chars: [BS]\n     Got:           [Ag, I, S, WP]",
+    "  ❌ Grave Robber → Tomb Robber\n     Expected chars: [Int]\n     Got:           [Ag, I, S, T, WP]",
+    "  ❌ Grave Robber → Treasure Hunter\n     Expected chars: [WP]\n     Got:           [Ag, I, Int, S, T, WP]",
+    "  ❌ Artist → Apprentice Artist\n     Expected chars: [Ag, Int, T]\n     Got:           [Dex, Fel, I]",
+    "  ❌ Artist → Artist\n     Expected chars: [Def]\n     Got:           [Ag, Dex, Fel, I]",
+    "  ⚠️  Artist → Artist skills\n     Expected: 6, Got: 7",
+    "  ❌ Artist → Master Artist\n     Expected chars: [Fel]\n     Got:           [Ag, Dex, Fel, I, WP]",
+    "  ❌ Artist → Maestro\n     Expected chars: [WP]\n     Got:           [Ag, Dex, Fel, I, Int, WP]",
+    "  ❌ Servant → Menial\n     Expected chars: [Dex, I, T]\n     Got:           [Ag, I, S]",
+    "  ❌ Servant → Servant\n     Expected chars: [Ag]\n     Got:           [Ag, I, S, T]",
+    "  ❌ Servant → Attendant\n     Expected chars: [WP]\n     Got:           [Ag, I, S, T, WP]",
+    "  ❌ Servant → Steward\n     Expected chars: [Def]\n     Got:           [Ag, Dex, I, S, T, WP]",
+    "  ❌ Entertainer → Busker\n     Expected chars: [Def, Dex, Int]\n     Got:           [Ag, Dex, Fel]",
+    "  ❌ Entertainer → Entertainer\n     Expected chars: [BS]\n     Got:           [Ag, Dex, Fel, WP]",
+    "  ❌ Entertainer → Troubadour\n     Expected chars: [S]\n     Got:           [Ag, Dex, Fel, I, WP]",
+    "  ❌ Entertainer → Troupe Leader\n     Expected chars: [I]\n     Got:           [Ag, Dex, Fel, I, WP, WS]",
+    "  ❌ Agitator → Pamphleteer\n     Expected chars: [Def, S, WP]\n     Got:           [BS, Fel, I]",
+    "  ❌ Agitator → Agitator\n     Expected chars: [Dex]\n     Got:           [Ag, BS, Fel, I]",
+    "  ❌ Agitator → Rabble Rouser\n     Expected chars: [BS]\n     Got:           [Ag, BS, Fel, I, WP]",
+    "  ❌ Agitator → Demagogue\n     Expected chars: [Ag]\n     Got:           [Ag, BS, Fel, I, Int, WP]",
+    "  ❌ Wrecker → Cargo Scavenger\n     Expected chars: [Ag, BS, T]\n     Got:           [S, T, WS]",
+    "  ❌ Wrecker → Wrecker\n     Expected chars: [Fel]\n     Got:           [I, S, T, WS]",
+    "  ❌ Wrecker → River Pirate\n     Expected chars: [S]\n     Got:           [Ag, I, S, T, WS]",
+    "  ❌ Wrecker → Wrecker Captain\n     Expected chars: [Def]\n     Got:           [Ag, I, S, T, WP, WS]",
+    "  ❌ Villager → Peasant\n     Expected chars: [Dex, I, T]\n     Got:           [S, T, WP]",
+    "  ❌ Villager → Villager\n     Expected chars: [BS]\n     Got:           [S, T, WP, WS]",
+    "  ⚠️  Villager → Villager tier/standing\n     Expected: Brass 2\n     Got:      Brass 3",
+    "  ⚠️  Villager → Villager skills\n     Expected: 6, Got: 5",
+    "  ❌ Villager → Councillor\n     Expected chars: [Def]\n     Got:           [I, S, T, WP, WS]",
+    "  ❌ Villager → Village Elder\n     Expected chars: [WP]\n     Got:           [Fel, I, S, T, WP, WS]",
+    "  ❌ Knight → Squire\n     Expected chars: [Ag, Dex, T]\n     Got:           [S, T, WS]",
+    "  ❌ Knight → Knight\n     Expected chars: [BS]\n     Got:           [I, S, T, WS]",
+    "  ❌ Knight → First Knight\n     Expected chars: [Fel]\n     Got:           [Ag, I, S, T, WS]",
+    "  ❌ Knight → Knight of the Inner Circle\n     Expected chars: [Def]\n     Got:           [Ag, I, S, T, WP, WS]",
+    "  ❌ Priest → Initiate\n     Expected chars: [Dex, Fel, I]\n     Got:           [Fel, T, WP]",
+    "  ❌ Priest → Priest\n     Expected chars: [Def]\n     Got:           [Fel, I, T, WP]",
+    "  ❌ Priest → High Priest\n     Expected chars: [WP]\n     Got:           [Fel, I, T, WP, WS]",
+    "  ❌ Priest → Lector\n     Expected chars: [Ag]\n     Got:           [Fel, I, S, T, WP, WS]",
+    "  ❌ Smuggler → River Runner\n     Expected chars: [Dex, Fel, Int]\n     Got:           [Ag, Dex, I]",
+    "  ⚠️  Smuggler → River Runner skills\n     Expected: 8, Got: 9",
+    "  ❌ Smuggler → Smuggler\n     Expected chars: [Ag]\n     Got:           [Ag, Dex, I, Int]",
+    "  ⚠️  Smuggler → Smuggler skills\n     Expected: 6, Got: 7",
+    "  ❌ Smuggler → Master Smuggler\n     Expected chars: [WP]\n     Got:           [Ag, Dex, I, Int, WS]",
+    "  ❌ Smuggler → Smuggler King\n     Expected chars: [Def]\n     Got:           [Ag, Dex, I, Int, T, WS]",
+    "  ❌ Witch Hunter → Interrogator\n     Expected chars: [BS, Fel, I]\n     Got:           [I, WP, WS]",
+    "  ❌ Witch Hunter → Witch Hunter\n     Expected chars: [S]\n     Got:           [BS, I, WP, WS]",
+    "  ❌ Witch Hunter → Inquisitor\n     Expected chars: [Def]\n     Got:           [Ag, BS, I, WP, WS]",
+    "  ❌ Witch Hunter → Witchfinder General\n     Expected chars: [WP]\n     Got:           [Ag, BS, I, T, WP, WS]",
+    "  ❌ Pit Fighter → Pugilist\n     Expected chars: [BS, I, T]\n     Got:           [S, T, WS]",
+    "  ❌ Pit Fighter → Pit Fighter\n     Expected chars: [Ag]\n     Got:           [I, S, T, WS]",
+    "  ⚠️  Pit Fighter → Pit Fighter skills\n     Expected: 6, Got: 7",
+    "  ❌ Pit Fighter → Pit Champion\n     Expected chars: [Dex]\n     Got:           [Ag, I, S, T, WS]",
+    "  ❌ Pit Fighter → Pit Legend\n     Expected chars: [Def]\n     Got:           [Ag, I, S, T, WP, WS]",
+    "  ❌ Boatman → Boat-hand\n     Expected chars: [Dex, I, T]\n     Got:           [Ag, S, T]",
+    "  ❌ Boatman → Boatman\n     Expected chars: [Ag]\n     Got:           [Ag, S, T, WS]",
+    "  ❌ Boatman → Bargeswain\n     Expected chars: [Int]\n     Got:           [Ag, I, S, T, WS]",
+    "  ❌ Boatman → Barge Master\n     Expected chars: [WP]\n     Got:           [Ag, I, S, T, WP, WS]",
+    "  ⚠️  Soldier → Officer tier/standing\n     Expected: Gold 1\n     Got:      Gold 7",
+    "  ❌ Rat Catcher → Rat Hunter\n     Expected chars: [BS, Fel, S]\n     Got:           [BS, T, WS]",
+    "  ⚠️  Rat Catcher → Rat Hunter skills\n     Expected: 8, Got: 9",
+    "  ❌ Rat Catcher → Rat Catcher\n     Expected chars: [I]\n     Got:           [BS, S, T, WS]",
+    "  ❌ Rat Catcher → Sewer Jack\n     Expected chars: [Ag]\n     Got:           [BS, S, T, WP, WS]",
+    "  ❌ Rat Catcher → Exterminator\n     Expected chars: [T]\n     Got:           [BS, I, S, T, WP, WS]",
+    "  ❌ Herbalist → Herb Gatherer\n     Expected chars: [Ag, Dex, I]\n     Got:           [Dex, I, Int]",
+    "  ❌ Herbalist → Herbalist\n     Expected chars: [Int]\n     Got:           [Dex, I, Int, T]",
+    "  ❌ Herbalist → Herb Master\n     Expected chars: [Def]\n     Got:           [Ag, Dex, I, Int, T]",
+    "  ❌ Herbalist → Herbwise\n     Expected chars: [WP]\n     Got:           [Ag, Dex, I, Int, T, WP]",
+    "  ❌ Stevedore → Dockhand\n     Expected chars: [Ag, BS, I]\n     Got:           [S, T, WS]",
+    "  ❌ Stevedore → Stevedore\n     Expected chars: [T]\n     Got:           [I, S, T, WS]",
+    "  ❌ Stevedore → Foreman\n     Expected chars: [Fel]\n     Got:           [I, S, T, WP, WS]",
+    "  ⚠️  Stevedore → Foreman tier/standing\n     Expected: Silver 5\n     Got:      Silver 3",
+    "  ❌ Stevedore → Dock Master\n     Expected chars: [WP]\n     Got:           [Fel, I, S, T, WP, WS]",
+    "  ❌ Guard → Sentry\n     Expected chars: [BS, Dex, I]\n     Got:           [T, WP, WS]",
+    "  ❌ Guard → Guard\n     Expected chars: [Ag]\n     Got:           [S, T, WP, WS]",
+    "  ❌ Guard → Honor Guard\n     Expected chars: [T]\n     Got:           [I, S, T, WP, WS]",
+    "  ❌ Guard → Guard Officer\n     Expected chars: [WP]\n     Got:           [BS, I, S, T, WP, WS]",
+    "  ❌ Road Warden → Toll Keeper\n     Expected chars: [Ag, I, S]\n     Got:           [BS, I, WS]",
+    "  ❌ Road Warden → Road Warden\n     Expected chars: [BS]\n     Got:           [BS, I, T, WS]",
+    "  ❌ Road Warden → Road Sergeant\n     Expected chars: [Def]\n     Got:           [Ag, BS, I, T, WS]",
+    "  ❌ Road Warden → Road Captain\n     Expected chars: [WP]\n     Got:           [Ag, BS, I, S, T, WS]",
+    "  ❌ Warden → Custodian\n     Expected chars: [Fel, I, T]\n     Got:           [BS, I, WP]",
+    "  ⚠️  Warden → Custodian skills\n     Expected: 7, Got: 8",
+    "  ❌ Warden → Warden\n     Expected chars: [BS]\n     Got:           [BS, I, S, WP]",
+    "  ❌ Warden → Seneschal\n     Expected chars: [Def]\n     Got:           [BS, I, S, T, WP]",
+    "  ❌ Warden → Governor\n     Expected chars: [WP]\n     Got:           [BS, Fel, I, S, T, WP]",
+    "  ❌ Huffer → Riverguide\n     Expected chars: [Ag, BS, I]\n     Got:           [Ag, I, Int]",
+    "  ❌ Huffer → Huffer\n     Expected chars: [Fel]\n     Got:           [Ag, I, Int, T]",
+    "  ❌ Huffer → Pilot\n     Expected chars: [WP]\n     Got:           [Ag, I, Int, S, T]",
+    "  ❌ Huffer → Master Pilot\n     Expected chars: [Def]\n     Got:           [Ag, I, Int, S, T, WP]",
+    "  ❌ Bawd → Hustler\n     Expected chars: [Def, Dex, Int]\n     Got:           [Ag, Fel, I]",
+    "  ❌ Bawd → Bawd\n     Expected chars: [Ag]\n     Got:           [Ag, Fel, I, WP]",
+    "  ❌ Bawd → Procurer\n     Expected chars: [Fel]\n     Got:           [Ag, Fel, I, T, WP]",
+    "  ❌ Bawd → Ringleader\n     Expected chars: [WP]\n     Got:           [Ag, Fel, I, Int, T, WP]",
+    "  ❌ Protagonist → Braggart\n     Expected chars: [BS, Dex, I]\n     Got:           [I, S, WS]",
+    "  ❌ Protagonist → Protagonist\n     Expected chars: [Ag]\n     Got:           [I, S, T, WS]",
+    "  ❌ Protagonist → Hitman\n     Expected chars: [S]\n     Got:           [BS, I, S, T, WS]",
+    "  ❌ Protagonist → Assassin\n     Expected chars: [Def]\n     Got:           [Ag, BS, I, S, T, WS]",
+    "  ❌ Pedlar → Vagabond\n     Expected chars: [Fel, I, Int]\n     Got:           [Ag, Fel, T]",
+    "  ⚠️  Pedlar → Vagabond skills\n     Expected: 8, Got: 9",
+    "  ❌ Pedlar → Pedlar\n     Expected chars: [Def]\n     Got:           [Ag, Fel, I, T]",
+    "  ❌ Pedlar → Master Pedlar\n     Expected chars: [Ag]\n     Got:           [Ag, Fel, I, T, WP]",
+    "  ❌ Pedlar → Wandering Trader\n     Expected chars: [WP]\n     Got:           [Ag, Fel, I, T, WP, WS]",
+    "  ❌ Racketeer → Thug\n     Expected chars: [BS, I, T]\n     Got:           [S, T, WS]",
+    "  ❌ Racketeer → Racketeer\n     Expected chars: [Def]\n     Got:           [I, S, T, WS]",
+    "  ⚠️  Racketeer → Racketeer skills\n     Expected: 6, Got: 7",
+    "  ❌ Racketeer → Gang Boss\n     Expected chars: [Fel]\n     Got:           [I, S, T, WP, WS]",
+    "  ❌ Racketeer → Crime Lord\n     Expected chars: [WP]\n     Got:           [Fel, I, S, T, WP, WS]",
+    "  ❌ Mystic → Fortune Teller\n     Expected chars: [Ag, Def, Int]\n     Got:           [Fel, I, WP]",
+    "  ⚠️  Mystic → Fortune Teller skills\n     Expected: 9, Got: 8",
+    "  ❌ Mystic → Mystic\n     Expected chars: [Fel]\n     Got:           [Dex, Fel, I, WP]",
+    "  ❌ Mystic → Sage\n     Expected chars: [Dex]\n     Got:           [Dex, Fel, I, Int, WP]",
+    "  ❌ Mystic → Seer\n     Expected chars: [WP]\n     Got:           [Dex, Fel, I, Int, T, WP]",
+    "  ⚠️  Mystic → Seer tier/standing\n     Expected: Brass 4\n     Got:      Brass 5",
+    "  ❌ Slayer → Troll Slayer\n     Expected chars: [BS, Fel, T]\n     Got:           [S, T, WS]",
+    "  ❌ Slayer → Giant Slayer\n     Expected chars: [I]\n     Got:           [S, T, WP, WS]",
+    "  ❌ Slayer → Dragon Slayer\n     Expected chars: [Dex]\n     Got:           [I, S, T, WP, WS]",
+    "  ❌ Slayer → Daemon Slayer\n     Expected chars: [Ag]\n     Got:           [Ag, I, S, T, WP, WS]",
+    "❌ MISSING: \"Bounty Hunter\" in careers.json",
+    "  ❌ Charlatan → Swindler\n     Expected chars: [Ag, Def, Int]\n     Got:           [Dex, Fel, I]",
+    "  ❌ Charlatan → Charlatan\n     Expected chars: [Fel]\n     Got:           [Ag, Dex, Fel, I]",
+    "  ❌ Charlatan → Con Artist\n     Expected chars: [Dex]\n     Got:           [Ag, Dex, Fel, I, Int]",
+    "  ❌ Charlatan → Scoundrel\n     Expected chars: [WP]\n     Got:           [Ag, Dex, Fel, I, Int, WP]",
+    "❌ MISSING: \"Ghost Strider\" in careers.json",
+    "❌ MISSING: \"Fieldwarden\" in careers.json",
+    "❌ MISSING: \"Karak Ranger\" in careers.json",
+    "❌ MISSING: \"Badger Rider\" in careers.json",
+    "❌ MISSING: \"Archer\" in careers.json",
+    "❌ MISSING: \"Greatsword\" in careers.json",
+    "❌ MISSING: \"Halberdier\" in careers.json",
+    "❌ MISSING: \"Handgunner\" in careers.json",
+    "❌ MISSING: \"Artillerist\" in careers.json",
+    "❌ MISSING: \"Camp Follower\" in careers.json",
+    "❌ MISSING: \"Cartographer\" in careers.json",
+    "❌ MISSING: \"Freelance\" in careers.json",
+    "❌ MISSING: \"Knight of the Blazing Sun\" in careers.json",
+    "❌ MISSING: \"Knight of the White Wolf\" in careers.json",
+    "❌ MISSING: \"Knight Panther\" in careers.json",
+    "❌ MISSING: \"Light Cavalry\" in careers.json",
+    "❌ MISSING: \"Siege Specialist\" in careers.json",
+    "❌ MISSING: \"Pikeman\" in careers.json",
+    "❌ MISSING: \"Warrior Priest of Myrmidia\" in careers.json",
+    "❌ MISSING: \"Beadle\" in careers.json",
+    "❌ MISSING: \"Mundane Alchemist (Human)\" in careers.json",
+    "❌ MISSING: \"Mundane Alchemist (Dwarf, Halfling)\" in careers.json",
+    "❌ MISSING: \"Magister Vigilant\" in careers.json",
+    "❌ MISSING: \"Scryer\" in careers.json",
+    "❌ MISSING: \"Hierophant\" in careers.json",
+    "❌ MISSING: \"Alchemist\" in careers.json",
+    "❌ MISSING: \"Druid\" in careers.json",
+    "❌ MISSING: \"Astromancer\" in careers.json",
+    "❌ MISSING: \"Shadowmancer\" in careers.json",
+    "❌ MISSING: \"Spiriter\" in careers.json",
+    "❌ MISSING: \"Pyromancer\" in careers.json",
+    "❌ MISSING: \"Shaman\" in careers.json",
+    "❌ MISSING: \"Maneater\" in careers.json",
+    "❌ MISSING: \"Rhinox Herder\" in careers.json",
+    "❌ MISSING: \"Ogre Butcher\" in careers.json",
+    "❌ MISSING: \"Priest of Handrich\" in careers.json",
+    "❌ MISSING: \"Priest of Solkan\" in careers.json",
+    "❌ MISSING: \"Priestesses of Rhya\" in careers.json",
+    "❌ MISSING: \"Wolf Kin\" in careers.json",
+    "❌ MISSING: \"Owler\" in careers.json",
+    "❌ MISSING: \"Beachcomber\" in careers.json",
+    "❌ MISSING: \"Chantyman\" in careers.json",
+    "❌ MISSING: \"Huffer (Sea)\" in careers.json",
+    "❌ MISSING: \"Officer\" in careers.json",
+    "❌ MISSING: \"Sailor\" in careers.json",
+    "❌ MISSING: \"Sailor-Priest of Manann\" in careers.json",
+    "❌ MISSING: \"Ship's Gunner\" in careers.json",
+    "❌ MISSING: \"Ship's Gunner (High Elf)\" in careers.json",
+    "❌ MISSING: \"Wrecker (Sea)\" in careers.json",
+    "❌ MISSING: \"Priests of Stromfel\" in careers.json",
+    "❌ MISSING: \"Interpreter\" in careers.json",
+    "❌ MISSING: \"Oracle\" in careers.json",
+    "❌ MISSING: \"Survivalist\" in careers.json",
+    "❌ MISSING: \"Trailblazer\" in careers.json",
+    "❌ MISSING: \"Cult Magus of Tzeentch\" in careers.json",
+    "❌ MISSING: \"Warrior of Tzeentch\" in careers.json",
+    "❌ MISSING: \"Ironbreakers\" in careers.json",
+    "❌ MISSING: \"Hedge Witch - Animal Doctor\" in careers.json",
+    "❌ MISSING: \"Dwarf Engineer - Guild Engineer\" in careers.json",
+    "❌ MISSING: \"Dwarf Engineer - Outcast Engineer\" in careers.json",
+    "❌ MISSING: \"Dwarf Engineer - Sky Pilot\" in careers.json",
+    "❌ MISSING: \"Dwarf Artillerist - Guild Engineer\" in careers.json",
+    "❌ MISSING: \"Dwarf Artillerist - Outcast Engineer\" in careers.json",
+    "❌ MISSING: \"Dwarf Lawyer - Reckoner\" in careers.json",
+    "❌ MISSING: \"Dwarf Lawyer - Grudgemaster\" in careers.json",
+    "❌ MISSING: \"Dwarf Artisan \" in careers.json",
+    "❌ MISSING: \"Dwarf Miner - Karak Miner\" in careers.json",
+    "❌ MISSING: \"Dwarf Miner - Lodefinder\" in careers.json",
+    "❌ MISSING: \"Dwarf Messenger\" in careers.json",
+    "❌ MISSING: \"Slayer - Brother of Grimnir\" in careers.json",
+    "❌ MISSING: \"Slayer - Doomseeker\" in careers.json",
+    "❌ MISSING: \"Slayer - War-mourner\" in careers.json",
+    "❌ MISSING: \"Dwarf Soldier - Axefighter\" in careers.json",
+    "❌ MISSING: \"Dwarf Soldier - Quarreller\" in careers.json",
+    "❌ MISSING: \"Dwarf Soldier - Thunderer\" in careers.json",
+    "❌ MISSING: \"Dwarf Handgunner - Thunderer\" in careers.json",
+    "❌ MISSING: \"Brewer\" in careers.json",
+    "❌ MISSING: \"Doom Priest\" in careers.json",
+    "❌ MISSING: \"Forge Priest\" in careers.json",
+    "❌ MISSING: \"Hearth Priest\" in careers.json",
+    "❌ MISSING: \"Hammerer\" in careers.json",
+    "❌ MISSING: \"Ironbreaker\" in careers.json",
+    "❌ MISSING: \"Karak Ranger - v2\" in careers.json",
+    "❌ MISSING: \"Runescribe\" in careers.json",
+    "❌ MISSING: \"Runesmith\" in careers.json",
+    "❌ MISSING: \"Thane\" in careers.json",
+    "❌ MISSING: \"Thief-Priest\" in careers.json",
+    "❌ MISSING: \"Priest of Ranald\" in careers.json",
+    "❌ MISSING: \"Gambler-Priest\" in careers.json",
+    "❌ MISSING: \"Trickster-Priest\" in careers.json",
+    "❌ MISSING: \"Liberator-Priest\" in careers.json",
+    "❌ MISSING: \"Forger\" in careers.json",
+    "❌ MISSING: \"Ranger-Priest\" in careers.json",
+    "❌ MISSING: \"Muleskinner\" in careers.json",
+    "❌ MISSING: \"Gamekeeper\" in careers.json",
+    "❌ MISSING: \"Poacher\" in careers.json",
+    "❌ MISSING: \"High Elf Artisan\" in careers.json",
+    "❌ MISSING: \"High Elf Artillerist\" in careers.json",
+    "❌ MISSING: \"High Elf Cavalryman\" in careers.json",
+    "❌ MISSING: \"High Elf Light Cavalry\" in careers.json",
+    "❌ MISSING: \"High Elf Pit Fighter\" in careers.json",
+    "  ❌ Merchant → Trader\n     Expected chars: [Def, Dex, Fel]\n     Got:           [Fel, Int, WP]",
+    "  ❌ Merchant → Merchant\n     Expected chars: [WP]\n     Got:           [Fel, I, Int, WP]",
+    "  ❌ Merchant → Master Merchant\n     Expected chars: [Ag]\n     Got:           [Ag, Fel, I, Int, WP]",
+    "  ❌ Merchant → Merchant Prince\n     Expected chars: [BS]\n     Got:           [Ag, Fel, I, Int, T, WP]",
+    "❌ MISSING: \"High Elf Entertainer\" in careers.json",
+    "❌ MISSING: \"High Elf Seaman\" in careers.json",
+    "❌ MISSING: \"Sea Guard\" in careers.json",
+    "❌ MISSING: \"Swordmaster\" in careers.json",
+    "❌ MISSING: \"Shadow Warrior\" in careers.json",
+    "❌ MISSING: \"Merchant Adventurer\" in careers.json",
+    "❌ MISSING: \"Aestheticist\" in careers.json",
+    "❌ MISSING: \"Mage\" in careers.json",
+    "❌ MISSING: \"Smith-priest Of Vaul\" in careers.json",
+    "❌ MISSING: \"Storm Weaver\" in careers.json",
+    "❌ MISSING: \"Loremaster Of Hoeth\" in careers.json"
+  ],
+  "fixes": [
+    {
+      "career": "Merchant",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Def",
+        "Dex",
+        "Fel"
+      ],
+      "actual": [
+        "Fel",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Merchant",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Merchant",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Merchant",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Outlaw",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "BS",
+        "I",
+        "T"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "WS"
+      ]
+    },
+    {
+      "career": "Outlaw",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "S"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "S",
+        "WS"
+      ]
+    },
+    {
+      "career": "Outlaw",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "S",
+        "WS"
+      ]
+    },
+    {
+      "career": "Outlaw",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Hedge Witch",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "I",
+        "Int"
+      ],
+      "actual": [
+        "Dex",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Hedge Witch",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Dex",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Hedge Witch",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Dex",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Hedge Witch",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Dex",
+        "Fel",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Watchman",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "BS",
+        "Def",
+        "T"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Watchman",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Watchman",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Watchman",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Duellist",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "BS",
+        "Dex"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "WS"
+      ]
+    },
+    {
+      "career": "Duellist",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "S"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "WS"
+      ]
+    },
+    {
+      "career": "Duellist",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "T"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "S",
+        "WS"
+      ]
+    },
+    {
+      "career": "Duellist",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "Dex",
+        "I",
+        "S",
+        "WS"
+      ]
+    },
+    {
+      "career": "Thief",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "Dex",
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "I"
+      ]
+    },
+    {
+      "career": "Thief",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Int"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Thief",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "T"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "I",
+        "Int",
+        "WS"
+      ]
+    },
+    {
+      "career": "Thief",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "I",
+        "Int",
+        "S",
+        "WS"
+      ]
+    },
+    {
+      "career": "Spy",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Def",
+        "Dex",
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "Int"
+      ]
+    },
+    {
+      "career": "Spy",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Spy",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Spy",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Messenger",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "Dex",
+        "I"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "WP"
+      ]
+    },
+    {
+      "career": "Messenger",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Messenger",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Messenger",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "Fel",
+        "I",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Investigator",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "Dex",
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Investigator",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Investigator",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Int"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Investigator",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Witch",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "BS",
+        "Fel",
+        "I"
+      ],
+      "actual": [
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Witch",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Witch",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Witch",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Bailiff",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "BS",
+        "Fel"
+      ],
+      "actual": [
+        "Fel",
+        "Int",
+        "WS"
+      ]
+    },
+    {
+      "career": "Bailiff",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "Int",
+        "WS"
+      ]
+    },
+    {
+      "career": "Bailiff",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Dex"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "Int",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Bailiff",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Coachman",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Fel",
+        "I",
+        "S"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "T"
+      ]
+    },
+    {
+      "career": "Coachman",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Dex"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "T"
+      ]
+    },
+    {
+      "career": "Coachman",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Coachman",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Miner",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Fel",
+        "I",
+        "T"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Miner",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Miner",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Miner",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Dex",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Physician",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Fel",
+        "Int",
+        "WP"
+      ],
+      "actual": [
+        "Dex",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Physician",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Dex",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Physician",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Dex",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Physician",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Dex"
+      ],
+      "actual": [
+        "Dex",
+        "Fel",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Beggar",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Def",
+        "Dex",
+        "I"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "T"
+      ]
+    },
+    {
+      "career": "Beggar",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "T"
+      ]
+    },
+    {
+      "career": "Beggar",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Beggar",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Flagellant",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "BS",
+        "I",
+        "T"
+      ],
+      "actual": [
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Flagellant",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Flagellant",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Flagellant",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Nun",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Def",
+        "Int",
+        "WP"
+      ],
+      "actual": [
+        "Fel",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Nun",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Nun",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "S",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Nun",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "I"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Advisor",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "Dex",
+        "I"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Advisor",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Advisor",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Advisor",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Scholar",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Fel",
+        "I",
+        "WP"
+      ],
+      "actual": [
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Scholar",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Scholar",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Dex",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Scholar",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Int"
+      ],
+      "actual": [
+        "Dex",
+        "Fel",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Seaman",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Def",
+        "Dex",
+        "Int"
+      ],
+      "actual": [
+        "Ag",
+        "S",
+        "T"
+      ]
+    },
+    {
+      "career": "Seaman",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "Ag",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Seaman",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Seaman",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Artisan",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "I",
+        "Int",
+        "T"
+      ],
+      "actual": [
+        "Dex",
+        "Int",
+        "S"
+      ]
+    },
+    {
+      "career": "Artisan",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Dex",
+        "Int",
+        "S",
+        "T"
+      ]
+    },
+    {
+      "career": "Artisan",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Dex",
+        "Int",
+        "S",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Artisan",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Dex",
+        "I",
+        "Int",
+        "S",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Lawyer",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "Int",
+        "WP"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Lawyer",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Lawyer",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Lawyer",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "I"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Scout",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "Dex",
+        "I"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I"
+      ]
+    },
+    {
+      "career": "Scout",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "S"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "T"
+      ]
+    },
+    {
+      "career": "Scout",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "S",
+        "T"
+      ]
+    },
+    {
+      "career": "Scout",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Int"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "Int",
+        "S",
+        "T"
+      ]
+    },
+    {
+      "career": "Townsman",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Def",
+        "Dex",
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "Int"
+      ]
+    },
+    {
+      "career": "Townsman",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Townsman",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Int"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Townsman",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Envoy",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Def",
+        "Dex",
+        "I"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "T"
+      ]
+    },
+    {
+      "career": "Envoy",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "T"
+      ]
+    },
+    {
+      "career": "Envoy",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Envoy",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Wizard",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "BS",
+        "Fel",
+        "WP"
+      ],
+      "actual": [
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Wizard",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Dex"
+      ],
+      "actual": [
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Wizard",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Dex",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Wizard",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Dex",
+        "I",
+        "Int",
+        "S",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Riverwoman",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Dex",
+        "I",
+        "Int"
+      ],
+      "actual": [
+        "Ag",
+        "S",
+        "T"
+      ]
+    },
+    {
+      "career": "Riverwoman",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T"
+      ]
+    },
+    {
+      "career": "Riverwoman",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Riverwoman",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Noble",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "BS",
+        "Int"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "WS"
+      ]
+    },
+    {
+      "career": "Noble",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "Int",
+        "WS"
+      ]
+    },
+    {
+      "career": "Noble",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int",
+        "WS"
+      ]
+    },
+    {
+      "career": "Noble",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Fence",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "Def",
+        "Dex"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Fence",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Fence",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Fence",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Warrior Priest",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "BS",
+        "Fel",
+        "I"
+      ],
+      "actual": [
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Warrior Priest",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "T"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Warrior Priest",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Warrior Priest",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Engineer",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Int",
+        "S",
+        "WP"
+      ],
+      "actual": [
+        "BS",
+        "Dex",
+        "Int"
+      ]
+    },
+    {
+      "career": "Engineer",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "BS",
+        "Dex",
+        "Int",
+        "S"
+      ]
+    },
+    {
+      "career": "Engineer",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "I"
+      ],
+      "actual": [
+        "BS",
+        "Dex",
+        "I",
+        "Int",
+        "S"
+      ]
+    },
+    {
+      "career": "Engineer",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "BS",
+        "Dex",
+        "I",
+        "Int",
+        "S",
+        "T"
+      ]
+    },
+    {
+      "career": "Hunter",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "I",
+        "Int",
+        "T"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I"
+      ]
+    },
+    {
+      "career": "Hunter",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "S"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "S"
+      ]
+    },
+    {
+      "career": "Hunter",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "S",
+        "T"
+      ]
+    },
+    {
+      "career": "Hunter",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "S",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Apothecary",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "I",
+        "Int",
+        "WP"
+      ],
+      "actual": [
+        "Dex",
+        "Int",
+        "T"
+      ]
+    },
+    {
+      "career": "Apothecary",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Dex",
+        "I",
+        "Int",
+        "T"
+      ]
+    },
+    {
+      "career": "Apothecary",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Dex",
+        "I",
+        "Int",
+        "S",
+        "T"
+      ]
+    },
+    {
+      "career": "Apothecary",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Dex",
+        "I",
+        "Int",
+        "S",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Riverwarden",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Def",
+        "S",
+        "T"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Riverwarden",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Riverwarden",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Riverwarden",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Cavalryman",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "BS",
+        "Dex",
+        "T"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "WS"
+      ]
+    },
+    {
+      "career": "Cavalryman",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "S"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "S",
+        "WS"
+      ]
+    },
+    {
+      "career": "Cavalryman",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Cavalryman",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "Int",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Grave Robber",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "Fel",
+        "T"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "WP"
+      ]
+    },
+    {
+      "career": "Grave Robber",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "WP"
+      ]
+    },
+    {
+      "career": "Grave Robber",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Int"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Grave Robber",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "Int",
+        "S",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Artist",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "Int",
+        "T"
+      ],
+      "actual": [
+        "Dex",
+        "Fel",
+        "I"
+      ]
+    },
+    {
+      "career": "Artist",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I"
+      ]
+    },
+    {
+      "career": "Artist",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "WP"
+      ]
+    },
+    {
+      "career": "Artist",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Servant",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Dex",
+        "I",
+        "T"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S"
+      ]
+    },
+    {
+      "career": "Servant",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T"
+      ]
+    },
+    {
+      "career": "Servant",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Servant",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "I",
+        "S",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Entertainer",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Def",
+        "Dex",
+        "Int"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel"
+      ]
+    },
+    {
+      "career": "Entertainer",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "WP"
+      ]
+    },
+    {
+      "career": "Entertainer",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "S"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "WP"
+      ]
+    },
+    {
+      "career": "Entertainer",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "I"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Agitator",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Def",
+        "S",
+        "WP"
+      ],
+      "actual": [
+        "BS",
+        "Fel",
+        "I"
+      ]
+    },
+    {
+      "career": "Agitator",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Dex"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "Fel",
+        "I"
+      ]
+    },
+    {
+      "career": "Agitator",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "Fel",
+        "I",
+        "WP"
+      ]
+    },
+    {
+      "career": "Agitator",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Wrecker",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "BS",
+        "T"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Wrecker",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Wrecker",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "S"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Wrecker",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Villager",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Dex",
+        "I",
+        "T"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Villager",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Villager",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Villager",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Knight",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "Dex",
+        "T"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Knight",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Knight",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Knight",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Priest",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Dex",
+        "Fel",
+        "I"
+      ],
+      "actual": [
+        "Fel",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Priest",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Priest",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Priest",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Smuggler",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Dex",
+        "Fel",
+        "Int"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "I"
+      ]
+    },
+    {
+      "career": "Smuggler",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Smuggler",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "I",
+        "Int",
+        "WS"
+      ]
+    },
+    {
+      "career": "Smuggler",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "I",
+        "Int",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Witch Hunter",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "BS",
+        "Fel",
+        "I"
+      ],
+      "actual": [
+        "I",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Witch Hunter",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "S"
+      ],
+      "actual": [
+        "BS",
+        "I",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Witch Hunter",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Witch Hunter",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Pit Fighter",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "BS",
+        "I",
+        "T"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Pit Fighter",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Pit Fighter",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Dex"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Pit Fighter",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Boatman",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Dex",
+        "I",
+        "T"
+      ],
+      "actual": [
+        "Ag",
+        "S",
+        "T"
+      ]
+    },
+    {
+      "career": "Boatman",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Boatman",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Int"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Boatman",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Rat Catcher",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "BS",
+        "Fel",
+        "S"
+      ],
+      "actual": [
+        "BS",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Rat Catcher",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "I"
+      ],
+      "actual": [
+        "BS",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Rat Catcher",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "BS",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Rat Catcher",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "T"
+      ],
+      "actual": [
+        "BS",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Herbalist",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "Dex",
+        "I"
+      ],
+      "actual": [
+        "Dex",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Herbalist",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Int"
+      ],
+      "actual": [
+        "Dex",
+        "I",
+        "Int",
+        "T"
+      ]
+    },
+    {
+      "career": "Herbalist",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "I",
+        "Int",
+        "T"
+      ]
+    },
+    {
+      "career": "Herbalist",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Stevedore",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "BS",
+        "I"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Stevedore",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "T"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Stevedore",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Stevedore",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Guard",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "BS",
+        "Dex",
+        "I"
+      ],
+      "actual": [
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Guard",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Guard",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "T"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Guard",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "BS",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Road Warden",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "I",
+        "S"
+      ],
+      "actual": [
+        "BS",
+        "I",
+        "WS"
+      ]
+    },
+    {
+      "career": "Road Warden",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "BS",
+        "I",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Road Warden",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Road Warden",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Warden",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Fel",
+        "I",
+        "T"
+      ],
+      "actual": [
+        "BS",
+        "I",
+        "WP"
+      ]
+    },
+    {
+      "career": "Warden",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "BS",
+        "I",
+        "S",
+        "WP"
+      ]
+    },
+    {
+      "career": "Warden",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "BS",
+        "I",
+        "S",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Warden",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "BS",
+        "Fel",
+        "I",
+        "S",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Huffer",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "BS",
+        "I"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Huffer",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "Int",
+        "T"
+      ]
+    },
+    {
+      "career": "Huffer",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "Int",
+        "S",
+        "T"
+      ]
+    },
+    {
+      "career": "Huffer",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "Int",
+        "S",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Bawd",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Def",
+        "Dex",
+        "Int"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I"
+      ]
+    },
+    {
+      "career": "Bawd",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "WP"
+      ]
+    },
+    {
+      "career": "Bawd",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Bawd",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Protagonist",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "BS",
+        "Dex",
+        "I"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "WS"
+      ]
+    },
+    {
+      "career": "Protagonist",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Protagonist",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "S"
+      ],
+      "actual": [
+        "BS",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Protagonist",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "BS",
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Pedlar",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Fel",
+        "I",
+        "Int"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "T"
+      ]
+    },
+    {
+      "career": "Pedlar",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "T"
+      ]
+    },
+    {
+      "career": "Pedlar",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Pedlar",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Racketeer",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "BS",
+        "I",
+        "T"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Racketeer",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Def"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Racketeer",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Racketeer",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Mystic",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "Def",
+        "Int"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "WP"
+      ]
+    },
+    {
+      "career": "Mystic",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Dex",
+        "Fel",
+        "I",
+        "WP"
+      ]
+    },
+    {
+      "career": "Mystic",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Dex"
+      ],
+      "actual": [
+        "Dex",
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Mystic",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Dex",
+        "Fel",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    },
+    {
+      "career": "Slayer",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "BS",
+        "Fel",
+        "T"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WS"
+      ]
+    },
+    {
+      "career": "Slayer",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "I"
+      ],
+      "actual": [
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Slayer",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Dex"
+      ],
+      "actual": [
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Slayer",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "I",
+        "S",
+        "T",
+        "WP",
+        "WS"
+      ]
+    },
+    {
+      "career": "Charlatan",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Ag",
+        "Def",
+        "Int"
+      ],
+      "actual": [
+        "Dex",
+        "Fel",
+        "I"
+      ]
+    },
+    {
+      "career": "Charlatan",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "Fel"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I"
+      ]
+    },
+    {
+      "career": "Charlatan",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Dex"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "Int"
+      ]
+    },
+    {
+      "career": "Charlatan",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Ag",
+        "Dex",
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Merchant",
+      "level": 0,
+      "field": "characteristics",
+      "expected": [
+        "Def",
+        "Dex",
+        "Fel"
+      ],
+      "actual": [
+        "Fel",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Merchant",
+      "level": 1,
+      "field": "characteristics",
+      "expected": [
+        "WP"
+      ],
+      "actual": [
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Merchant",
+      "level": 2,
+      "field": "characteristics",
+      "expected": [
+        "Ag"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int",
+        "WP"
+      ]
+    },
+    {
+      "career": "Merchant",
+      "level": 3,
+      "field": "characteristics",
+      "expected": [
+        "BS"
+      ],
+      "actual": [
+        "Ag",
+        "Fel",
+        "I",
+        "Int",
+        "T",
+        "WP"
+      ]
+    }
+  ]
+}
