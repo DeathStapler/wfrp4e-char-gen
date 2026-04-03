@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "A web-based character generator for Warhammer Fantasy Roleplay 4e",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p ${PORT:-30005}",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p ${PORT:-30005}",
     "lint": "next lint",
     "test": "vitest",
     "test:coverage": "vitest --coverage"

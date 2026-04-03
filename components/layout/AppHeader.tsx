@@ -7,7 +7,7 @@ import { OpenRouterSettingsModal } from "@/components/settings/OpenRouterSetting
 
 export function AppHeader() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { apiKey, model } = useOpenRouterSettings();
+  const { apiKey, model, apiCallCount } = useOpenRouterSettings();
   const hasApiKey = apiKey.length > 0;
 
   // Derive a short display name from the model ID
@@ -35,11 +35,14 @@ export function AppHeader() {
             {/* Active model badge — shown when API key + model are set */}
             {hasApiKey && modelLabel && (
               <span
-                className="hidden sm:inline-flex items-center gap-1.5 rounded border border-amber-800/50 bg-gray-900/80 px-2 py-0.5 text-xs text-amber-400 font-mono max-w-[220px] truncate"
+                className="hidden sm:inline-flex items-center gap-1.5 rounded border border-amber-800/50 bg-gray-900/80 px-2 py-0.5 text-xs text-amber-400 font-mono max-w-[260px] truncate"
                 title={model}
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-green-500 shrink-0" />
                 {modelLabel}
+                {apiCallCount > 0 && (
+                  <span className="text-gray-500 shrink-0">· {apiCallCount}</span>
+                )}
               </span>
             )}
 

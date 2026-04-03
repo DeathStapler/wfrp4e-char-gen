@@ -224,24 +224,33 @@ export default function CharacterSheetPage({
               <tbody>
                 {/* Base + advances row */}
                 <tr className="border-b border-gray-800/40">
+                  {CHAR_KEYS.map((k) => (
+                    <td key={k} className="px-2 py-1.5 text-xs text-gray-400">
+                      {character.characteristicBases[k] ?? 0}
+                      {(character.characteristicAdvances[k] ?? 0) > 0 && (
+                        <span className="text-amber-400">
+                          +{character.characteristicAdvances[k]}
+                        </span>
+                      )}
+                    </td>
+                  ))}
+                </tr>
+                {/* Talent bonus row */}
+                <tr className="border-b border-gray-800/40">
                   {CHAR_KEYS.map((k) => {
                     const talentBonus = getCharTalentBonus(k);
                     const talentLabel = talentBonus > 0 ? getCharTalentBonusLabel(k) : "";
                     return (
-                      <td key={k} className="px-2 py-1.5 text-xs text-gray-400">
-                        {character.characteristicBases[k] ?? 0}
-                        {(character.characteristicAdvances[k] ?? 0) > 0 && (
-                          <span className="text-amber-400">
-                            +{character.characteristicAdvances[k]}
-                          </span>
-                        )}
-                        {talentBonus > 0 && (
+                      <td key={k} className="px-2 py-1 text-xs">
+                        {talentBonus > 0 ? (
                           <span
-                            className="text-emerald-500/80 ml-0.5"
+                            className="text-emerald-500/80"
                             title={`+${talentBonus} from ${talentLabel}`}
                           >
                             +{talentBonus}✦
                           </span>
+                        ) : (
+                          <span className="text-gray-700">—</span>
                         )}
                       </td>
                     );
@@ -269,8 +278,7 @@ export default function CharacterSheetPage({
               </tbody>
             </table>
             <p className="px-3 py-1.5 text-xs text-gray-400 border-t border-gray-800">
-              Row 1: Starting + Advances&nbsp;&nbsp;·&nbsp;&nbsp;Row 2:
-              Total&nbsp;&nbsp;·&nbsp;&nbsp;Row 3: Bonus (÷10)&nbsp;&nbsp;·&nbsp;&nbsp;<span className="text-emerald-400">✦ = talent bonus</span>
+              Row 1: Starting + Advances&nbsp;&nbsp;·&nbsp;&nbsp;Row 2: Talent Bonus&nbsp;&nbsp;·&nbsp;&nbsp;Row 3: Total&nbsp;&nbsp;·&nbsp;&nbsp;Row 4: Bonus (÷10)
             </p>
           </div>
         </section>

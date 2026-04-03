@@ -202,7 +202,7 @@ export function CharacterWizard({
     ];
 
     const characteristicBases = Object.fromEntries(
-      CHAR_KEYS.map((k) => [k, character.characteristicRolls[k] ?? 0])
+      CHAR_KEYS.map((k) => [k, (species.characteristics[k] ?? 0) + (character.characteristicRolls[k] ?? 0)])
     ) as Record<CharacteristicKey, number>;
 
     const characteristicAdvances = Object.fromEntries(

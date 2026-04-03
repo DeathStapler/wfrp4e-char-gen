@@ -7,8 +7,8 @@
 import skillData from '@/data/hammergen-skill.json';
 
 // Build lookup tables at module load time
-let skillLookup: Record<number, string> | null = null;
-let talentLookup: Record<number, string> | null = null;
+let skillLookup: Record<string, string> | null = null;
+let talentLookup: Record<string, string> | null = null;
 let characteristicMap: Record<number, string> | null = null;
 
 /**
@@ -31,7 +31,7 @@ const CHARACTERISTICS: Record<number, string> = {
 /**
  * Build skill lookup on first use
  */
-function getSkillLookup(): Record<number, string> {
+function getSkillLookup(): Record<string, string> {
   if (skillLookup) return skillLookup;
 
   skillLookup = {};
@@ -52,7 +52,7 @@ function getSkillLookup(): Record<number, string> {
 /**
  * Build talent lookup (future: populate when talents data is available)
  */
-function getTalentLookup(): Record<number, string> {
+function getTalentLookup(): Record<string, string> {
   if (talentLookup) return talentLookup;
   talentLookup = {};
   // TODO: Parse talents from hammergen data when available

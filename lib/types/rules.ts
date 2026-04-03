@@ -401,6 +401,13 @@ export interface Career {
   careerClass: CareerClass
 
   /**
+   * Species that may enter this career during character creation,
+   * based on the Random Class and Career Table (WFRP 4e Core Rulebook p.26).
+   * If undefined, all species are eligible (treat as open access).
+   */
+  species?: string[]
+
+  /**
    * The four career levels, in order from 1 (Recruit/Apprentice) to 4 (Master).
    * Must always contain exactly 4 levels.
    */

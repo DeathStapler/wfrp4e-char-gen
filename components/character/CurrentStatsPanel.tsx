@@ -20,13 +20,13 @@ function findSkillData(skillName: string): Skill | undefined {
   }
 }
 
-function Tooltip({ children, content }: { children: React.ReactNode; content: string | undefined }) {
+function Tooltip({ children, content }: { children: React.ReactNode; content: React.ReactNode | undefined }) {
   if (!content) return <>{children}</>;
   return (
     <span className="relative group/tip cursor-help">
       {children}
       <span
-        className="absolute left-full top-0 ml-2 z-50 w-60 rounded-md bg-gray-950 border border-gray-700 px-3 py-2 text-xs text-gray-200 shadow-xl opacity-0 group-hover/tip:opacity-100 transition-opacity duration-150 pointer-events-none leading-relaxed whitespace-normal"
+        className="absolute left-full top-1/2 -translate-y-1/2 ml-2.5 z-50 w-72 rounded-lg bg-gray-900 border border-gray-700/80 shadow-2xl shadow-black/50 opacity-0 group-hover/tip:opacity-100 transition-opacity duration-150 pointer-events-none"
         role="tooltip"
       >
         {content}
@@ -65,10 +65,18 @@ export function CurrentStatsPanel({
   career = null,
   species = null,
 }: CurrentStatsPanelProps) {
+  // Resolve "Lore (any)" → "Lore (Science)" using customSpecialisation
+  const resolvedCareerAllocation = careerSkillAllocation.map(a =>
+    a.customSpecialisation
+      ? { ...a, skillId: a.skillId.replace(" (any)", ` (${a.customSpecialisation})`) }
+      : a
+  );
+  const resolvedCareerSkillIds = resolvedCareerAllocation.map(a => a.skillId);
+
   // Merge species + career skills for display
   const allSkillNames = Array.from(new Set([
     ...speciesSkills.map((s) => s.skillName),
-    ...careerSkills,
+    ...resolvedCareerSkillIds,
   ]));
 
   return (
@@ -158,17 +166,31 @@ export function CurrentStatsPanel({
           <div className="px-3 py-2 space-y-0.5">
             {allSkillNames.map((skillName) => {
               const speciesAdv = speciesSkills.find((s) => s.skillName === skillName)?.advances ?? 0;
-              const careerAdv = careerSkillAllocation.find((a) => a.skillId === skillName)?.advances ?? 0;
+              const careerAdv = resolvedCareerAllocation.find((a) => a.skillId === skillName)?.advances ?? 0;
               const total = speciesAdv + careerAdv;
-              const isCareer = careerSkills.includes(skillName);
+              const isCareer = resolvedCareerSkillIds.includes(skillName) || careerSkills.includes(skillName);
               const skill = findSkillData(skillName);
-              const tooltipText = skill
-                ? `${skill.characteristic} skill${skill.advanced ? " (Advanced)" : ""}${skill.description ? `\n${skill.description}` : ""}`
-                : undefined;
+              const tooltipContent = skill ? (
+                <div className="p-3 space-y-2">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-amber-900/50 text-amber-300 border border-amber-700/40 uppercase tracking-wide">
+                      {skill.characteristic}
+                    </span>
+                    {skill.advanced && (
+                      <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-sky-900/40 text-sky-300 border border-sky-700/40 uppercase tracking-wide">
+                        Advanced
+                      </span>
+                    )}
+                  </div>
+                  {skill.description && (
+                    <p className="text-xs text-gray-300 leading-relaxed">{skill.description}</p>
+                  )}
+                </div>
+              ) : undefined;
 
               return (
                 <div key={skillName} className="flex items-center justify-between py-0.5">
-                  <Tooltip content={tooltipText}>
+                  <Tooltip content={tooltipContent}>
                     <span className={`text-xs truncate max-w-[140px] ${isCareer ? "text-amber-200/80" : "text-gray-400"}`}>
                       {skillName}
                     </span>
@@ -192,15 +214,39 @@ export function CurrentStatsPanel({
           <div className="px-3 py-2 space-y-0.5">
             {talentIds.map((id) => {
               const talent = typedTalentsData.find((t) => t.id === id);
-              const name = talent?.name ?? id;
-              const tooltipParts = [];
-              if (talent?.tests) tooltipParts.push(`Tests: ${talent.tests}`);
-              if (talent?.description) tooltipParts.push(talent.description);
-              const tooltipText = tooltipParts.length > 0 ? tooltipParts.join("\n\n") : undefined;
+              // Handle grouped talents stored as slugs (e.g. "acute-sense-sight" → "Acute Sense (Sight)")
+              const groupedBase = !talent ? typedTalentsData.find((t) => id.startsWith(t.id + '-')) : undefined;
+              const resolvedTalent = talent ?? groupedBase;
+              let name: string;
+              if (talent) {
+                name = talent.name;
+              } else if (groupedBase) {
+                const suffix = id.slice(groupedBase.id.length + 1);
+                const option = suffix.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                name = `${groupedBase.name} (${option})`;
+              } else {
+                name = id;
+              }
+              const tooltipContent = (resolvedTalent?.tests || resolvedTalent?.description) ? (
+                <div className="p-3 space-y-2">
+                  {resolvedTalent.tests && (
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] text-gray-500 uppercase tracking-wider shrink-0">Tests</span>
+                      <span className="text-xs text-amber-300 font-medium">{resolvedTalent.tests}</span>
+                    </div>
+                  )}
+                  {resolvedTalent.tests && resolvedTalent.description && (
+                    <div className="border-t border-gray-700/60" />
+                  )}
+                  {resolvedTalent.description && (
+                    <p className="text-xs text-gray-300 leading-relaxed">{resolvedTalent.description}</p>
+                  )}
+                </div>
+              ) : undefined;
 
               return (
                 <div key={id} className="py-0.5">
-                  <Tooltip content={tooltipText}>
+                  <Tooltip content={tooltipContent}>
                     <span className="text-xs text-purple-300/80 truncate max-w-[160px] inline-block">
                       {name}
                     </span>

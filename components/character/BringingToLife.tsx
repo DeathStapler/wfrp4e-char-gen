@@ -63,7 +63,7 @@ export function BringingToLife({
   onBack,
 }: BringingToLifeProps) {
   const [backstory, setBackstory] = useState<CharacterBackstory>(initialBackstory);
-  const { apiKey, model } = useOpenRouterSettings();
+  const { apiKey, model, incrementApiCallCount } = useOpenRouterSettings();
   const [isGenerating, setIsGenerating] = useState(false);
   const [generateError, setGenerateError] = useState<string | null>(null);
 
@@ -121,6 +121,8 @@ Return ONLY a valid JSON object with these exact keys (no extra text, no markdow
         if (response.status === 401) throw new Error('Invalid API key — check your settings');
         throw new Error(`API request failed: ${response.status}`);
       }
+
+      incrementApiCallCount();
 
       const data = await response.json() as {
         choices?: Array<{ message?: { content?: string } }>

@@ -208,7 +208,7 @@ export function CharacterDetails({
   const [rollResults, setRollResults] = useState<Partial<Record<RollableField, FieldRollResult>>>({})
 
   // OpenRouter settings for name generation
-  const { apiKey, model } = useOpenRouterSettings()
+  const { apiKey, model, incrementApiCallCount } = useOpenRouterSettings()
 
   // Name generation state
   const [showNamePicker, setShowNamePicker] = useState(false)
@@ -403,6 +403,8 @@ export function CharacterDetails({
         if (response.status === 401) throw new Error('Invalid API key — check your settings')
         throw new Error(`API request failed: ${response.status}`)
       }
+
+      incrementApiCallCount()
 
       const data = await response.json() as {
         choices?: Array<{

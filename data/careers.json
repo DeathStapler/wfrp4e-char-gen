@@ -3,6 +3,12 @@
     "id": "apothecary",
     "name": "Apothecary",
     "careerClass": "Academic",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -209,6 +215,11 @@
     "id": "engineer",
     "name": "Engineer",
     "careerClass": "Academic",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -414,6 +425,12 @@
     "id": "lawyer",
     "name": "Lawyer",
     "careerClass": "Academic",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -617,6 +634,9 @@
     "id": "nun",
     "name": "Nun",
     "careerClass": "Academic",
+    "species": [
+      "human"
+    ],
     "levels": [
       {
         "level": 1,
@@ -821,6 +841,12 @@
     "id": "physician",
     "name": "Physician",
     "careerClass": "Academic",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -1021,6 +1047,9 @@
     "id": "priest",
     "name": "Priest",
     "careerClass": "Academic",
+    "species": [
+      "human"
+    ],
     "levels": [
       {
         "level": 1,
@@ -1224,6 +1253,13 @@
     "id": "scholar",
     "name": "Scholar",
     "careerClass": "Academic",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -1430,6 +1466,11 @@
     "id": "wizard",
     "name": "Wizard",
     "careerClass": "Academic",
+    "species": [
+      "human",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -1635,6 +1676,11 @@
     "id": "agitator",
     "name": "Agitator",
     "careerClass": "Burghers",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -1837,6 +1883,13 @@
     "id": "artisan",
     "name": "Artisan",
     "careerClass": "Burghers",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -2041,6 +2094,11 @@
     "id": "beggar",
     "name": "Beggar",
     "careerClass": "Burghers",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -2240,6 +2298,12 @@
     "id": "investigator",
     "name": "Investigator",
     "careerClass": "Burghers",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -2442,6 +2506,12 @@
     "id": "merchant",
     "name": "Merchant",
     "careerClass": "Burghers",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -2648,6 +2718,11 @@
     "id": "rat-catcher",
     "name": "Rat Catcher",
     "careerClass": "Burghers",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -2856,6 +2931,12 @@
     "id": "townsman",
     "name": "Townsman",
     "careerClass": "Burghers",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -3058,6 +3139,12 @@
     "id": "watchman",
     "name": "Watchman",
     "careerClass": "Burghers",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -3262,6 +3349,13 @@
     "id": "advisor",
     "name": "Advisor",
     "careerClass": "Courtier",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -3462,6 +3556,13 @@
     "id": "artist",
     "name": "Artist",
     "careerClass": "Courtier",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -3665,6 +3766,11 @@
     "id": "duellist",
     "name": "Duellist",
     "careerClass": "Courtier",
+    "species": [
+      "human",
+      "dwarf",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -3868,6 +3974,13 @@
     "id": "envoy",
     "name": "Envoy",
     "careerClass": "Courtier",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -4071,6 +4184,12 @@
     "id": "noble",
     "name": "Noble",
     "careerClass": "Courtier",
+    "species": [
+      "human",
+      "dwarf",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -4285,6 +4404,11 @@
     "id": "servant",
     "name": "Servant",
     "careerClass": "Courtier",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -4482,6 +4606,13 @@
     "id": "spy",
     "name": "Spy",
     "careerClass": "Courtier",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -4687,6 +4818,12 @@
     "id": "warden",
     "name": "Warden",
     "careerClass": "Courtier",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -4890,6 +5027,11 @@
     "id": "bailiff",
     "name": "Bailiff",
     "careerClass": "Peasant",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -5091,6 +5233,9 @@
     "id": "hedge-witch",
     "name": "Hedge Witch",
     "careerClass": "Peasant",
+    "species": [
+      "human"
+    ],
     "levels": [
       {
         "level": 1,
@@ -5295,6 +5440,12 @@
     "id": "herbalist",
     "name": "Herbalist",
     "careerClass": "Peasant",
+    "species": [
+      "human",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -5496,6 +5647,13 @@
     "id": "hunter",
     "name": "Hunter",
     "careerClass": "Peasant",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -5699,6 +5857,11 @@
     "id": "miner",
     "name": "Miner",
     "careerClass": "Peasant",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -5905,6 +6068,10 @@
     "id": "mystic",
     "name": "Mystic",
     "careerClass": "Peasant",
+    "species": [
+      "human",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -6104,6 +6271,13 @@
     "id": "soldier",
     "name": "Soldier",
     "careerClass": "Warrior",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "description": "Soldiers are the professional fighting men and women of the Old World's armies, mercenary companies, and militias. They are trained in the use of weapons, armour, and tactics, and are the backbone of the Empire's military might. A career in soldiering demands toughness, discipline, and the willingness to follow orders — even unto death.",
     "careerExits": [
       "Sergeant",
@@ -6319,6 +6493,13 @@
     "id": "scout",
     "name": "Scout",
     "careerClass": "Peasant",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -6524,6 +6705,12 @@
     "id": "villager",
     "name": "Villager",
     "careerClass": "Peasant",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -6717,6 +6904,11 @@
     "id": "coachman",
     "name": "Coachman",
     "careerClass": "Ranger",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -6920,6 +7112,13 @@
     "id": "entertainer",
     "name": "Entertainer",
     "careerClass": "Ranger",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -7127,6 +7326,9 @@
     "id": "flagellant",
     "name": "Flagellant",
     "careerClass": "Ranger",
+    "species": [
+      "human"
+    ],
     "levels": [
       {
         "level": 1,
@@ -7329,6 +7531,13 @@
     "id": "messenger",
     "name": "Messenger",
     "careerClass": "Ranger",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -7528,6 +7737,11 @@
     "id": "pedlar",
     "name": "Pedlar",
     "careerClass": "Ranger",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -7742,6 +7956,10 @@
     "id": "road-warden",
     "name": "Road Warden",
     "careerClass": "Rogue",
+    "species": [
+      "human",
+      "halfling"
+    ],
     "description": "With a wary eye and ready weapon, you tour the highways of the Empire enforcing the law.",
     "levels": [
       {
@@ -7947,6 +8165,9 @@
     "id": "witch-hunter",
     "name": "Witch Hunter",
     "careerClass": "Rogue",
+    "species": [
+      "human"
+    ],
     "description": "You hunt the illegal witches plaguing the Empire by any and all means necessary.",
     "levels": [
       {
@@ -8154,6 +8375,12 @@
     "id": "boatman",
     "name": "Boatman",
     "careerClass": "Riverfolk",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -8353,6 +8580,11 @@
     "id": "huffer",
     "name": "Huffer",
     "careerClass": "Riverfolk",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -8554,6 +8786,10 @@
     "id": "riverwarden",
     "name": "Riverwarden",
     "careerClass": "Riverfolk",
+    "species": [
+      "human",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -8754,6 +8990,11 @@
     "id": "riverwoman",
     "name": "Riverwoman",
     "careerClass": "Riverfolk",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -8956,6 +9197,12 @@
     "id": "seaman",
     "name": "Seaman",
     "careerClass": "Riverfolk",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -9156,6 +9403,12 @@
     "id": "smuggler",
     "name": "Smuggler",
     "careerClass": "Riverfolk",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -9368,6 +9621,11 @@
     "id": "stevedore",
     "name": "Stevedore",
     "careerClass": "Riverfolk",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -9567,6 +9825,11 @@
     "id": "wrecker",
     "name": "Wrecker",
     "careerClass": "Riverfolk",
+    "species": [
+      "human",
+      "dwarf",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -9768,6 +10031,11 @@
     "id": "bawd",
     "name": "Bawd",
     "careerClass": "Rogue",
+    "species": [
+      "human",
+      "halfling",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -9965,6 +10233,11 @@
     "id": "charlatan",
     "name": "Charlatan",
     "careerClass": "Rogue",
+    "species": [
+      "human",
+      "halfling",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -10169,6 +10442,11 @@
     "id": "fence",
     "name": "Fence",
     "careerClass": "Rogue",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -10370,6 +10648,10 @@
     "id": "grave-robber",
     "name": "Grave Robber",
     "careerClass": "Rogue",
+    "species": [
+      "human",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -10578,6 +10860,13 @@
     "id": "outlaw",
     "name": "Outlaw",
     "careerClass": "Rogue",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -10782,6 +11071,11 @@
     "id": "racketeer",
     "name": "Racketeer",
     "careerClass": "Rogue",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -10992,6 +11286,11 @@
     "id": "thief",
     "name": "Thief",
     "careerClass": "Rogue",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling"
+    ],
     "levels": [
       {
         "level": 1,
@@ -11191,6 +11490,9 @@
     "id": "witch",
     "name": "Witch",
     "careerClass": "Rogue",
+    "species": [
+      "human"
+    ],
     "levels": [
       {
         "level": 1,
@@ -11396,6 +11698,11 @@
     "id": "cavalryman",
     "name": "Cavalryman",
     "careerClass": "Warrior",
+    "species": [
+      "human",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -11599,6 +11906,13 @@
     "id": "guard",
     "name": "Guard",
     "careerClass": "Warrior",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -11803,6 +12117,11 @@
     "id": "knight",
     "name": "Knight",
     "careerClass": "Warrior",
+    "species": [
+      "human",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -12011,6 +12330,13 @@
     "id": "pit-fighter",
     "name": "Pit Fighter",
     "careerClass": "Warrior",
+    "species": [
+      "human",
+      "dwarf",
+      "halfling",
+      "high-elf",
+      "wood-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -12220,6 +12546,11 @@
     "id": "protagonist",
     "name": "Protagonist",
     "careerClass": "Warrior",
+    "species": [
+      "human",
+      "dwarf",
+      "high-elf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -12425,6 +12756,9 @@
     "id": "slayer",
     "name": "Slayer",
     "careerClass": "Warrior",
+    "species": [
+      "dwarf"
+    ],
     "levels": [
       {
         "level": 1,
@@ -12629,6 +12963,9 @@
     "id": "warrior-priest",
     "name": "Warrior Priest",
     "careerClass": "Warrior",
+    "species": [
+      "human"
+    ],
     "levels": [
       {
         "level": 1,

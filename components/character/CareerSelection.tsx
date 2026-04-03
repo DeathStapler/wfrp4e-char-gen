@@ -112,28 +112,33 @@ export function CareerSelection({
   const [randomRollDisplay, setRandomRollDisplay] = useState<{ dieValue: number; careerName: string } | null>(null);
   const [roll3Dice, setRoll3Dice] = useState<number[]>([]);
 
+  // Filter careers to those available for the selected species
+  const eligibleCareers = species?.id && allCareers.some(c => c.species)
+    ? allCareers.filter(c => !c.species || c.species.includes(species.id))
+    : allCareers;
+
   const availableClasses = Array.from(
-    new Set(allCareers.map((c) => c.careerClass))
+    new Set(eligibleCareers.map((c) => c.careerClass))
   ).sort() as CareerClass[];
 
   const classCounts = Object.fromEntries(
     availableClasses.map((cls) => [
       cls,
-      allCareers.filter((c) => c.careerClass === cls).length,
+      eligibleCareers.filter((c) => c.careerClass === cls).length,
     ])
   ) as Record<CareerClass, number>;
 
   const filteredCareers =
     activeClass === "All"
-      ? allCareers
-      : allCareers.filter((c) => c.careerClass === activeClass);
+      ? eligibleCareers
+      : eligibleCareers.filter((c) => c.careerClass === activeClass);
 
   // Get career characteristics for selected/highlighted career
   const selectedCareer = selectedId ? allCareers.find((c) => c.id === selectedId) : null;
   const careerCharacteristics = selectedCareer ? selectedCareer.levels[0].characteristics : [];
 
   function handleRollRandom() {
-    const { roll, career } = rollRandomCareerWithDie(allCareers);
+    const { roll, career } = rollRandomCareerWithDie(eligibleCareers);
     setSelectedId(career.id);
     setChoiceMode("random");
     setRolledCareers([]);
@@ -145,7 +150,7 @@ export function CareerSelection({
     const picked: Array<{ roll: number; career: Career }> = [];
     const usedIds = new Set<string>();
     while (picked.length < 3) {
-      const result = rollRandomCareerWithDie(allCareers);
+      const result = rollRandomCareerWithDie(eligibleCareers);
       if (!usedIds.has(result.career.id)) {
         usedIds.add(result.career.id);
         picked.push(result);
@@ -346,7 +351,7 @@ export function CareerSelection({
                     activeClass === "All" ? "opacity-70" : "opacity-50"
                   }`}
                 >
-                  {allCareers.length}
+                  {eligibleCareers.length}
                 </span>
               </button>
               {availableClasses.map((cls) => (

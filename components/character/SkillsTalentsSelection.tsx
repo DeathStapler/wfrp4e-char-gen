@@ -34,11 +34,48 @@ interface TalentEntry {
   name: string;
   description?: string;
   tests?: string;
+  max?: number | "bonus";
+  bonusCharacteristic?: string;
 }
 
 const talentsById = new Map<string, TalentEntry>(
   (talentsData as TalentEntry[]).map((t) => [t.name, t])
 );
+
+/** Returns how many times a talent may be taken given the character's current characteristics. */
+function getTalentMaxAllowed(talentName: string, characteristics: Characteristics): number {
+  const info = talentsById.get(talentName);
+  if (!info || info.max === undefined) return 1;
+  if (info.max === "bonus") {
+    const charValue = info.bonusCharacteristic
+      ? (characteristics[info.bonusCharacteristic as CharacteristicKey] ?? 0)
+      : 0;
+    return Math.floor(charValue / 10);
+  }
+  return info.max as number;
+}
+
+/**
+ * Counts how many times `talentName` is already selected, optionally excluding
+ * a specific slot (so we don't penalise the slot currently being evaluated).
+ */
+function getTalentCountExcluding(
+  talentName: string,
+  fixedTalents: string[],
+  speciesChoiceTalents: string[],
+  speciesRandomTalents: string[],
+  selectedTalent: string | null,
+  excludeChoiceIndex?: number,
+  excludeRandomIndex?: number,
+  excludeCareer?: boolean
+): number {
+  let count = 0;
+  count += fixedTalents.filter((t) => t === talentName).length;
+  count += speciesChoiceTalents.filter((t, i) => t === talentName && i !== excludeChoiceIndex).length;
+  count += speciesRandomTalents.filter((t, i) => t === talentName && i !== excludeRandomIndex).length;
+  if (!excludeCareer && selectedTalent === talentName) count++;
+  return count;
+}
 
 // ── Skill display name helper ─────────────────────────────────────────────────
 
@@ -314,12 +351,19 @@ export function SkillsTalentsSelection({
   const canProceed = speciesValid && allocationValid && choiceTalentsValid && randomTalentsValid && talentValid && anySpecValid && allChoiceGroupsSelected;
 
   function rollRandomTalent(slotIndex: number) {
-    const allTaken = new Set([
-      ...fixedTalents,
-      ...speciesChoiceTalents.filter(Boolean),
-      ...speciesRandomTalents.filter((t, i) => i !== slotIndex && Boolean(t)),
-    ]);
-    const available = randomPool.filter(t => !allTaken.has(t));
+    const available = randomPool.filter((t) => {
+      const count = getTalentCountExcluding(
+        t,
+        fixedTalents,
+        speciesChoiceTalents,
+        speciesRandomTalents,
+        selectedTalent,
+        undefined,
+        slotIndex,
+        false
+      );
+      return count < getTalentMaxAllowed(t, characterCharacteristics);
+    });
     const pool = available.length > 0 ? available : randomPool;
     const pick = pool[Math.floor(Math.random() * pool.length)];
     onSpeciesRandomTalentChange(slotIndex, pick);
@@ -682,20 +726,37 @@ export function SkillsTalentsSelection({
                   <div className="flex flex-wrap gap-2">
                     {group.options.map((option) => {
                       const isSelected = selected === option;
+                      const countExcludingSlot = getTalentCountExcluding(
+                        option,
+                        fixedTalents,
+                        speciesChoiceTalents,
+                        speciesRandomTalents,
+                        selectedTalent,
+                        groupIndex,
+                        undefined,
+                        false
+                      );
+                      const maxAllowed = getTalentMaxAllowed(option, characterCharacteristics);
+                      const isAtMax = !isSelected && countExcludingSlot >= maxAllowed;
                       return (
                         <button
                           key={option}
-                          onClick={() => onSpeciesChoiceTalentChange(groupIndex, option)}
+                          onClick={() => !isAtMax && onSpeciesChoiceTalentChange(groupIndex, option)}
+                          disabled={isAtMax}
                           className={`rounded-lg border px-4 py-2 text-sm font-medium transition-colors ${
-                            isSelected
+                            isAtMax
+                              ? "border-gray-700/40 bg-gray-900/30 text-gray-600 cursor-not-allowed"
+                              : isSelected
                               ? "border-amber-500/60 bg-amber-900/20 text-amber-300"
                               : "border-gray-700 bg-gray-900/60 text-gray-200 hover:border-gray-600 hover:bg-gray-900"
                           }`}
                           role="radio"
                           aria-checked={isSelected}
+                          title={isAtMax ? `Already at max (${countExcludingSlot}/${maxAllowed})` : undefined}
                         >
                           {option}
                           {isSelected && <span className="ml-2 text-[10px] text-amber-500">✓</span>}
+                          {isAtMax && <span className="ml-2 text-[10px] text-gray-600">({countExcludingSlot}/{maxAllowed})</span>}
                         </button>
                       );
                     })}
@@ -752,9 +813,25 @@ export function SkillsTalentsSelection({
                             aria-label={`Pick talent for random slot ${i + 1}`}
                           >
                             <option value="">Pick manually…</option>
-                            {randomPool.map((t) => (
-                              <option key={t} value={t}>{t}</option>
-                            ))}
+                            {randomPool.map((t) => {
+                              const countExcludingSlot = getTalentCountExcluding(
+                                t,
+                                fixedTalents,
+                                speciesChoiceTalents,
+                                speciesRandomTalents,
+                                selectedTalent,
+                                undefined,
+                                i,
+                                false
+                              );
+                              const maxAllowed = getTalentMaxAllowed(t, characterCharacteristics);
+                              const isAtMax = speciesRandomTalents[i] !== t && countExcludingSlot >= maxAllowed;
+                              return (
+                                <option key={t} value={t} disabled={isAtMax}>
+                                  {t}{isAtMax ? ` (${countExcludingSlot}/${maxAllowed})` : ""}
+                                </option>
+                              );
+                            })}
                           </select>
                         </div>
                       </div>
@@ -793,13 +870,28 @@ export function SkillsTalentsSelection({
             {careerLevel.talents.map((entry) => {
               const talentInfo = talentsById.get(entry.talent);
               const isSelected = selectedTalent === entry.talent;
+              const countFromSpecies = getTalentCountExcluding(
+                entry.talent,
+                fixedTalents,
+                speciesChoiceTalents,
+                speciesRandomTalents,
+                null,
+                undefined,
+                undefined,
+                true
+              );
+              const maxAllowed = getTalentMaxAllowed(entry.talent, characterCharacteristics);
+              const isAtMax = !isSelected && countFromSpecies >= maxAllowed;
 
               return (
                 <button
                   key={entry.talent}
-                  onClick={() => handleCareerTalentSelect(entry.talent)}
+                  onClick={() => !isAtMax && handleCareerTalentSelect(entry.talent)}
+                  disabled={isAtMax}
                   className={`w-full text-left rounded-lg border px-4 py-3 transition-colors ${
-                    isSelected
+                    isAtMax
+                      ? "border-gray-700/40 bg-gray-900/30 opacity-60 cursor-not-allowed"
+                      : isSelected
                       ? "border-amber-500/60 bg-amber-900/20"
                       : "border-gray-800 bg-gray-900/60 hover:border-gray-700 hover:bg-gray-900"
                   }`}
@@ -811,13 +903,18 @@ export function SkillsTalentsSelection({
                       <div className="flex items-center gap-2">
                         <span
                           className={`text-sm font-medium ${
-                            isSelected ? "text-amber-300" : "text-gray-100"
+                            isAtMax ? "text-gray-500" : isSelected ? "text-amber-300" : "text-gray-100"
                           }`}
                         >
                           {entry.talent}
                         </span>
                         {isSelected && (
                           <span className="text-[10px] text-amber-500">✓</span>
+                        )}
+                        {isAtMax && (
+                          <span className="text-[10px] text-red-400 border border-red-800/40 bg-red-900/20 px-1.5 py-0.5 rounded">
+                            At max ({countFromSpecies}/{maxAllowed})
+                          </span>
                         )}
                       </div>
                       {talentInfo?.tests && (
@@ -831,7 +928,9 @@ export function SkillsTalentsSelection({
                     </div>
                     <div
                       className={`mt-0.5 shrink-0 w-4 h-4 rounded-full border-2 transition-colors ${
-                        isSelected
+                        isAtMax
+                          ? "border-gray-700 bg-transparent"
+                          : isSelected
                           ? "border-amber-400 bg-amber-400"
                           : "border-gray-600 bg-transparent"
                       }`}
