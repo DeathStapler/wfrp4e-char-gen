@@ -8,7 +8,7 @@ import type { SpeciesSkillSelection } from "@/lib/rules/species";
 import { Button } from "@/components/ui/Button";
 import { StepIndicator } from "@/components/character/StepIndicator";
 import { CurrentStatsPanel } from "@/components/character/CurrentStatsPanel";
-import { useOpenRouterSettings } from "@/hooks/useOpenRouterSettings";
+import { useAIProvider } from "@/hooks/useAIProvider";
 import { NamePickerModal } from "@/components/character/NamePickerModal";
 import {
   rollAgeWithDetails,
@@ -208,7 +208,7 @@ export function CharacterDetails({
   const [rollResults, setRollResults] = useState<Partial<Record<RollableField, FieldRollResult>>>({})
 
   // OpenRouter settings for name generation
-  const { apiKey, model, incrementApiCallCount } = useOpenRouterSettings()
+  const { apiKey, incrementApiCallCount, callAI } = useAIProvider()
 
   // Name generation state
   const [showNamePicker, setShowNamePicker] = useState(false)
@@ -382,42 +382,8 @@ export function CharacterDetails({
       const genderClause = form.gender.trim() ? ` The character is ${form.gender.trim()}.` : ""
       const prompt = `Create a list of 10 character names for the Warhammer Fantasy Roleplaying setting. The species is ${species}.${genderClause} Respond with ONLY a JSON array of strings, no explanation. Example: ["Name1", "Name2", "Name3"]`
 
-      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${apiKey}`,
-          'Content-Type': 'application/json',
-          'HTTP-Referer': 'https://wfrp-char-gen.local',
-          'X-Title': 'WFRP Character Generator',
-        },
-        body: JSON.stringify({
-          model: model || 'meta-llama/llama-3.1-8b-instruct:free',
-          messages: [{ role: 'user', content: prompt }],
-          max_tokens: 300,
-          temperature: 0.9,
-        }),
-      })
-
-      if (!response.ok) {
-        if (response.status === 429) throw new Error('Rate limit reached — wait a moment and try again')
-        if (response.status === 401) throw new Error('Invalid API key — check your settings')
-        throw new Error(`API request failed: ${response.status}`)
-      }
-
+      const raw = await callAI(prompt, { maxTokens: 300, temperature: 0.9 })
       incrementApiCallCount()
-
-      const data = await response.json() as {
-        choices?: Array<{
-          message?: {
-            content?: string
-          }
-        }>
-      }
-
-      const raw = data.choices?.[0]?.message?.content?.trim()
-      if (!raw) {
-        throw new Error('No content returned from API')
-      }
 
       const names = parseNamesFromResponse(raw)
 

@@ -42,6 +42,24 @@ const talentsById = new Map<string, TalentEntry>(
   (talentsData as TalentEntry[]).map((t) => [t.name, t])
 );
 
+/** Look up a talent by exact name or by stripping a specialisation suffix like " (Any)" or " (Cultists)". */
+function resolveTalentInfo(talentName: string): TalentEntry | undefined {
+  const exact = talentsById.get(talentName);
+  if (exact) return exact;
+  // Handle "Bless (Any)", "Etiquette (Cultists)", "Read/Write", etc.
+  const normalized = talentName.replace(/\//g, '-');
+  for (const [key, val] of talentsById) {
+    if (normalized === key.replace(/\//g, '-')) return val;
+    // Strip specialisation: "Bless (Any)" → base "Bless"
+    const parenIdx = talentName.indexOf(' (');
+    if (parenIdx > -1) {
+      const base = talentName.slice(0, parenIdx);
+      if (talentsById.has(base)) return talentsById.get(base);
+    }
+  }
+  return undefined;
+}
+
 /** Returns how many times a talent may be taken given the character's current characteristics. */
 function getTalentMaxAllowed(talentName: string, characteristics: Characteristics): number {
   const info = talentsById.get(talentName);
@@ -273,6 +291,16 @@ export function SkillsTalentsSelection({
     return init;
   });
 
+  // ── Species any-specialisation choices ─────────────────────────────────────
+
+  const [speciesAnySpec, setSpeciesAnySpec] = useState<Record<string, string>>(() => {
+    const init: Record<string, string> = {};
+    for (const sel of initialSpeciesSelections) {
+      if (sel.customSpecialisation) init[sel.skillId] = sel.customSpecialisation;
+    }
+    return init;
+  });
+
   const totalAllocated = activeSkillDisplayNames.reduce((s, name) => s + (allocation[name] ?? 0), 0);
   const remainingPool = 40 - totalAllocated;
 
@@ -329,8 +357,18 @@ export function SkillsTalentsSelection({
   // ── Live species skill selections (for CurrentStatsPanel) ─────────────────
 
   const liveSpeciesSkills = [
-    ...plusFive.map((skillName) => ({ skillName, advances: 5 })),
-    ...plusThree.map((skillName) => ({ skillName, advances: 3 })),
+    ...plusFive.map((skillName) => {
+      const resolvedName = skillName.includes("(Any)") && speciesAnySpec[skillName]
+        ? skillName.replace("(Any)", `(${speciesAnySpec[skillName]})`)
+        : skillName;
+      return { skillName: resolvedName, advances: 5 };
+    }),
+    ...plusThree.map((skillName) => {
+      const resolvedName = skillName.includes("(Any)") && speciesAnySpec[skillName]
+        ? skillName.replace("(Any)", `(${speciesAnySpec[skillName]})`)
+        : skillName;
+      return { skillName: resolvedName, advances: 3 };
+    }),
   ];
 
   // ── Validation ───────────────────────────────────────────────────────────
@@ -345,10 +383,15 @@ export function SkillsTalentsSelection({
     const entry = idx >= 0 ? careerLevel.skills[idx] : null;
     return !entry?.anySpecialisation || !!anySpec[name];
   });
+  const speciesAnySpecValid = speciesStartingSkills.every((skillName) => {
+    if (!skillName.includes("(Any)")) return true;
+    const isSelected = plusFive.includes(skillName) || plusThree.includes(skillName);
+    return !isSelected || !!speciesAnySpec[skillName];
+  });
   const allChoiceGroupsSelected = skillRenderItems
     .filter((item): item is Extract<SkillRenderItem, { type: "choice" }> => item.type === "choice")
     .every((item) => !!choiceGroupSelections[item.letter]);
-  const canProceed = speciesValid && allocationValid && choiceTalentsValid && randomTalentsValid && talentValid && anySpecValid && allChoiceGroupsSelected;
+  const canProceed = speciesValid && allocationValid && choiceTalentsValid && randomTalentsValid && talentValid && anySpecValid && speciesAnySpecValid && allChoiceGroupsSelected;
 
   function rollRandomTalent(slotIndex: number) {
     const available = randomPool.filter((t) => {
@@ -372,8 +415,16 @@ export function SkillsTalentsSelection({
   function handleNext() {
     if (!canProceed || !selectedTalent) return;
     const selections: SpeciesSkillSelection[] = [
-      ...plusFive.map((id) => ({ skillId: id, advances: 5 as const })),
-      ...plusThree.map((id) => ({ skillId: id, advances: 3 as const })),
+      ...plusFive.map((id) => ({
+        skillId: id,
+        advances: 5 as const,
+        ...(speciesAnySpec[id] ? { customSpecialisation: speciesAnySpec[id] } : {}),
+      })),
+      ...plusThree.map((id) => ({
+        skillId: id,
+        advances: 3 as const,
+        ...(speciesAnySpec[id] ? { customSpecialisation: speciesAnySpec[id] } : {}),
+      })),
     ];
     const careerAlloc: CareerSkillAllocation[] = activeSkillDisplayNames.map((name) => {
       const idx = careerSkillDisplayNames.indexOf(name);
@@ -449,52 +500,79 @@ export function SkillsTalentsSelection({
               const isSelected = isFive || isThree;
               const bothFull = plusFive.length === 3 && plusThree.length === 3;
               const disabled = !isSelected && bothFull;
+              const isAny = skillName.includes("(Any)");
+              const baseSkillName = isAny ? skillName.replace(" (Any)", "") : skillName;
 
               return (
-                <button
-                  key={skillName}
-                  onClick={() => handleSpeciesSkillClick(skillName)}
-                  disabled={disabled}
-                  className={`text-left rounded-lg border px-4 py-3 transition-colors ${
-                    isFive
-                      ? "border-amber-500/60 bg-amber-900/20"
-                      : isThree
-                      ? "border-teal-500/60 bg-teal-900/20"
-                      : disabled
-                      ? "border-gray-800/40 bg-gray-900/20 opacity-40 cursor-not-allowed"
-                      : "border-gray-800 bg-gray-900/60 hover:border-gray-700 hover:bg-gray-900"
-                  }`}
-                  aria-pressed={isSelected}
-                >
-                  <div className="flex items-center justify-between">
-                    <span
-                      className={`text-sm font-medium ${
-                        isFive
-                          ? "text-amber-300"
-                          : isThree
-                          ? "text-teal-300"
-                          : "text-gray-100"
-                      }`}
-                    >
-                      {skillName}
-                    </span>
-                    <div className="flex items-center gap-2 shrink-0 ml-2">
-                      {characteristic && (
-                        <span className="text-[10px] text-gray-400">{characteristic}</span>
-                      )}
-                      {isFive && (
-                        <span className="text-[11px] font-bold px-1.5 py-0.5 rounded bg-amber-800/50 text-amber-300">
-                          +5
-                        </span>
-                      )}
-                      {isThree && (
-                        <span className="text-[11px] font-bold px-1.5 py-0.5 rounded bg-teal-800/50 text-teal-300">
-                          +3
-                        </span>
-                      )}
+                <div key={skillName} className="flex flex-col gap-1.5">
+                  <button
+                    onClick={() => handleSpeciesSkillClick(skillName)}
+                    disabled={disabled}
+                    className={`text-left rounded-lg border px-4 py-3 transition-colors ${
+                      isFive
+                        ? "border-amber-500/60 bg-amber-900/20"
+                        : isThree
+                        ? "border-teal-500/60 bg-teal-900/20"
+                        : disabled
+                        ? "border-gray-800/40 bg-gray-900/20 opacity-40 cursor-not-allowed"
+                        : "border-gray-800 bg-gray-900/60 hover:border-gray-700 hover:bg-gray-900"
+                    }`}
+                    aria-pressed={isSelected}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span
+                        className={`text-sm font-medium ${
+                          isFive
+                            ? "text-amber-300"
+                            : isThree
+                            ? "text-teal-300"
+                            : "text-gray-100"
+                        }`}
+                      >
+                        {isAny
+                          ? `${baseSkillName} (${speciesAnySpec[skillName] || "Any"})`
+                          : skillName}
+                      </span>
+                      <div className="flex items-center gap-2 shrink-0 ml-2">
+                        {characteristic && (
+                          <span className="text-[10px] text-gray-400">{characteristic}</span>
+                        )}
+                        {isFive && (
+                          <span className="text-[11px] font-bold px-1.5 py-0.5 rounded bg-amber-800/50 text-amber-300">
+                            +5
+                          </span>
+                        )}
+                        {isThree && (
+                          <span className="text-[11px] font-bold px-1.5 py-0.5 rounded bg-teal-800/50 text-teal-300">
+                            +3
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </button>
+                  </button>
+                  {isAny && isSelected && (() => {
+                    const specs = getAvailableSpecialisations(baseSkillName, allSkills);
+                    return (
+                      <div className="mt-1.5 px-1">
+                        <select
+                          value={speciesAnySpec[skillName] ?? ""}
+                          onChange={(e) =>
+                            setSpeciesAnySpec((prev) => ({ ...prev, [skillName]: e.target.value }))
+                          }
+                          className="text-xs rounded border border-gray-700 bg-gray-900 text-gray-200 px-2 py-1 focus:outline-none focus:border-amber-500/60"
+                        >
+                          <option value="">Choose specialisation…</option>
+                          {specs.map((spec) => (
+                            <option key={spec} value={spec}>{spec}</option>
+                          ))}
+                        </select>
+                        {!speciesAnySpec[skillName] && (
+                          <span className="ml-2 text-[10px] text-amber-500">Required</span>
+                        )}
+                      </div>
+                    );
+                  })()}
+                </div>
               );
             })}
           </div>
@@ -868,7 +946,7 @@ export function SkillsTalentsSelection({
 
           <div className="space-y-2">
             {careerLevel.talents.map((entry) => {
-              const talentInfo = talentsById.get(entry.talent);
+              const talentInfo = resolveTalentInfo(entry.talent);
               const isSelected = selectedTalent === entry.talent;
               const countFromSpecies = getTalentCountExcluding(
                 entry.talent,

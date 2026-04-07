@@ -102,7 +102,7 @@
       "Lore (Geology)",
       "Lore (Metallurgy)",
       "Melee (Basic)",
-      "Trade (any one)"
+      "Trade (Any)"
     ],
     "startingTalents": [
       { "type": "fixed",  "talent": "Magic Resistance" },
@@ -173,7 +173,7 @@
       "Lore (Reikland)",
       "Perception",
       "Sleight of Hand",
-      "Stealth",
+      "Stealth (Any)",
       "Trade (Cook)"
     ],
     "startingTalents": [
@@ -243,7 +243,7 @@
       "Melee (Basic)",
       "Navigation",
       "Perception",
-      "Play (any one)",
+      "Play (Any)",
       "Ranged (Bow)",
       "Sail",
       "Swim"

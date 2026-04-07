@@ -2,18 +2,20 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useOpenRouterSettings } from "@/hooks/useOpenRouterSettings";
-import { OpenRouterSettingsModal } from "@/components/settings/OpenRouterSettingsModal";
+import { useAIProvider } from "@/hooks/useAIProvider";
+import { AISettingsModal } from "@/components/settings/AISettingsModal";
 
 export function AppHeader() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { apiKey, model, apiCallCount } = useOpenRouterSettings();
-  const hasApiKey = apiKey.length > 0;
+  const { hasApiKey, model, apiCallCount, activeProvider } = useAIProvider();
 
   // Derive a short display name from the model ID
   // e.g. "meta-llama/llama-3.1-8b-instruct:free" → "llama-3.1-8b-instruct"
+  // e.g. "gemini-2.0-flash" → "gemini-2.0-flash"
   const modelLabel = model
-    ? model.split("/").pop()?.replace(/:free$/, "") ?? model
+    ? (activeProvider === "openrouter"
+        ? model.split("/").pop()?.replace(/:free$/, "") ?? model
+        : model)
     : null;
 
   return (
@@ -50,7 +52,7 @@ export function AppHeader() {
               onClick={() => setIsModalOpen(true)}
               className="relative p-2 text-gray-400 hover:text-amber-400 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-gray-950 rounded"
               aria-label="Settings"
-              title="OpenRouter Settings"
+              title="AI Settings"
             >
               {/* Gear Icon SVG */}
               <svg
@@ -75,7 +77,7 @@ export function AppHeader() {
         </div>
       </header>
 
-      <OpenRouterSettingsModal
+      <AISettingsModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />

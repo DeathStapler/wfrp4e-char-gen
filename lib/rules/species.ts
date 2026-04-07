@@ -181,6 +181,7 @@ export function getRandomTalentPool(): string[] {
 export interface SpeciesSkillSelection {
   skillId: string
   advances: 5 | 3
+  customSpecialisation?: string
 }
 
 /**

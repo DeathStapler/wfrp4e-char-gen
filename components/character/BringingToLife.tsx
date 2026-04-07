@@ -8,7 +8,7 @@ import type { SpeciesSkillSelection } from "@/lib/rules/species";
 import { Button } from "@/components/ui/Button";
 import { StepIndicator } from "@/components/character/StepIndicator";
 import { CurrentStatsPanel } from "@/components/character/CurrentStatsPanel";
-import { useOpenRouterSettings } from "@/hooks/useOpenRouterSettings";
+import { useAIProvider } from "@/hooks/useAIProvider";
 
 export interface BringingToLifeProps {
   initialBackstory: CharacterBackstory;
@@ -63,9 +63,99 @@ export function BringingToLife({
   onBack,
 }: BringingToLifeProps) {
   const [backstory, setBackstory] = useState<CharacterBackstory>(initialBackstory);
-  const { apiKey, model, incrementApiCallCount } = useOpenRouterSettings();
+  const { apiKey, incrementApiCallCount, callAI } = useAIProvider();
   const [isGenerating, setIsGenerating] = useState(false);
   const [generateError, setGenerateError] = useState<string | null>(null);
+
+  // Perplexity flow
+  const [showMoodInput, setShowMoodInput] = useState(false);
+  const [perplexityMood, setPerplexityMood] = useState("");
+  const [showPasteArea, setShowPasteArea] = useState(false);
+  const [pasteJson, setPasteJson] = useState("");
+  const [pasteError, setPasteError] = useState<string | null>(null);
+
+  // Maps Perplexity JSON keys → CharacterBackstory keys
+  const PERPLEXITY_KEY_MAP: Record<string, keyof CharacterBackstory> = {
+    character_motivation: "motivation",
+    what_drives_your_character: "motivation",
+    where_are_you_from: "whereFrom",
+    what_is_your_family_like: "family",
+    what_was_your_childhood_like: "childhood",
+    why_did_you_leave_home: "whyLeft",
+    who_are_your_best_friends: "friends",
+    what_is_your_greatest_desire: "greatestDesire",
+    what_are_your_best_memories: "bestMemory",
+    what_are_your_worst_memories: "worstMemory",
+    what_are_your_religious_beliefs: "religion",
+    who_or_what_are_you_loyal_to: "loyalty",
+    why_are_you_adventuring: "whyAdventuring",
+  };
+
+  function buildPerplexityPrompt(mood: string): string {
+    const speciesName = species?.name ?? "Human";
+    const careerTitle = career?.levels[0]?.title ?? "";
+    const careerPart = careerTitle ? ` ${careerTitle}` : "";
+    const intro = `Complete this json block as if you are making a ${speciesName}${careerPart} character for the warhammer WFRP game. It should have the mood of ${mood}`;
+    const jsonTemplate = JSON.stringify({
+      character_motivation: "",
+      what_drives_your_character: "",
+      where_are_you_from: "",
+      what_is_your_family_like: "",
+      what_was_your_childhood_like: "",
+      why_did_you_leave_home: "",
+      who_are_your_best_friends: "",
+      what_is_your_greatest_desire: "",
+      what_are_your_best_memories: "",
+      what_are_your_worst_memories: "",
+      what_are_your_religious_beliefs: "",
+      who_or_what_are_you_loyal_to: "",
+      why_are_you_adventuring: "",
+    }, null, 2);
+    return `${intro}\n${jsonTemplate}`;
+  }
+
+  function handleOpenPerplexity() {
+    const mood = perplexityMood.trim();
+    if (!mood) return;
+    const prompt = buildPerplexityPrompt(mood);
+    const url = `https://www.perplexity.ai/?q=${encodeURIComponent(prompt)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+    setShowMoodInput(false);
+    setShowPasteArea(true);
+    setPasteJson("");
+    setPasteError(null);
+  }
+
+  function handleApplyPastedJson() {
+    setPasteError(null);
+    const cleaned = pasteJson
+      .replace(/^```(?:json)?\s*/i, "")
+      .replace(/\s*```$/, "")
+      .trim();
+    let parsed: Record<string, string>;
+    try {
+      parsed = JSON.parse(cleaned) as Record<string, string>;
+    } catch {
+      setPasteError("Could not parse JSON — make sure you copied the full response");
+      return;
+    }
+    const updates: Partial<Record<keyof CharacterBackstory, string>> = {};
+    for (const [rawKey, value] of Object.entries(parsed)) {
+      const mappedKey = PERPLEXITY_KEY_MAP[rawKey];
+      if (mappedKey && typeof value === "string" && value.trim()) {
+        // Don't overwrite motivation if already set by character_motivation
+        if (mappedKey === "motivation" && updates.motivation) continue;
+        updates[mappedKey] = value.trim();
+      }
+    }
+    if (Object.keys(updates).length === 0) {
+      setPasteError("No recognised fields found — did you paste the full JSON?");
+      return;
+    }
+    setBackstory((prev) => ({ ...prev, ...updates }));
+    setShowPasteArea(false);
+    setPasteJson("");
+  }
 
   function update(key: keyof CharacterBackstory, value: string) {
     setBackstory((prev) => ({ ...prev, [key]: value || undefined }));
@@ -100,36 +190,8 @@ Return ONLY a valid JSON object with these exact keys (no extra text, no markdow
 }`;
 
     try {
-      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${apiKey}`,
-          'Content-Type': 'application/json',
-          'HTTP-Referer': 'https://wfrp-char-gen.local',
-          'X-Title': 'WFRP Character Generator',
-        },
-        body: JSON.stringify({
-          model: model || 'meta-llama/llama-3.1-8b-instruct:free',
-          messages: [{ role: 'user', content: prompt }],
-          max_tokens: 1000,
-          temperature: 0.9,
-        }),
-      });
-
-      if (!response.ok) {
-        if (response.status === 429) throw new Error('Rate limit reached — wait a moment and try again');
-        if (response.status === 401) throw new Error('Invalid API key — check your settings');
-        throw new Error(`API request failed: ${response.status}`);
-      }
-
+      const raw = await callAI(prompt, { maxTokens: 1000, temperature: 0.9 });
       incrementApiCallCount();
-
-      const data = await response.json() as {
-        choices?: Array<{ message?: { content?: string } }>
-      };
-
-      const raw = data.choices?.[0]?.message?.content?.trim() ?? '';
-      if (!raw) throw new Error('No content returned from API');
 
       // Strip markdown fences if present
       const cleaned = raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '').trim();
@@ -217,11 +279,92 @@ Return ONLY a valid JSON object with these exact keys (no extra text, no markdow
                     {isGenerating ? "Generating…" : "✨ Generate All"}
                   </button>
                 )}
+                <button
+                  type="button"
+                  onClick={() => { setShowMoodInput(true); setShowPasteArea(false); setPasteError(null); }}
+                  className="ml-2 shrink-0 inline-flex items-center gap-1.5 rounded border border-blue-700 bg-gray-800 px-3 py-2 text-sm font-medium text-blue-400 transition-colors hover:border-blue-500 hover:bg-blue-900/30"
+                >
+                  🔮 Perplexity
+                </button>
               </div>
               {generateError && (
                 <p className="mt-2 text-sm text-red-400">{generateError}</p>
               )}
             </div>
+
+        {/* Perplexity — mood input */}
+        {showMoodInput && (
+          <div className="mb-6 rounded-lg border border-blue-700/50 bg-blue-900/10 px-5 py-4">
+            <p className="text-sm font-medium text-blue-300 mb-3">
+              What mood should your character have?
+            </p>
+            <div className="flex gap-2">
+              <input
+                type="text"
+                autoFocus
+                className="flex-1 rounded border border-gray-700 bg-gray-950 px-3 py-2 text-sm text-gray-100 placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30"
+                placeholder="e.g., brooding, optimistic, haunted, reckless…"
+                value={perplexityMood}
+                onChange={(e) => setPerplexityMood(e.target.value)}
+                onKeyDown={(e) => { if (e.key === "Enter") handleOpenPerplexity(); if (e.key === "Escape") setShowMoodInput(false); }}
+              />
+              <button
+                type="button"
+                onClick={handleOpenPerplexity}
+                disabled={!perplexityMood.trim()}
+                className="rounded border border-blue-700 bg-gray-800 px-4 py-2 text-sm font-medium text-blue-400 transition-colors hover:border-blue-500 hover:bg-blue-900/30 disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                Open Perplexity ↗
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowMoodInput(false)}
+                className="rounded border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-gray-400 transition-colors hover:text-gray-200"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Perplexity — paste JSON response */}
+        {showPasteArea && (
+          <div className="mb-6 rounded-lg border border-blue-700/50 bg-blue-900/10 px-5 py-4">
+            <p className="text-sm font-medium text-blue-300 mb-1">
+              Paste the JSON from Perplexity
+            </p>
+            <p className="text-xs text-gray-400 mb-3">
+              Copy the full JSON block from Perplexity and paste it below, then click Apply.
+            </p>
+            <textarea
+              className="w-full rounded border border-gray-700 bg-gray-950 px-3 py-2 text-xs text-gray-100 placeholder-gray-600 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/30 resize-none font-mono"
+              rows={8}
+              placeholder={'{\n  "character_motivation": "...",\n  "where_are_you_from": "...",\n  ...\n}'}
+              value={pasteJson}
+              onChange={(e) => { setPasteJson(e.target.value); setPasteError(null); }}
+            />
+            {pasteError && (
+              <p className="mt-2 text-xs text-red-400">{pasteError}</p>
+            )}
+            <div className="flex gap-2 mt-3">
+              <button
+                type="button"
+                onClick={handleApplyPastedJson}
+                disabled={!pasteJson.trim()}
+                className="rounded border border-blue-700 bg-gray-800 px-4 py-2 text-sm font-medium text-blue-400 transition-colors hover:border-blue-500 hover:bg-blue-900/30 disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                Apply to Fields
+              </button>
+              <button
+                type="button"
+                onClick={() => { setShowPasteArea(false); setPasteJson(""); setPasteError(null); }}
+                className="rounded border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-gray-400 transition-colors hover:text-gray-200"
+              >
+                Dismiss
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Motivation (top, full-width) */}
         <div className="mb-8 rounded-lg border border-amber-700/30 bg-amber-900/10 px-5 py-4">

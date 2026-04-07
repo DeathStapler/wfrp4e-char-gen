@@ -214,8 +214,11 @@ export function CharacterWizard({
 
     // Species skill advances (by display name)
     for (const sel of character.speciesSkillSelections) {
-      const existing = skillsMap.get(sel.skillId) ?? { advances: 0, isCareerSkill: false };
-      skillsMap.set(sel.skillId, { ...existing, advances: existing.advances + sel.advances });
+      const resolvedId = sel.customSpecialisation
+        ? sel.skillId.replace(" (Any)", ` (${sel.customSpecialisation})`)
+        : sel.skillId;
+      const existing = skillsMap.get(resolvedId) ?? { advances: 0, isCareerSkill: false };
+      skillsMap.set(resolvedId, { ...existing, advances: existing.advances + sel.advances });
     }
 
     // Career skill allocation

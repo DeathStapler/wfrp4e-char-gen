@@ -120,13 +120,32 @@ export default function CharacterSheetPage({
   }
 
   function findTalent(talentId: string) {
-    return (
-      talentsData as Array<{
-        id: string;
-        name: string;
-        description: string;
-      }>
-    ).find((t) => t.id === talentId);
+    const normalized = talentId.replace(/\//g, '-');
+    return (typedTalentsData as Array<{ id: string; name: string; description: string }>).find(
+      (t) => t.id === normalized || t.id === talentId
+    );
+  }
+
+  function resolveTalent(talentId: string) {
+    const normalized = talentId.replace(/\//g, '-');
+    const talents = typedTalentsData as Array<{ id: string; name: string; description: string }>;
+    return talents.find((t) => t.id === normalized || t.id === talentId)
+      ?? talents.find((t) => normalized.startsWith(t.id + '-') || talentId.startsWith(t.id + '-'));
+  }
+
+  function formatTalentName(talentId: string): string {
+    const normalized = talentId.replace(/\//g, '-');
+    const talents = typedTalentsData as Array<{ id: string; name: string; description: string }>;
+    const exact = talents.find((t) => t.id === normalized || t.id === talentId);
+    if (exact) return exact.name;
+    // Handle grouped talents like "acute-sense-sight" → "Acute Sense (Sight)"
+    const base = talents.find((t) => normalized.startsWith(t.id + '-') || talentId.startsWith(t.id + '-'));
+    if (base) {
+      const suffix = normalized.slice(base.id.length + 1);
+      const option = suffix.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      return `${base.name} (${option})`;
+    }
+    return formatSlug(talentId);
   }
 
   const handleDelete = () => {
@@ -288,7 +307,7 @@ export default function CharacterSheetPage({
           <h2 className="font-serif text-lg text-amber-500 uppercase tracking-widest mb-3">
             Wounds &amp; Status
           </h2>
-          <div className="rounded-lg border border-gray-800 bg-gray-900 p-4 flex flex-wrap gap-6 items-center">
+          <div className="rounded-lg border border-gray-800 bg-gray-900 p-4 grid grid-cols-5 gap-4 items-center">
             <StatPip label="Threshold" value={character.status.woundThreshold} highlight />
             <StatPip label="Current Wounds" value={character.status.currentWounds} />
             <StatPip label="Advantage" value={character.status.advantage} />
@@ -332,7 +351,7 @@ export default function CharacterSheetPage({
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {character.talents.map((t, i) => {
-                const talent = findTalent(t.talentId);
+                const talent = resolveTalent(t.talentId);
                 return (
                   <div
                     key={i}
@@ -340,7 +359,7 @@ export default function CharacterSheetPage({
                   >
                     <div className="flex items-start justify-between gap-2 mb-1">
                       <span className="text-amber-300 font-semibold text-sm leading-snug">
-                        {talent?.name ?? formatSlug(t.talentId)}
+                        {formatTalentName(t.talentId)}
                       </span>
                       {t.timesTaken > 1 && (
                         <span className="text-xs text-gray-400 bg-gray-800 rounded px-1.5 py-0.5 shrink-0">
