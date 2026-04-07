@@ -1,22 +1,21 @@
 "use client";
 
-import type { Career, CharacteristicKey, Skill, Species, Talent } from "@/lib/types/rules";
+import type { Career, CharacteristicKey, Species } from "@/lib/types/rules";
 import type { Characteristics } from "@/lib/types/character";
 import type { CareerSkillAllocation } from "@/lib/rules/skills";
 import { getTalentCharacteristicBonuses } from "@/lib/rules/characteristics";
-import talentsData from "@/data/talents.json";
-import skillsData from "@/data/skills.json";
+import { TalentData, SkillData } from "@/lib/data/game-data";
 
-const typedTalentsData = talentsData as unknown as Talent[];
-const typedSkillsData = skillsData as unknown as Skill[];
-
-function findSkillData(skillName: string): Skill | undefined {
-  const exact = typedSkillsData.find((s) => s.name === skillName);
+function findSkillData(skillName: string) {
+  // Try exact match first
+  const exact = SkillData.get(skillName);
   if (exact) return exact;
+
+  // Try extracting base name from grouped skills like "Melee (Basic)"
   const parenIdx = skillName.indexOf(" (");
   if (parenIdx > -1) {
     const base = skillName.slice(0, parenIdx);
-    return typedSkillsData.find((s) => s.name === base);
+    return SkillData.get(base);
   }
 }
 
@@ -127,7 +126,7 @@ export function CurrentStatsPanel({
           <div className="grid grid-cols-2 gap-1">
             {ALL_CHARACTERISTICS.map((key) => {
               const base = characteristics[key] ?? 0;
-              const talentBonus = getTalentCharacteristicBonuses(talentIds, key, typedTalentsData);
+              const talentBonus = getTalentCharacteristicBonuses(talentIds, key, TalentData.all);
               const total = base + talentBonus;
               const isCareer = careerCharacteristics.includes(key as string);
 
@@ -220,9 +219,11 @@ export function CurrentStatsPanel({
           </div>
           <div className="px-3 py-2 space-y-0.5">
             {talentIds.map((id) => {
-              const talent = typedTalentsData.find((t) => t.id === id);
+              const talent = TalentData.byId.get(id);
               // Handle grouped talents stored as slugs (e.g. "acute-sense-sight" → "Acute Sense (Sight)")
-              const groupedBase = !talent ? typedTalentsData.find((t) => id.startsWith(t.id + '-')) : undefined;
+              const groupedBase = !talent
+                ? TalentData.all.find((t) => id.startsWith(t.id + "-"))
+                : undefined;
               const resolvedTalent = talent ?? groupedBase;
               let name: string;
               if (talent) {

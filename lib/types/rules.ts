@@ -776,6 +776,18 @@ export interface EquipmentItem {
   description?: string
 }
 
+// ── Random Talents ────────────────────────────────────────────────────────────
+
+/**
+ * A flat list of talents available for random selection during character creation.
+ * This is the generic Random Talent Table from WFRP 4e Core Rulebook p.30.
+ * When a species entry specifies "random" talents, players roll on this table.
+ */
+export interface RandomTalentsList {
+  /** Array of talent names available for random selection. */
+  talents: string[]
+}
+
 // ── Roll Tables ───────────────────────────────────────────────────────────────
 
 /**
