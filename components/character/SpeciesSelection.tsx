@@ -70,7 +70,7 @@ function SpeciesCard({ species, selected, onSelect, showXpBadge }: SpeciesCardPr
       <div className="grid grid-cols-5 gap-1 mb-3">
         {CHARACTERISTIC_KEYS.map((key) => (
           <div key={key} className="flex flex-col items-center">
-            <span className="text-xs text-gray-400 uppercase tracking-wide">
+            <span className="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wide">
               {CHARACTERISTIC_LABELS[key]}
             </span>
             <span className={`text-sm tabular-nums ${statColour(species.characteristics[key])}`}>
@@ -136,7 +136,7 @@ export function SpeciesSelection({
         <StepIndicator currentStep={1} totalSteps={8} stepLabel="Choose Your Species" />
 
         {/* Two-column layout: left stats panel + right content */}
-        <div className="flex gap-6 items-start">
+        <div className="flex flex-col lg:flex-row gap-6 items-start">
           {/* Left column: sticky stats panel (~1/3 width) */}
           <aside className="w-full lg:w-80 shrink-0 lg:sticky lg:top-6">
             <CurrentStatsPanel

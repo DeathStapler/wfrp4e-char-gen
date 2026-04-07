@@ -7,13 +7,13 @@ interface StepIndicatorProps {
 export function StepIndicator({ currentStep, totalSteps, stepLabel }: StepIndicatorProps) {
   return (
     <div className="mb-6">
-      <div className="flex items-center gap-1 mb-2">
+      <div className="flex items-center gap-1 mb-2 overflow-x-auto pb-2 scrollbar-hide">
         {Array.from({ length: totalSteps }, (_, i) => {
           const step = i + 1;
           const isActive = step === currentStep;
           const isPast = step < currentStep;
           return (
-            <div key={step} className="flex items-center gap-1">
+            <div key={step} className="flex items-center gap-1 shrink-0">
               <div
                 className={`flex h-5 w-5 items-center justify-center rounded-full text-xs font-semibold transition-colors ${
                   isActive

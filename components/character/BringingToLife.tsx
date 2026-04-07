@@ -232,7 +232,7 @@ Return ONLY a valid JSON object with these exact keys (no extra text, no markdow
         <StepIndicator currentStep={7} totalSteps={8} stepLabel="Bringing to Life" />
 
         {/* Two-column layout: left stats panel + right content */}
-        <div className="flex gap-6 items-start">
+        <div className="flex flex-col lg:flex-row gap-6 items-start">
           {/* Left column: sticky stats panel (~1/3 width) */}
           <aside className="w-full lg:w-80 shrink-0 lg:sticky lg:top-6">
             <CurrentStatsPanel
@@ -257,7 +257,7 @@ Return ONLY a valid JSON object with these exact keys (no extra text, no markdow
           {/* Right column: step content (~2/3 width) */}
           <div className="flex-1 min-w-0">
             <div className="mb-8">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <h1 className="font-serif text-3xl text-gray-100">Bringing Your Character to Life</h1>
                   <p className="text-gray-400 mt-2 text-sm">
@@ -265,12 +265,13 @@ Return ONLY a valid JSON object with these exact keys (no extra text, no markdow
                     alive at the table — you can always fill them in later.
                   </p>
                 </div>
+                <div className="flex flex-wrap items-center gap-2">
                 {apiKey && (
                   <button
                     type="button"
                     onClick={handleGenerateAll}
                     disabled={isGenerating}
-                    className={`ml-4 shrink-0 inline-flex items-center gap-1.5 rounded border px-3 py-2 text-sm font-medium transition-colors ${
+                    className={`shrink-0 inline-flex items-center gap-1.5 rounded border px-3 py-2 text-sm font-medium transition-colors ${
                       isGenerating
                         ? "cursor-wait border-gray-700 bg-gray-800 text-gray-400"
                         : "border-amber-700 bg-gray-800 text-amber-400 hover:border-amber-500 hover:bg-amber-900/30"
@@ -282,10 +283,11 @@ Return ONLY a valid JSON object with these exact keys (no extra text, no markdow
                 <button
                   type="button"
                   onClick={() => { setShowMoodInput(true); setShowPasteArea(false); setPasteError(null); }}
-                  className="ml-2 shrink-0 inline-flex items-center gap-1.5 rounded border border-blue-700 bg-gray-800 px-3 py-2 text-sm font-medium text-blue-400 transition-colors hover:border-blue-500 hover:bg-blue-900/30"
+                  className="shrink-0 inline-flex items-center gap-1.5 rounded border border-blue-700 bg-gray-800 px-3 py-2 text-sm font-medium text-blue-400 transition-colors hover:border-blue-500 hover:bg-blue-900/30"
                 >
                   🔮 Perplexity
                 </button>
+                </div>
               </div>
               {generateError && (
                 <p className="mt-2 text-sm text-red-400">{generateError}</p>

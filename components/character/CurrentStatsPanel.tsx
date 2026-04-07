@@ -26,7 +26,14 @@ function Tooltip({ children, content }: { children: React.ReactNode; content: Re
     <span className="relative group/tip cursor-help">
       {children}
       <span
-        className="absolute left-full top-1/2 -translate-y-1/2 ml-2.5 z-50 w-72 rounded-lg bg-gray-900 border border-gray-700/80 shadow-2xl shadow-black/50 opacity-0 group-hover/tip:opacity-100 transition-opacity duration-150 pointer-events-none"
+        className="absolute left-full top-1/2 -translate-y-1/2 ml-2.5 z-50 w-72 rounded-lg bg-gray-900 border border-gray-700/80 shadow-2xl shadow-black/50 opacity-0 group-hover/tip:opacity-100 transition-opacity duration-150 pointer-events-none hidden lg:block"
+        role="tooltip"
+      >
+        {content}
+      </span>
+      {/* Mobile tooltip - positioned below */}
+      <span
+        className="fixed bottom-4 left-4 right-4 z-50 rounded-lg bg-gray-900 border border-gray-700/80 shadow-2xl shadow-black/50 p-3 opacity-0 group-active/tip:opacity-100 lg:hidden pointer-events-none"
         role="tooltip"
       >
         {content}

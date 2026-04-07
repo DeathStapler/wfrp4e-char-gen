@@ -448,7 +448,7 @@ export function SkillsTalentsSelection({
         <StepIndicator currentStep={4} totalSteps={8} stepLabel="Skills & Talents" />
 
         {/* Two-column layout: left stats panel + right content */}
-        <div className="flex gap-6 items-start">
+        <div className="flex flex-col lg:flex-row gap-6 items-start">
           {/* Left column: sticky stats panel (~1/3 width) */}
           <aside className="w-full lg:w-80 shrink-0 lg:sticky lg:top-6">
             <CurrentStatsPanel

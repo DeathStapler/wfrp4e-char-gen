@@ -480,7 +480,7 @@ export function CharacterDetails({
         />
 
         {/* Two-column layout: left stats panel + right content */}
-        <div className="flex gap-6 items-start">
+        <div className="flex flex-col lg:flex-row gap-6 items-start">
           {/* Left column: sticky stats panel (~1/3 width) */}
           <aside className="w-full lg:w-80 shrink-0 lg:sticky lg:top-6">
             <CurrentStatsPanel
@@ -552,7 +552,7 @@ export function CharacterDetails({
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Age — rollable */}
               <div>
                 <label className="block text-xs uppercase tracking-widest text-gray-400 mb-1.5">
@@ -600,7 +600,7 @@ export function CharacterDetails({
           </legend>
 
           <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Eye Colour — rollable */}
               <div>
                 <label className="block text-xs uppercase tracking-widest text-gray-400 mb-1.5">
@@ -646,7 +646,7 @@ export function CharacterDetails({
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Height — rollable, feet+inches display */}
               <div>
                 <label className="block text-xs uppercase tracking-widest text-gray-400 mb-1.5">
@@ -739,7 +739,7 @@ export function CharacterDetails({
               </p>
 
               {/* Allocation controls */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Fate Extra Points */}
                 <div className="rounded border border-emerald-800/60 bg-emerald-950/20 p-4">
                   <div className="flex items-center justify-between mb-2">
@@ -787,7 +787,7 @@ export function CharacterDetails({
               {/* Final totals display */}
               <div className="mt-4 pt-4 border-t border-gray-800">
                 <p className="text-sm text-gray-300 mb-2">Final Totals:</p>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="rounded bg-emerald-950/40 px-3 py-2 border border-emerald-900/50">
                     <div className="text-xs text-emerald-400/70 mb-0.5">Fate</div>
                     <div className="text-sm text-gray-300 font-mono">
