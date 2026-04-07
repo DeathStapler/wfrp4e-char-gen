@@ -578,7 +578,7 @@ Dwarfs
 
 **Skills:** Consume Alcohol, Cool, Endurance, Entertain
 
-(Storytelling), Evaluate, Intimidate, Language (Khazalid), Lore (Dwarfs), Lore (Geology), Lore (Metallurgy), Melee (Basic), Trade (any one)
+(Storytelling), Evaluate, Intimidate, Language (Khazalid), Lore (Dwarfs), Lore (Geology), Lore (Metallurgy), Melee (Basic), Trade (Any)
 
 **Talents:** Magic Resistance, Night Vision, Read/Write _or_
 
@@ -598,7 +598,7 @@ High Elves
 
 **Skills:** Cool, Entertain (Sing), Evaluate, Language (Eltharin),
 
-Leadership, Melee (Basic), Navigation, Perception, Play (any one), Ranged (Bow), Sail, Swim
+Leadership, Melee (Basic), Navigation, Perception, Play (Any), Ranged (Bow), Sail, Swim
 
 **Talents:** Acute Sense (Sight), Coolheaded _or_ Savvy, Night
 
@@ -608,13 +608,13 @@ Vision, Second Sight _or_ Sixth Sense, Read/Write
 
 | Roll  | Description           | Roll  | Description          |
 | ----- | --------------------- | ----- | -------------------- |
-| 01–03 | Acute Sense (any one) | 51–52 | Noble Blood          |
+| 01–03 | Acute Sense (Any)     | 51–52 | Noble Blood          |
 | 04–06 | Ambidextrous          | 53–55 | Orientation          |
 | 07–09 | Animal Affinity       | 56–58 | Perfect Pitch        |
 | 10–12 | Artistic              | 59–62 | Pure Soul            |
 | 13–15 | Attractive            | 63–65 | Read/Write           |
-| 16–18 | Coolheaded            | 66–68 | Resistance (any one) |
-| 19–21 | Craftsman (any one)   | 69–71 | Savvy                |
+| 16–18 | Coolheaded            | 66–68 | Resistance (Any)     |
+| 19–21 | Craftsman (Any)       | 69–71 | Savvy                |
 | 22–24 | Flee!                 | 72–74 | Sharp                |
 | 25–28 | Hardy                 | 75–78 | Sixth Sense          |
 | 29–31 | Lightning Reflexes    | 79–81 | Strong Legs          |

@@ -668,7 +668,7 @@ You've been taught how to use clandestine markings only intelligible to members 
 
 ThisSkill does not usually need to be Tested — you can decipher any appropriate signs you can see if you have this Skill. But if the signs have been disturbed, worn away, or if you are pressed for time, then a Test will likely be required. Most messages are very simple, no more than three words.
 
-**Specialisations:** Grey Order, Guild (any one), Ranger, Scout, Thie , Vagabond
+**Specialisations:** Grey Order, Guild (Any), Ranger, Scout, Thie , Vagabond
 
 Page 129
 

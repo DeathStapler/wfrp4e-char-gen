@@ -303,7 +303,7 @@ Craftsman (Trade)
 
 **Max:** Dexterity Bonus
 
-**Tests:** Trade (any one)
+**Tests:** Trade (Any)
 
 You have true creative talent. Add the associated Trade Skill to any Career you enter. If the Trade Skill is already in your Career, you may instead purchase the Skill for 5 XP fewer per Advance.
 
