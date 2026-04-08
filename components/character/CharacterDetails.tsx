@@ -19,6 +19,7 @@ import {
   type Nd10RollDetails,
   type ColourRollDetails,
 } from "@/lib/rules/appearance";
+import { generateName } from "@/lib/rules/name-generator";
 
 interface CharacterDetailsProps {
   speciesId: string;
@@ -409,6 +410,13 @@ export function CharacterDetails({
     setShowNamePicker(false)
   }
 
+  function handleGenerateLocalName() {
+    if (!species) return
+    const name = generateName(species)
+    setField("name", name)
+    triggerFlash("name")
+  }
+
   function handleFinish() {
     const trimmedName = form.name.trim()
     if (!trimmedName) return
@@ -528,20 +536,35 @@ export function CharacterDetails({
                 <label className="block text-xs uppercase tracking-widest text-gray-400">
                   Name <span className="text-red-500">*</span>
                 </label>
-                {apiKey && (
+                <div className="flex items-center gap-2">
                   <button
                     type="button"
-                    onClick={handleGenerateNames}
-                    disabled={isGeneratingNames}
+                    onClick={handleGenerateLocalName}
+                    disabled={!species}
                     className={`inline-flex items-center gap-1 rounded border px-2 py-1 text-xs font-medium transition-colors ${
-                      isGeneratingNames
-                        ? "cursor-wait border-gray-700 bg-gray-800 text-gray-400"
-                        : "border-amber-700 bg-gray-800 text-amber-400 hover:border-amber-500 hover:bg-amber-900/30"
+                      !species
+                        ? "cursor-not-allowed border-gray-700 bg-gray-800 text-gray-500"
+                        : "border-gray-600 bg-gray-800 text-gray-300 hover:border-amber-600 hover:text-amber-400"
                     }`}
+                    title={!species ? "Select a species first" : "Generate random name"}
                   >
-                    {isGeneratingNames ? "Generating…" : "✨ Names"}
+                    🎲 Roll Name
                   </button>
-                )}
+                  {apiKey && (
+                    <button
+                      type="button"
+                      onClick={handleGenerateNames}
+                      disabled={isGeneratingNames}
+                      className={`inline-flex items-center gap-1 rounded border px-2 py-1 text-xs font-medium transition-colors ${
+                        isGeneratingNames
+                          ? "cursor-wait border-gray-700 bg-gray-800 text-gray-400"
+                          : "border-amber-700 bg-gray-800 text-amber-400 hover:border-amber-500 hover:bg-amber-900/30"
+                      }`}
+                    >
+                      {isGeneratingNames ? "Generating…" : "✨ Names"}
+                    </button>
+                  )}
+                </div>
               </div>
               <input
                 type="text"

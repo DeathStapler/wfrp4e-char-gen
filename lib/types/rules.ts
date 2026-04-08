@@ -150,6 +150,9 @@ export interface Species {
 
   /** Physical appearance roll tables for this species. */
   appearance?: SpeciesAppearance
+
+  /** Name generation data for this species. */
+  names?: Record<string, unknown>
 }
 
 // ── Appearance Roll Tables ─────────────────────────────────────────────────────

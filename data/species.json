@@ -39,7 +39,7 @@
       { "type": "choice", "options": ["Savvy", "Suave"] },
       { "type": "random", "count": 3 }
     ],
-    "description": "Humans are the most numerous and widespread of the civilised species of the Old World, occupying every corner of the continent. Their relatively short lives drive extraordinary ambition and versatility. Humans can enter any career class without restriction. They begin with 3 additional Random Talents rolled on the Random Talent Table, and have Extra Points to distribute freely between Fate and Resilience.",
+    "description": "Humans are the most numerous and widespread of the civilized species of the Old World, occupying every corner of the continent. Their relatively short lives drive extraordinary ambition and versatility. Humans can enter any career class without restriction. They begin with 3 additional Random Talents rolled on the Random Talent Table, and have Extra Points to distribute freely between Fate and Resilience.",
     "appearance": {
       "age": { "base": 15, "diceCount": 1, "diceSize": 10 },
       "height": { "baseInches": 57, "diceCount": 2, "diceSize": 10 },
@@ -66,6 +66,46 @@
         { "min": 18, "max": 18, "result": "Auburn" },
         { "min": 19, "max": 19, "result": "Red" },
         { "min": 20, "max": 20, "result": "Grey" }
+      ]
+    },
+    "names": {
+      "meta": {
+        "logic": "Forename + (Surname OR 'of' Location OR House von Location)",
+        "description": "Comprehensive Human naming for the Empire and its provinces."
+      },
+      "templates": [
+        "{forename} {surname}",
+        "{forename} of {location}",
+        "{forename} {house_name} von {location}"
+      ],
+      "forename": [
+        "Adelbert", "Albrecht", "Berthold", "Dieter", "Erich", "Franz", "Gunter",
+        "Hans", "Jakob", "Karl", "Kurt", "Max", "Otto", "Siegfried", "Ulrich", "Wilhelm",
+        "Agatha", "Beatrice", "Clothilde", "Dorothea", "Elsa", "Gretchen", "Hilda",
+        "Ingrid", "Katarina", "Lotte", "Magda", "Sigrid", "Ursula", "Wertha",
+        "Friedrich", "Lukas", "Stefan", "Klaus", "Rudolf", "Helga", "Marta"
+      ],
+      "surname": [
+        "Bauer", "Fleischer", "Schmidt", "Schuster", "Muller", "Fisher", "Weber", "Wagner",
+        "Augenlos", "Dunn", "Laut", "Stark", "Lang", "Kutz", "Schwarz", "Weiss",
+        "Gross", "Jung", "Krause", "Lange", "Vogel", "Richter", "Hartman", "Becker",
+        "Schulz", "Hoffman", "Schaefer", "Koch", "Klein", "Wolf"
+      ],
+      "location": [
+        "Altdorf", "Ubersreik", "Bogenhafen", "Nuln", "Middenheim", "Talabheim",
+        "Wolfenburg", "Averheim", "Wurtbad", "Hergig", "Pfeildorf", "Eilhart",
+        "Helmgart", "Kemperbad", "Auerswald", "Grunburg", "Weissbruck", "Grauenburg",
+        "Mousillon", "Mordheim", "Sylvania", "Wissenburg", "Delberz", "Carroburg",
+        "Grenzstadt", "Heideldorf", "Saluizen", "Zuber", "Holthusen", "Stimmigen",
+        "Waldenhof", "Sessen", "Bechafen", "Essen", "Siegfriedhof", "Krugenheim"
+      ],
+      "house_name": [
+        "Mordheim", "Totenwald", "Nachtmann", "Gravescu", "Verwesung", "Bleich",
+        "Habicht", "Greifental", "Eisenfaust", "Schwarzherz", "Dornen", "Nebelstein",
+        "Schattenborn", "Rabenfels", "Finster", "Geistreich", "Blutsturm", "Winterhoff",
+        "Altfrost", "Grimm", "Steinach", "Eisenstein", "Von Kalb", "Krueger", "Vulk",
+        "Drakken", "Gallowglass", "Harrow", "Vile", "Aschaffenberg", "Bildhofen",
+        "Liebewitz", "Todbringer", "Jungfreud", "Walfen", "Gausser", "Hertwig"
       ]
     }
   },
@@ -139,6 +179,52 @@
         { "min": 19, "max": 19, "result": "Reddish Brown" },
         { "min": 20, "max": 20, "result": "Black" }
       ]
+    },
+    "names": {
+      "meta": {
+        "description": "Short, sturdy names. Surnames are either parental roots + suffix or a nickname earned through deeds.",
+        "naming_conventions": "Forename + Surname/Nickname + Clan Name"
+      },
+      "templates": [
+        "{forename} {parent_root}{suffix} {clan}",
+        "{forename} {nickname} {clan}"
+      ],
+      "forename": [
+        "Alrik", "Bronda", "Dimzad", "Fenna", "Gottri", "Gudrun", "Snorri",
+        "Baragaz", "Durak", "Galazil", "Gnoldok", "Nazril", "Okri",
+        "Bargin", "Brokk", "Dammaz", "Dorin", "Fimbur", "Garil", "Gari",
+        "Hargin", "Hegar", "Kadrin", "Logazor", "Lunn", "Morek", "Morgrim",
+        "Rogni", "Skalf", "Thungni", "Ulfar", "Thura", "Varek", "Yorri",
+        "Bakraz", "Drakki", "Gorog", "Karakaz", "Kuzz", "Rikkit", "Zun",
+        "Borek", "Dwinbar", "Farina", "Grumni", "Harek", "Kargun", "Madrin"
+      ],
+      "parent_root": [
+        "Arik", "Grunna", "Skag", "Sovri", "Gottri", "Bardin", "Brokk",
+        "Dori", "Fari", "Grendel", "Hogni", "Kurgan", "Snorri", "Thungni"
+      ],
+      "suffix": [
+        "sdottir", "snev", "sniz", "sson"
+      ],
+      "nickname": [
+        "Axebringer", "Finehand", "Forkbeard", "Ironbraid", "Redhammer",
+        "Stonefist", "Silverbeard", "Shortbeard", "Braidedbeard", "Stoutbeard",
+        "Ironhead", "Broadshoulder", "One-Eye", "Barrelchest", "Scar-eye",
+        "Longstrider", "Orc-hewer", "Shieldbreaker", "Doom-seeker", "Goblin-bane",
+        "Troll-biter", "Axe-flayer", "Gold-finder", "Gem-setter", "Deep-delver",
+        "Rock-shaper", "Anvil-dragger", "Blackhand", "Oathkeeper", "Ironfoot",
+        "Gatekeeper", "Grimmar", "Stone-eye", "Dragon-slayer", "Deep-walker"
+      ],
+      "clan": [
+        "Ardrungan", "Bryntok", "Gazani", "Gromheld", "Harrazlings", "Unboki",
+        "Dokkintroll", "Ganvalgger", "Kvitang", "Thungtak", "Wyrgrinti", "Zankonk",
+        "Grummigazz", "Skrundun", "Backstein", "Guttrak", "Drakk-maki",
+        "Ironhold", "Grimazul", "Karaz-a-Karak", "Zhufbar", "Barak Varr",
+        "Karak Kadrin", "Karak Azgal", "Karak Azul", "Karak Eight Peaks",
+        "Karak Hirn", "Karak Norn", "Karak Zorn", "Karak Izor", "Karak Bhufdar",
+        "Durnheim", "Grung Zint", "Kazad Grund", "Kraka Drak", "Kraka Ravnsvake",
+        "Kraka Ornsmotek", "Sjoktraken", "Varnskrak", "Karak Vrag", "Karak Grom",
+        "Drubizgrund", "Grimrad", "Khazid Ungor", "Kolaz Umgol", "Oberheim"
+      ]
     }
   },
   {
@@ -210,6 +296,56 @@
         { "min": 18, "max": 18, "result": "Almond" },
         { "min": 19, "max": 19, "result": "Chocolate" },
         { "min": 20, "max": 20, "result": "Liquorice" }
+      ]
+    },
+    "names": {
+      "meta": {
+        "logic": "Formal/Short Name + Middle Name + Clan Name",
+        "description": "Cozy, food-focused, and family-tree specific."
+      },
+      "templates": [
+        "{names:formal} ({names:short}) {middle} {clan}",
+        "{names:short} {middle} {clan}"
+      ],
+      "names": [
+        {"formal": "Antoniella", "short": "Anni"},
+        {"formal": "Esmerelda", "short": "Esme"},
+        {"formal": "Ferdinand", "short": "Fred"},
+        {"formal": "Heironymus", "short": "Hiro"},
+        {"formal": "Maximilian", "short": "Max"},
+        {"formal": "Theodosius", "short": "Theo"},
+        {"formal": "Thomasina", "short": "Tina"},
+        {"formal": "Pippinella", "short": "Pippa"},
+        {"formal": "Samwise", "short": "Sam"},
+        {"formal": "Meriadoc", "short": "Merry"},
+        {"formal": "Peregrin", "short": "Pippin"},
+        {"formal": "Belisarius", "short": "Belly"},
+        {"formal": "Ludmilla", "short": "Milla"},
+        {"formal": "Willebrod", "short": "Willi"}
+      ],
+      "short": [
+        "Rosie", "Scrumper", "Penny", "Lucky", "Digger", "Pudge", "Skip", "Bud",
+        "Daisy", "Fern", "Mossy", "Pip", "Reed", "Sedge", "Twiggy", "Berry", "Bun",
+        "Cookie", "Honey", "Muffin", "Nibbs", "Pickle", "Spud", "Dash", "Giggles",
+        "Lefty", "Pockets", "Sunny", "Tumbles", "Winks"
+      ],
+      "middle": [
+        "Applebee", "Boffin", "Breadbasket", "Cherry", "Dewdrop", "Elderberry",
+        "Fingerbone", "Gander", "Hollyhock", "Juniper", "Mallow", "Pudding",
+        "Bramble", "Clover", "Hawthorn", "Ivy", "Marigold", "Nettle", "Rosehip",
+        "Thistle", "Barley", "Butter", "Cinnamon", "Flour", "Ginger", "Nutmeg",
+        "Saffron", "Yeast", "Brook", "Dell", "Fen", "Hollow", "Knoll", "Orchard",
+        "Patch", "Willow"
+      ],
+      "clan": [
+        "Ashfield", "Brandysnap", "Hayfoot", "Rumster", "Shortbottom", "Thorncobble",
+        "Berrychase", "Bramblewile", "Gullyflot", "Hogpen", "Oatfield", "Piesnatcher",
+        "Puddifoot", "Sweetberry", "Tumblepot", "Barleybrew", "Cheesemonger",
+        "Ganderroast", "Oatloaf", "Piesifter", "Sloewine", "Sugarplum", "Tealeaf",
+        "Badgerburrow", "Deepfurrow", "Greenhill", "Muddyfoot", "Riverflat",
+        "Stonehearth", "Underbough", "Whitethorn", "Brighteye", "Fastfeet",
+        "Gluttonbelly", "Heavybag", "Laughingstock", "Proudstrider", "Softstep",
+        "Woollyboot"
       ]
     }
   },
@@ -285,6 +421,30 @@
       ],
       "canRollEyeTwice": true,
       "canRollHairTwice": true
+    },
+    "names": {
+      "meta": {
+        "description": "Elegant, melodic names often referencing light, magic, or the sea.",
+        "naming_conventions": "Forename (2-3 fragments) + Epithet"
+      },
+      "templates": [
+        "{prefix}{suffix} {epithet}",
+        "{prefix}{middle}{suffix} {epithet}"
+      ],
+      "prefix": ["Aes", "Ath", "Dor", "Far", "Gal", "Im", "Lin", "Mal", "Mor", "Ullia"],
+      "middle": ["a", "ath", "dia", "en", "for", "lor", "mar", "ol", "sor", "than"],
+      "suffix": ["andril", "anel", "ellion", "fi", "il", "irian", "mor", "nil", "ric", "wing"],
+      "epithet": [
+        "Emberfell", "Fireborn", "Foamheart", "Goldenhair", "Silverspray", "Spellsign",
+        "Brightstar", "Dawnstrider", "Loreweaver", "Mistwalker", "Oceansong", "Sunshadow",
+        "Swiftwing", "Trueheart", "Wavecaller", "Wisdomseeker", "Highspire", "Starshot",
+        "Moonwhisper", "Starweaver", "Seastorm", "Crystalgaze", "Skyreaver", "Lightbringer",
+        "Shadowdancer", "Dreamwalker", "Frostwind", "Thunderheart", "Glimmerblade",
+        "Moonshadow", "Sunshard", "Stormrider", "Windsong", "Eagleeye", "Silverthread",
+        "Starfall", "Duskbringer", "Sunspear", "Moonblade", "Starcrown", "Arcaneweaver",
+        "Runeseer", "Spellward", "Silvertongue", "Highborn", "Regalsworn", "Seamaster",
+        "Windrider", "Depthcaller"
+      ]
     }
   },
   {
@@ -329,7 +489,7 @@
       { "type": "choice", "options": ["Read/Write", "Very Resilient"] },
       { "type": "fixed",  "talent": "Rover" }
     ],
-    "description": "Wood Elves — the Asrai of Athel Loren and Eonir of the Laurelorn — remained in the Old World after the War of the Beard and withdrew into the deep forests. Sharing the same characteristic profile as High Elves, they differ markedly in culture and skills: wilderness-focused, stealthy hunters and trackers. They are rare and unsettling visitors to civilised lands, and deeply mistrustful of outsiders.",
+    "description": "Wood Elves — the Asrai of Athel Loren and Eonir of the Laurelorn — remained in the Old World after the War of the Beard and withdrew into the deep forests. Sharing the same characteristic profile as High Elves, they differ markedly in culture and skills: wilderness-focused, stealthy hunters and trackers. They are rare and unsettling visitors to civilized lands, and deeply mistrustful of outsiders.",
     "appearance": {
       "age": { "base": 30, "diceCount": 10, "diceSize": 10 },
       "height": { "baseInches": 71, "diceCount": 1, "diceSize": 10 },
@@ -359,6 +519,28 @@
       ],
       "canRollEyeTwice": true,
       "canRollHairTwice": true
+    },
+    "names": {
+      "meta": {
+        "description": "Fluid names that blend with the forest environment.",
+        "naming_conventions": "Forename (2-3 fragments) + Epithet"
+      },
+      "templates": [
+        "{prefix}{suffix} {epithet}",
+        "{prefix}{middle}{suffix} {epithet}"
+      ],
+      "prefix": ["Aes", "Ath", "Dor", "Far", "Gal", "Im", "Lin", "Mal", "Mor", "Ullia"],
+      "middle": ["a", "ath", "dia", "en", "for", "lor", "mar", "ol", "sor", "than"],
+      "suffix": ["arha", "anhu", "dda", "han", "loc", "noc", "oth", "ryn", "stra", "wyth"],
+      "epithet": [
+        "Fleetriver", "Shadowstalker", "Treeshaper", "Weavewatcher", "Willowlimb", "Windrunner",
+        "Barkskin", "Deeproot", "Greenstep", "Leafshroud", "Mosswalker", "Nightglade",
+        "Oakheart", "Quickbeam", "Raindancer", "Thornshot", "Wildstride", "Woodheart",
+        "Wildgrowth", "Fernshade", "Thornweave", "Starchaser", "Dewgatherer", "Rootbound",
+        "Bramblewalker", "Mistwatcher", "Pineheart", "Vinestrider", "Hollowdweller", "Sunthroughleaves",
+        "Spiderweaver", "Acornkeeper", "Foxshadow", "Wolfsong", "Streamdancer", "Moonpetal",
+        "Swiftsquirrel", "Ivyembrace", "Frostleaf", "Crowcaller", "Tanglewood", "Beetleback"
+      ]
     }
   }
 ]
