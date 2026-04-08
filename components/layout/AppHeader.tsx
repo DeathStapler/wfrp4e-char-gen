@@ -21,10 +21,10 @@ export function AppHeader() {
   return (
     <>
       {/* Decorative top bar */}
-      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent print:hidden" />
 
       {/* Header */}
-      <header className="absolute top-0 inset-x-0 z-10 mb-6">
+      <header className="absolute top-0 inset-x-0 z-10 mb-6 print:hidden">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link
             href="/"

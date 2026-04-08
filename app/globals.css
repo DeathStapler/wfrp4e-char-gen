@@ -6,3 +6,89 @@
     color: #f3f4f6;
   }
 }
+
+@media print {
+  /* Base */
+  html, body, * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html, body {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+  }
+
+  /* Hide nav / danger zone / footer */
+  .print-hidden {
+    display: none !important;
+  }
+
+  /* Page wrapper */
+  .min-h-screen {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    padding-top: 1rem !important;
+  }
+
+  /* All bordered cards get a warm off-white background */
+  [class*="rounded"][class*="border"],
+  [class*="rounded-lg"][class*="border"] {
+    background-color: #fef9f0 !important;
+    border-color: #d6b87a !important;
+  }
+
+  /* Table header rows */
+  thead tr,
+  [class*="bg-gray-800"] {
+    background-color: #f5e9d0 !important;
+  }
+
+  /* Alternating/bonus table row */
+  [class*="bg-gray-950"] {
+    background-color: #fdf4e3 !important;
+  }
+
+  /* Section headings */
+  h2 {
+    color: #92400e !important;
+  }
+
+  /* Card sub-headings */
+  h3 {
+    color: #b45309 !important;
+  }
+
+  /* Character name */
+  h1 {
+    color: #78350f !important;
+  }
+
+  /* General text */
+  p, span, dd, dt, li, td, th {
+    color: #1f2937 !important;
+  }
+
+  /* Muted/label text — keep slightly lighter */
+  [class*="text-gray-4"] {
+    color: #6b7280 !important;
+  }
+
+  /* Talent bonus (emerald) */
+  [class*="text-emerald"] {
+    color: #065f46 !important;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse;
+  }
+  th, td {
+    border-color: #e5d3a8 !important;
+  }
+
+  /* Avoid page breaks inside sections */
+  section {
+    break-inside: avoid;
+  }
+}

@@ -169,13 +169,21 @@ export default function CharacterSheetPage({
       ? "text-gray-300"
       : "text-orange-400";
 
+  const handlePrint = () => window.print();
+
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100 px-4 py-8 print:bg-white print:text-black">
       {/* Top nav */}
-      <div className="max-w-5xl mx-auto mb-6">
+      <div className="max-w-5xl mx-auto mb-6 flex items-center justify-between print-hidden">
         <Button variant="ghost" href="/characters">
           ← Characters
         </Button>
+        <button
+          onClick={handlePrint}
+          className="px-4 py-2 text-sm text-amber-300 border border-amber-800/50 rounded bg-amber-950/20 hover:bg-amber-950/40 hover:border-amber-700/50 transition-colors"
+        >
+          🖨 Print / Save as PDF
+        </button>
       </div>
 
       <div className="max-w-5xl mx-auto space-y-6">
@@ -507,7 +515,7 @@ export default function CharacterSheetPage({
         )}
 
         {/* Danger Zone */}
-        <section className="border-t border-gray-900 pt-6 mt-8">
+        <section className="print-hidden border-t border-gray-900 pt-6 mt-8">
           <h2 className="text-sm text-gray-400 uppercase tracking-wider mb-3">
             Danger Zone
           </h2>
@@ -520,7 +528,7 @@ export default function CharacterSheetPage({
         </section>
 
         {/* Footer timestamps */}
-        <footer className="border-t border-gray-900 pt-4 pb-8 flex flex-wrap justify-between text-xs text-gray-400 gap-2">
+        <footer className="print-hidden border-t border-gray-900 pt-4 pb-8 flex flex-wrap justify-between text-xs text-gray-400 gap-2">
           <span>
             Created {new Date(character.createdAt).toLocaleDateString()}
           </span>
