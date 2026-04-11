@@ -132,6 +132,12 @@ export function AdvancementStep({
 }: AdvancementStepProps) {
   const options = getCareerCreationOptions(career, careerLevel);
 
+  // Filter career skills down to only those the player actually chose.
+  // This removes unchosen choice-group alternatives (e.g. if the player picked
+  // "Stealth (Rural)", "Stealth (Urban)" is excluded here).
+  const allocatedSkillIds = new Set(careerSkillAllocation.map((a) => a.skillId));
+  const availableSkills = options.skills.filter((s) => allocatedSkillIds.has(s));
+
   // ── State ─────────────────────────────────────────────────────────────────
 
   const [charAdvances, setCharAdvances] = useState<Record<string, number>>(
@@ -147,7 +153,7 @@ export function AdvancementStep({
   const [skillAdvances, setSkillAdvances] = useState<Record<string, number>>(
     () => {
       const init: Record<string, number> = {};
-      for (const s of options.skills) {
+      for (const s of availableSkills) {
         init[s] = initialAdvances.skills[s] ?? 0;
       }
       return init;
@@ -175,7 +181,7 @@ export function AdvancementStep({
     return sum + calcCharXpCost(getCharExisting(abbrev), newAdv);
   }, 0);
 
-  const skillXpSpent = options.skills.reduce((sum, skillName) => {
+  const skillXpSpent = availableSkills.reduce((sum, skillName) => {
     const newAdv = skillAdvances[skillName] ?? 0;
     return sum + calcSkillXpCost(getSkillExisting(skillName), newAdv);
   }, 0);
@@ -250,7 +256,7 @@ export function AdvancementStep({
   );
 
   // Career skills: merge creation advances + local XP spend
-  const liveCareerAlloc: CareerSkillAllocation[] = options.skills.map((skillName) => {
+  const liveCareerAlloc: CareerSkillAllocation[] = availableSkills.map((skillName) => {
     const alloc = careerSkillAllocation.find((a) => a.skillId === skillName);
     const resolvedId = alloc?.customSpecialisation
       ? skillName.replace(" (any)", ` (${alloc.customSpecialisation})`)
@@ -403,12 +409,12 @@ export function AdvancementStep({
                 </Panel>
 
                 {/* Skills Panel */}
-                <Panel title="Skills" badge={`${options.skills.length} available`}>
+                <Panel title="Skills" badge={`${availableSkills.length} available`}>
                   <p className="text-xs text-gray-400 mb-3">
                     Career skill cost: 10 × (current advance + 1) XP per advance.
                   </p>
                   <div className="space-y-2">
-                    {options.skills.map((skillName) => {
+                    {availableSkills.map((skillName) => {
                       const alloc = careerSkillAllocation.find((a) => a.skillId === skillName);
                       const displayName = alloc?.customSpecialisation
                         ? skillName.replace(" (any)", ` (${alloc.customSpecialisation})`)

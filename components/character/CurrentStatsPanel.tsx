@@ -218,50 +218,69 @@ export function CurrentStatsPanel({
             <span className="font-serif text-sm text-amber-400">Talents</span>
           </div>
           <div className="px-3 py-2 space-y-0.5">
-            {talentIds.map((id) => {
-              const talent = TalentData.byId.get(id);
-              // Handle grouped talents stored as slugs (e.g. "acute-sense-sight" → "Acute Sense (Sight)")
-              const groupedBase = !talent
-                ? TalentData.all.find((t) => id.startsWith(t.id + "-"))
-                : undefined;
-              const resolvedTalent = talent ?? groupedBase;
-              let name: string;
-              if (talent) {
-                name = talent.name;
-              } else if (groupedBase) {
-                const suffix = id.slice(groupedBase.id.length + 1);
-                const option = suffix.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-                name = `${groupedBase.name} (${option})`;
-              } else {
-                name = id;
-              }
-              const tooltipContent = (resolvedTalent?.tests || resolvedTalent?.description) ? (
-                <div className="p-3 space-y-2">
-                  {resolvedTalent.tests && (
-                    <div className="flex items-center gap-2">
-                      <span className="text-[10px] text-gray-500 uppercase tracking-wider shrink-0">Tests</span>
-                      <span className="text-xs text-amber-300 font-medium">{resolvedTalent.tests}</span>
-                    </div>
-                  )}
-                  {resolvedTalent.tests && resolvedTalent.description && (
-                    <div className="border-t border-gray-700/60" />
-                  )}
-                  {resolvedTalent.description && (
-                    <p className="text-xs text-gray-300 leading-relaxed">{resolvedTalent.description}</p>
-                  )}
-                </div>
-              ) : undefined;
+            {(() => {
+              // Resolve each id to a display name, then deduplicate with counts
+              const resolved = talentIds.map((id) => {
+                const talent = TalentData.byId.get(id);
+                const groupedBase = !talent
+                  ? TalentData.all.find((t) => id.startsWith(t.id + "-"))
+                  : undefined;
+                const resolvedTalent = talent ?? groupedBase;
+                let name: string;
+                if (talent) {
+                  name = talent.name;
+                } else if (groupedBase) {
+                  const suffix = id.slice(groupedBase.id.length + 1);
+                  const option = suffix.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                  name = `${groupedBase.name} (${option})`;
+                } else {
+                  name = id;
+                }
+                return { id, name, resolvedTalent };
+              });
 
-              return (
-                <div key={id} className="py-0.5">
-                  <Tooltip content={tooltipContent}>
-                    <span className="text-xs text-purple-300/80 truncate max-w-[160px] inline-block">
-                      {name}
-                    </span>
-                  </Tooltip>
-                </div>
-              );
-            })}
+              // Count by display name, keep first entry for tooltip
+              const seen = new Map<string, { id: string; name: string; resolvedTalent: typeof resolved[0]["resolvedTalent"]; count: number }>();
+              for (const entry of resolved) {
+                if (seen.has(entry.name)) {
+                  seen.get(entry.name)!.count++;
+                } else {
+                  seen.set(entry.name, { ...entry, count: 1 });
+                }
+              }
+
+              return Array.from(seen.values()).map(({ id, name, resolvedTalent, count }) => {
+                const tooltipContent = (resolvedTalent?.tests || resolvedTalent?.description) ? (
+                  <div className="p-3 space-y-2">
+                    {resolvedTalent.tests && (
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] text-gray-500 uppercase tracking-wider shrink-0">Tests</span>
+                        <span className="text-xs text-amber-300 font-medium">{resolvedTalent.tests}</span>
+                      </div>
+                    )}
+                    {resolvedTalent.tests && resolvedTalent.description && (
+                      <div className="border-t border-gray-700/60" />
+                    )}
+                    {resolvedTalent.description && (
+                      <p className="text-xs text-gray-300 leading-relaxed">{resolvedTalent.description}</p>
+                    )}
+                  </div>
+                ) : undefined;
+
+                return (
+                  <div key={id} className="py-0.5 flex items-center justify-between">
+                    <Tooltip content={tooltipContent}>
+                      <span className="text-xs text-purple-300/80 truncate max-w-[140px] inline-block">
+                        {name}
+                      </span>
+                    </Tooltip>
+                    {count > 1 && (
+                      <span className="text-[10px] text-purple-400/60 ml-1 shrink-0">×{count}</span>
+                    )}
+                  </div>
+                );
+              });
+            })()}
           </div>
         </div>
       )}
