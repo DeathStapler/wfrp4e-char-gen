@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useEffect, useState, Suspense } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import speciesData from "@/data/species.json";
 import careersData from "@/data/careers.json";
 import skillsData from "@/data/skills.json";
@@ -9,13 +9,10 @@ import talentsData from "@/data/talents.json";
 import type { Character } from "@/lib/types/character";
 import type { CharacteristicKey, Talent } from "@/lib/types/rules";
 import { getTalentCharacteristicBonuses } from "@/lib/rules/characteristics";
-import { loadCharacter, deleteCharacter, saveCharacter } from "@/lib/storage/character-storage";
 import {
-  createShareLink,
   fetchSharedCharacter,
-  getStoredPlayerName,
-  setStoredPlayerName,
 } from "@/lib/utils/share-character";
+import { saveCharacter, generateCharacterId, loadAllCharacters } from "@/lib/storage/character-storage";
 import { Button } from "@/components/ui/Button";
 import { WealthDisplay } from "@/components/ui/WealthDisplay";
 
@@ -31,23 +28,65 @@ function formatSlug(id: string) {
   return id.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-export default function CharacterSheetPage() {
-  const params = useParams();
-  const id = params.id as string;
+export default function SharedCharacterPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-950 flex items-center justify-center">
+        <p className="text-gray-400 animate-pulse">Loading shared character…</p>
+      </div>
+    }>
+      <SharedCharacterInner />
+    </Suspense>
+  );
+}
+
+function SharedCharacterInner() {
+  const searchParams = useSearchParams();
   const router = useRouter();
   const [character, setCharacter] = useState<Character | null | undefined>(
     undefined
   );
-  const [shareStatus, setShareStatus] = useState<"idle" | "loading" | "copied" | "error">("idle");
+  const [saved, setSaved] = useState(false);
+
+  const shareId = searchParams.get("id");
 
   useEffect(() => {
-    setCharacter(loadCharacter(id));
-  }, [id]);
+    if (!shareId) {
+      setCharacter(null);
+      return;
+    }
+    fetchSharedCharacter(shareId).then((c) => setCharacter(c));
+  }, [shareId]);
+
+  const handleSave = () => {
+    if (!character || !shareId) return;
+
+    // Check if this shared character was already saved locally
+    const existing = loadAllCharacters().find(
+      (c) => c.sourceShareId === shareId
+    );
+    if (existing) {
+      setSaved(true);
+      router.push(`/character/${existing.id}`);
+      return;
+    }
+
+    const newChar: Character = {
+      ...character,
+      id: generateCharacterId(),
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      sourceShareId: shareId,
+    };
+    saveCharacter(newChar);
+    setSaved(true);
+    router.push(`/character/${newChar.id}`);
+  };
 
   if (character === undefined) {
     return (
       <div className="min-h-screen bg-gray-950 flex items-center justify-center">
-        <p className="text-gray-400 animate-pulse">Loading character…</p>
+        <p className="text-gray-400 animate-pulse">Loading shared character…</p>
       </div>
     );
   }
@@ -57,13 +96,13 @@ export default function CharacterSheetPage() {
       <div className="min-h-screen bg-gray-950 flex flex-col items-center justify-center gap-6">
         <div className="text-center">
           <p className="font-serif text-3xl text-amber-700 mb-2">☠</p>
-          <p className="font-serif text-2xl text-gray-400">Character Not Found</p>
+          <p className="font-serif text-2xl text-gray-400">Shared Character Not Found</p>
           <p className="text-gray-400 text-sm mt-2">
-            This soul has been lost to the darkness.
+            This shared link may have expired or never existed.
           </p>
         </div>
-        <Button variant="secondary" href="/characters">
-          ← Back to Characters
+        <Button variant="secondary" href="/shares">
+          ← Browse Shared Characters
         </Button>
       </div>
     );
@@ -84,9 +123,7 @@ export default function CharacterSheetPage() {
   ).find((c) => c.id === character.currentCareerId);
   const careerLevel = career?.levels[character.currentCareerLevel - 1];
 
-  // Capture narrowed reference for use in helper closures
   const char = character;
-
   const talentIds = char.talents.map((t) => t.talentId);
   const typedTalentsData = talentsData as unknown as Talent[];
 
@@ -123,45 +160,26 @@ export default function CharacterSheetPage() {
     ).find((s) => s.id === skillId);
   }
 
-  function findTalent(talentId: string) {
-    const normalized = talentId.replace(/\//g, '-');
-    return (typedTalentsData as Array<{ id: string; name: string; description: string }>).find(
-      (t) => t.id === normalized || t.id === talentId
-    );
-  }
-
   function resolveTalent(talentId: string) {
-    const normalized = talentId.replace(/\//g, '-');
+    const normalized = talentId.replace(/\//g, "-");
     const talents = typedTalentsData as Array<{ id: string; name: string; description: string }>;
     return talents.find((t) => t.id === normalized || t.id === talentId)
-      ?? talents.find((t) => normalized.startsWith(t.id + '-') || talentId.startsWith(t.id + '-'));
+      ?? talents.find((t) => normalized.startsWith(t.id + "-") || talentId.startsWith(t.id + "-"));
   }
 
   function formatTalentName(talentId: string): string {
-    const normalized = talentId.replace(/\//g, '-');
+    const normalized = talentId.replace(/\//g, "-");
     const talents = typedTalentsData as Array<{ id: string; name: string; description: string }>;
     const exact = talents.find((t) => t.id === normalized || t.id === talentId);
     if (exact) return exact.name;
-    // Handle grouped talents like "acute-sense-sight" → "Acute Sense (Sight)"
-    const base = talents.find((t) => normalized.startsWith(t.id + '-') || talentId.startsWith(t.id + '-'));
+    const base = talents.find((t) => normalized.startsWith(t.id + "-") || talentId.startsWith(t.id + "-"));
     if (base) {
       const suffix = normalized.slice(base.id.length + 1);
-      const option = suffix.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      const option = suffix.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
       return `${base.name} (${option})`;
     }
     return formatSlug(talentId);
   }
-
-  const handleDelete = () => {
-    if (
-      confirm(
-        `Delete ${character.metadata.name}? This cannot be undone.`
-      )
-    ) {
-      deleteCharacter(character.id);
-      router.push("/characters");
-    }
-  };
 
   const careerSkills = character.skills.filter((s) => s.isCareerSkill);
   const otherSkills = character.skills.filter((s) => !s.isCareerSkill);
@@ -173,94 +191,20 @@ export default function CharacterSheetPage() {
       ? "text-gray-300"
       : "text-orange-400";
 
-  const handlePrint = () => window.print();
-
-  const handleShare = async () => {
-    if (!character) return;
-    setShareStatus("loading");
-
-    let playerName = character.metadata.playerName;
-    if (!playerName) {
-      playerName = getStoredPlayerName() ?? undefined;
-    }
-    if (!playerName) {
-      const entered = window.prompt("Enter your player name to share this character:");
-      if (!entered || !entered.trim()) {
-        setShareStatus("idle");
-        return;
-      }
-      playerName = entered.trim();
-      setStoredPlayerName(playerName);
-    }
-
-    let charToShare: Character = {
-      ...character,
-      metadata: { ...character.metadata, playerName },
-    };
-
-    // Persist the player name back to localStorage copy
-    saveCharacter(charToShare);
-
-    // Prevent re-sharing the same character
-    if (character.shareId) {
-      const existing = await fetchSharedCharacter(character.shareId);
-      if (existing) {
-        const url = `${window.location.origin}/character/shared?id=${character.shareId}`;
-        await navigator.clipboard.writeText(url);
-        setShareStatus("copied");
-        setTimeout(() => setShareStatus("idle"), 2000);
-        return;
-      }
-      // Share was deleted from server — clear cached shareId and re-share
-      const clearedChar = { ...charToShare, shareId: undefined };
-      saveCharacter(clearedChar);
-      setCharacter(clearedChar);
-      charToShare = clearedChar;
-    }
-
-    try {
-      const url = await createShareLink(charToShare);
-      const shareId = new URL(url).searchParams.get("id");
-      if (shareId) {
-        const updatedChar = { ...charToShare, shareId };
-        saveCharacter(updatedChar);
-        setCharacter(updatedChar);
-      }
-      await navigator.clipboard.writeText(url);
-      setShareStatus("copied");
-      setTimeout(() => setShareStatus("idle"), 2000);
-    } catch {
-      setShareStatus("error");
-      setTimeout(() => setShareStatus("idle"), 3000);
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-gray-950 text-gray-100 px-4 py-8 print:bg-white print:text-black">
+    <div className="min-h-screen bg-gray-950 text-gray-100 px-4 py-8">
       {/* Top nav */}
-      <div className="max-w-5xl mx-auto mb-6 flex items-center justify-between print-hidden">
-        <Button variant="ghost" href="/characters">
-          ← Characters
+      <div className="max-w-5xl mx-auto mb-6 flex items-center justify-between">
+        <Button variant="ghost" href="/shares">
+          ← Shared Characters
         </Button>
-        <div className="flex items-center gap-2">
+        <div className="flex gap-3">
           <button
-            onClick={handleShare}
-            disabled={shareStatus === "loading"}
+            onClick={handleSave}
+            disabled={saved}
             className="px-4 py-2 text-sm text-emerald-300 border border-emerald-800/50 rounded bg-emerald-950/20 hover:bg-emerald-950/40 hover:border-emerald-700/50 transition-colors disabled:opacity-50"
           >
-            {shareStatus === "loading"
-              ? "Sharing…"
-              : shareStatus === "copied"
-              ? "Link copied!"
-              : shareStatus === "error"
-              ? "Failed"
-              : "Share"}
-          </button>
-          <button
-            onClick={handlePrint}
-            className="px-4 py-2 text-sm text-amber-300 border border-amber-800/50 rounded bg-amber-950/20 hover:bg-amber-950/40 hover:border-amber-700/50 transition-colors"
-          >
-            Print
+            {saved ? "Saved!" : "Save to My Characters"}
           </button>
         </div>
       </div>
@@ -599,29 +543,6 @@ export default function CharacterSheetPage() {
             </div>
           </section>
         )}
-
-        {/* Danger Zone */}
-        <section className="print-hidden border-t border-gray-900 pt-6 mt-8">
-          <h2 className="text-sm text-gray-400 uppercase tracking-wider mb-3">
-            Danger Zone
-          </h2>
-          <button
-            onClick={handleDelete}
-            className="px-4 py-2 text-sm text-rose-400 border border-rose-900/50 rounded bg-rose-950/20 hover:bg-rose-950/40 hover:border-rose-800/50 transition-colors"
-          >
-            Delete Character
-          </button>
-        </section>
-
-        {/* Footer timestamps */}
-        <footer className="print-hidden border-t border-gray-900 pt-4 pb-8 flex flex-wrap justify-between text-xs text-gray-400 gap-2">
-          <span>
-            Created {new Date(character.createdAt).toLocaleDateString()}
-          </span>
-          <span>
-            Last saved {new Date(character.updatedAt).toLocaleDateString()}
-          </span>
-        </footer>
       </div>
     </div>
   );
@@ -707,4 +628,3 @@ function SkillTable({ label, skills, findSkill, getCharTotal }: SkillTableProps)
     </div>
   );
 }
-

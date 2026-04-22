@@ -33,7 +33,19 @@ export function AppHeader() {
             WFRP 4e
           </Link>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
+            <Link
+              href="/characters"
+              className="text-sm text-gray-400 hover:text-amber-400 transition-colors"
+            >
+              My Characters
+            </Link>
+            <Link
+              href="/shares"
+              className="text-sm text-gray-400 hover:text-amber-400 transition-colors"
+            >
+              Shared
+            </Link>
             {/* Active model badge — shown when API key + model are set */}
             {hasApiKey && modelLabel && (
               <span

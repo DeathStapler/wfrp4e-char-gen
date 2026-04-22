@@ -391,8 +391,6 @@ export interface CreationAdvances {
   talents: string[];
 }
 
-// ── Character Metadata ────────────────────────────────────────────────────────
-
 /**
  * Biographical and descriptive information about the character.
  * This is the "who they are" layer — background, appearance, and motivation.
@@ -400,6 +398,12 @@ export interface CreationAdvances {
 export interface CharacterMetadata {
   /** The character's given name and any titles or epithets. */
   name: string
+
+  /**
+   * The player's real name or handle who created / owns this character.
+   * Displayed on the sheet and used to group shared characters.
+   */
+  playerName?: string
 
   /**
    * References Species.id from rules data.
@@ -600,4 +604,16 @@ export interface Character {
 
   /** Backstory answers from Step 7 (Bringing to Life). */
   backstory?: CharacterBackstory
+
+  /**
+   * If this character was originally loaded from a shared link, this stores
+   * the share ID so we can detect duplicates when re-saving.
+   */
+  sourceShareId?: string
+
+  /**
+   * The share ID assigned when this character was first shared to the server.
+   * Used to prevent creating multiple share links for the same character.
+   */
+  shareId?: string
 }

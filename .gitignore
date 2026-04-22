@@ -25,6 +25,9 @@ nohup.out
 .env.local
 .env.*.local
 
+# ==================== Shared character files ====================
+data/shares/
+
 # ==================== IDE & Editor ====================
 .vscode/
 .idea/

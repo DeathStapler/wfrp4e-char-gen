@@ -3,7 +3,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import type { Character } from "@/lib/types/character";
-import { loadAllCharacters, deleteCharacter } from "@/lib/storage/character-storage";
+import { loadAllCharacters, deleteCharacter, saveCharacter } from "@/lib/storage/character-storage";
+import {
+  createShareLink,
+  fetchSharedCharacter,
+  getStoredPlayerName,
+  setStoredPlayerName,
+} from "@/lib/utils/share-character";
 import { Button } from "@/components/ui/Button";
 import speciesData from "@/data/species.json";
 import careersData from "@/data/careers.json";
@@ -68,6 +74,7 @@ export default function CharactersPage() {
                 key={char.id}
                 character={char}
                 onDelete={loadCharacters}
+                onShare={loadCharacters}
               />
             ))}
           </div>
@@ -80,10 +87,14 @@ export default function CharactersPage() {
 function CharacterCard({
   character,
   onDelete,
+  onShare,
 }: {
   character: Character;
   onDelete: () => void;
+  onShare: () => void;
 }) {
+  const [shareLabel, setShareLabel] = useState<string | null>(null);
+
   const species = (speciesData as Array<{ id: string; name: string }>).find(
     (s) => s.id === character.metadata.speciesId
   );
@@ -117,28 +128,99 @@ function CharacterCard({
     }
   };
 
+  const handleShare = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    let playerName = character.metadata.playerName;
+    if (!playerName) {
+      playerName = getStoredPlayerName() ?? undefined;
+    }
+    if (!playerName) {
+      const entered = window.prompt("Enter your player name to share this character:");
+      if (!entered || !entered.trim()) return;
+      playerName = entered.trim();
+      setStoredPlayerName(playerName);
+    }
+
+    let charToShare: Character = {
+      ...character,
+      metadata: { ...character.metadata, playerName },
+    };
+    saveCharacter(charToShare);
+
+    // Prevent re-sharing the same character
+    if (character.shareId) {
+      const existing = await fetchSharedCharacter(character.shareId);
+      if (existing) {
+        const url = `${window.location.origin}/character/shared?id=${character.shareId}`;
+        await navigator.clipboard.writeText(url);
+        setShareLabel("Copied!");
+        setTimeout(() => setShareLabel(null), 2000);
+        return;
+      }
+      // Share was deleted from server — clear cached shareId and re-share
+      const clearedChar = { ...charToShare, shareId: undefined };
+      saveCharacter(clearedChar);
+      onShare();
+      charToShare = clearedChar;
+    }
+
+    try {
+      const url = await createShareLink(charToShare);
+      const shareId = new URL(url).searchParams.get("id");
+      if (shareId) {
+        const updatedChar = { ...charToShare, shareId };
+        saveCharacter(updatedChar);
+      }
+      onShare();
+      await navigator.clipboard.writeText(url);
+      setShareLabel("Copied!");
+      setTimeout(() => setShareLabel(null), 2000);
+    } catch {
+      setShareLabel("Failed");
+      setTimeout(() => setShareLabel(null), 3000);
+    }
+  };
+
   return (
     <Link href={`/character/${character.id}`} className="block group">
       <div className="h-full relative rounded-lg border border-gray-800 bg-gray-900 p-5 transition-colors group-hover:border-amber-700/60 group-hover:bg-gray-900/80">
-        <button
-          onClick={handleDelete}
-          className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-rose-500 hover:text-rose-400 hover:bg-rose-950/30 rounded p-1"
-          aria-label="Delete character"
-          title="Delete character"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+        <div className="absolute top-3 right-3 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+          <button
+            onClick={handleShare}
+            className="text-emerald-500 hover:text-emerald-400 hover:bg-emerald-950/30 rounded p-1"
+            aria-label="Share character"
+            title={shareLabel ?? "Share character"}
           >
-            <path
-              fillRule="evenodd"
-              d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </button>
+            {shareLabel ? (
+              <span className="text-xs px-1">{shareLabel}</span>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+              </svg>
+            )}
+          </button>
+          <button
+            onClick={handleDelete}
+            className="text-rose-500 hover:text-rose-400 hover:bg-rose-950/30 rounded p-1"
+            aria-label="Delete character"
+            title="Delete character"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
         <h2 className="font-serif text-xl text-amber-400 mb-2 leading-tight truncate">
           {character.metadata.name}
         </h2>
